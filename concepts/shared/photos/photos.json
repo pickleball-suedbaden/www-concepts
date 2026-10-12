@@ -1,0 +1,537 @@
+{
+ "note": "AI-generated sample photos used as placeholders in the website concepts. They will be replaced by real photos from club sessions, taken with consent, before launch.",
+ "photos": [
+  {
+   "id": "01",
+   "description": "Four players mid-rally at the net in a bright Sporthalle. Near side: a grey-haired man (~70) and a teenage girl (~15). Far side: a woman (~40) and a man (~30). Everyone grinning; one reaches for a soft dink; the ball hangs over the net with slight motion blur. Camera low at court level near the sideline.",
+   "orientation": "landscape",
+   "files": {
+    "800": {
+     "file": "01-800.webp",
+     "width": 800,
+     "height": 533,
+     "kb": 41
+    },
+    "1600": {
+     "file": "01-1600.webp",
+     "width": 1536,
+     "height": 1024,
+     "kb": 118
+    }
+   }
+  },
+  {
+   "id": "02",
+   "description": "Paddle tap at the net after a point between a ~12-year-old boy and a woman in her 50s from opposite sides, both laughing.",
+   "orientation": "square",
+   "files": {
+    "800": {
+     "file": "02-800.webp",
+     "width": 800,
+     "height": 800,
+     "kb": 43
+    },
+    "1600": {
+     "file": "02-1600.webp",
+     "width": 1254,
+     "height": 1254,
+     "kb": 94
+    }
+   }
+  },
+  {
+   "id": "03",
+   "description": "A beginner's first rally: a host (woman ~45) coaching beside a beginner (man ~35) whose face lights up as he returns the ball.",
+   "orientation": "landscape",
+   "files": {
+    "800": {
+     "file": "03-800.webp",
+     "width": 800,
+     "height": 600,
+     "kb": 40
+    },
+    "1600": {
+     "file": "03-1600.webp",
+     "width": 1448,
+     "height": 1086,
+     "kb": 98
+    }
+   }
+  },
+  {
+   "id": "04",
+   "description": "The informal \"family photo\" after a session: about 16 people of all ages bunched on court, paddles raised, laughing, a couple of kids at the front. No banner, no text.",
+   "orientation": "landscape",
+   "files": {
+    "800": {
+     "file": "04-800.webp",
+     "width": 800,
+     "height": 533,
+     "kb": 52
+    },
+    "1600": {
+     "file": "04-1600.webp",
+     "width": 1536,
+     "height": 1024,
+     "kb": 149
+    }
+   }
+  },
+  {
+   "id": "06",
+   "description": "High-angle wide view from a gallery over a sports hall with three pickleball courts in play (portable nets), clearly showing the court lines and the kitchen zone; on the left court a player serves underhand; about 12 players of mixed ages.",
+   "orientation": "landscape",
+   "files": {
+    "800": {
+     "file": "06-800.webp",
+     "width": 800,
+     "height": 533,
+     "kb": 50
+    },
+    "1600": {
+     "file": "06-1600.webp",
+     "width": 1536,
+     "height": 1024,
+     "kb": 150
+    }
+   }
+  },
+  {
+   "id": "12",
+   "description": "The entrance of a German school sports hall (1970s concrete and glass) in late-afternoon light, with an A-frame sign showing only an arrow pictogram and a ball pictogram (no readable text).",
+   "orientation": "landscape",
+   "files": {
+    "800": {
+     "file": "12-800.webp",
+     "width": 800,
+     "height": 533,
+     "kb": 82
+    },
+    "1600": {
+     "file": "12-1600.webp",
+     "width": 1536,
+     "height": 1024,
+     "kb": 258
+    }
+   }
+  },
+  {
+   "id": "13",
+   "description": "The \"Paddle Library\": a plastic crate full of loan paddles in varied colours plus a few balls, on a bench at the side of the hall. No logos.",
+   "orientation": "landscape",
+   "files": {
+    "800": {
+     "file": "13-800.webp",
+     "width": 800,
+     "height": 600,
+     "kb": 43
+    },
+    "1600": {
+     "file": "13-1600.webp",
+     "width": 1448,
+     "height": 1086,
+     "kb": 113
+    }
+   }
+  },
+  {
+   "id": "14",
+   "description": "Close-up of indoor court shoes with non-marking gum soles on the hall floor beside a court line and a perforated ball. No faces.",
+   "orientation": "square",
+   "files": {
+    "800": {
+     "file": "14-800.webp",
+     "width": 800,
+     "height": 800,
+     "kb": 38
+    },
+    "1600": {
+     "file": "14-1600.webp",
+     "width": 1254,
+     "height": 1254,
+     "kb": 85
+    }
+   }
+  },
+  {
+   "id": "15",
+   "description": "Volunteers setting up a full-width portable pickleball net in the empty hall before a session; a younger man carries a mesh bag of balls.",
+   "orientation": "landscape",
+   "files": {
+    "800": {
+     "file": "15-800.webp",
+     "width": 800,
+     "height": 600,
+     "kb": 56
+    },
+    "1600": {
+     "file": "15-1600.webp",
+     "width": 1448,
+     "height": 1086,
+     "kb": 155
+    }
+   }
+  },
+  {
+   "id": "17",
+   "description": "Students at an evening session: hall at night, warm artificial light, energetic doubles on a lined pickleball court, a few people by the wall bars cheering.",
+   "orientation": "landscape",
+   "files": {
+    "800": {
+     "file": "17-800.webp",
+     "width": 800,
+     "height": 533,
+     "kb": 40
+    },
+    "1600": {
+     "file": "17-1600.webp",
+     "width": 1536,
+     "height": 1024,
+     "kb": 118
+    }
+   }
+  },
+  {
+   "id": "18",
+   "description": "A couple in their late 50s playing doubles against two students in their early 20s, everyone mid-laugh after a long rally. Not a \"seniors\" shot; it reads as equals.",
+   "orientation": "landscape",
+   "files": {
+    "800": {
+     "file": "18-800.webp",
+     "width": 800,
+     "height": 600,
+     "kb": 50
+    },
+    "1600": {
+     "file": "18-1600.webp",
+     "width": 1448,
+     "height": 1086,
+     "kb": 130
+    }
+   }
+  },
+  {
+   "id": "19",
+   "description": "A parent and a ~9-year-old child on the same side of the net; the child hits the ball, the parent cheers behind.",
+   "orientation": "portrait",
+   "files": {
+    "800": {
+     "file": "19-800.webp",
+     "width": 800,
+     "height": 1067,
+     "kb": 51
+    },
+    "1600": {
+     "file": "19-1600.webp",
+     "width": 1086,
+     "height": 1448,
+     "kb": 85
+    }
+   }
+  },
+  {
+   "id": "20",
+   "description": "Women's doubles with a woman host at the net giving a tip, players of different ages, focused and friendly.",
+   "orientation": "landscape",
+   "files": {
+    "800": {
+     "file": "20-800.webp",
+     "width": 800,
+     "height": 600,
+     "kb": 51
+    },
+    "1600": {
+     "file": "20-1600.webp",
+     "width": 1448,
+     "height": 1086,
+     "kb": 124
+    }
+   }
+  },
+  {
+   "id": "21",
+   "description": "A man in his ~50s at courtside on a bench holding a pickleball paddle with curiosity, his tennis bag beside him.",
+   "orientation": "square",
+   "files": {
+    "800": {
+     "file": "21-800.webp",
+     "width": 800,
+     "height": 800,
+     "kb": 41
+    },
+    "1600": {
+     "file": "21-1600.webp",
+     "width": 1254,
+     "height": 1254,
+     "kb": 91
+    }
+   }
+  },
+  {
+   "id": "24",
+   "description": "Two pickleball paddles and a ball resting on the railing of a modern white steel arch pedestrian bridge over the wide Rhine at golden hour; the arch blurred behind. No people, or only distant ones.",
+   "orientation": "landscape",
+   "files": {
+    "800": {
+     "file": "24-800.webp",
+     "width": 800,
+     "height": 450,
+     "kb": 28
+    },
+    "1600": {
+     "file": "24-1600.webp",
+     "width": 1600,
+     "height": 900,
+     "kb": 76
+    }
+   }
+  },
+  {
+   "id": "26",
+   "description": "\"Dink & Drink\" after a session: a wooden table on a café or clubhouse terrace in evening light, players of mixed ages chatting and laughing, paddles on the table, mostly alcohol-free drinks (apple spritzer, water) and a couple of beers.",
+   "orientation": "square",
+   "files": {
+    "800": {
+     "file": "26-800.webp",
+     "width": 800,
+     "height": 800,
+     "kb": 66
+    },
+    "1600": {
+     "file": "26-1600.webp",
+     "width": 1254,
+     "height": 1254,
+     "kb": 140
+    }
+   }
+  },
+  {
+   "id": "d-action-dink",
+   "description": "Low angle along the net from beside the near post: two opponents, each just behind their kitchen line, trade a soft dink, the ball just over the net tape. Shallow depth of field; concentrated, half-smiling faces.",
+   "orientation": "landscape",
+   "files": {
+    "800": {
+     "file": "d-action-dink-800.webp",
+     "width": 800,
+     "height": 533,
+     "kb": 36
+    },
+    "1600": {
+     "file": "d-action-dink-1600.webp",
+     "width": 1536,
+     "height": 1024,
+     "kb": 96
+    }
+   }
+  },
+  {
+   "id": "d-action-reach",
+   "description": "Seen from behind, a player in their 20s lunges wide for a low ball that has bounced, facing the net and the opponent, backlit by bright hall windows.",
+   "orientation": "portrait",
+   "files": {
+    "800": {
+     "file": "d-action-reach-800.webp",
+     "width": 800,
+     "height": 1200,
+     "kb": 93
+    },
+    "1600": {
+     "file": "d-action-reach-1600.webp",
+     "width": 1024,
+     "height": 1536,
+     "kb": 155
+    }
+   }
+  },
+  {
+   "id": "d-gen-10",
+   "description": "A 10-year-old girl with a gap-toothed grin, holding her paddle up beside her face, a little flushed from playing.",
+   "orientation": "portrait",
+   "files": {
+    "800": {
+     "file": "d-gen-10-800.webp",
+     "width": 800,
+     "height": 1000,
+     "kb": 50
+    },
+    "1600": {
+     "file": "d-gen-10-1600.webp",
+     "width": 1122,
+     "height": 1402,
+     "kb": 103
+    }
+   }
+  },
+  {
+   "id": "d-gen-16",
+   "description": "A 16-year-old boy, headphones around his neck, relaxed half-smile, paddle hanging from one hand.",
+   "orientation": "portrait",
+   "files": {
+    "800": {
+     "file": "d-gen-16-800.webp",
+     "width": 800,
+     "height": 1000,
+     "kb": 45
+    },
+    "1600": {
+     "file": "d-gen-16-1600.webp",
+     "width": 1122,
+     "height": 1402,
+     "kb": 87
+    }
+   }
+  },
+  {
+   "id": "d-gen-24",
+   "description": "A 24-year-old university student (woman), ponytail, sweatband on her wrist, bright laugh.",
+   "orientation": "portrait",
+   "files": {
+    "800": {
+     "file": "d-gen-24-800.webp",
+     "width": 800,
+     "height": 1000,
+     "kb": 35
+    },
+    "1600": {
+     "file": "d-gen-24-1600.webp",
+     "width": 1122,
+     "height": 1402,
+     "kb": 66
+    }
+   }
+  },
+  {
+   "id": "d-gen-38",
+   "description": "A 38-year-old father with a short beard, slightly sweaty, satisfied grin, paddle in both hands.",
+   "orientation": "portrait",
+   "files": {
+    "800": {
+     "file": "d-gen-38-800.webp",
+     "width": 800,
+     "height": 1000,
+     "kb": 37
+    },
+    "1600": {
+     "file": "d-gen-38-1600.webp",
+     "width": 1122,
+     "height": 1402,
+     "kb": 71
+    }
+   }
+  },
+  {
+   "id": "d-gen-56",
+   "description": "A 56-year-old woman, a former tennis player, confident and amused, paddle held like a racket.",
+   "orientation": "portrait",
+   "files": {
+    "800": {
+     "file": "d-gen-56-800.webp",
+     "width": 800,
+     "height": 1000,
+     "kb": 43
+    },
+    "1600": {
+     "file": "d-gen-56-1600.webp",
+     "width": 1122,
+     "height": 1402,
+     "kb": 86
+    }
+   }
+  },
+  {
+   "id": "d-gen-74",
+   "description": "A 74-year-old man with white hair, wiry and fit, cheeky smile, paddle tucked under his arm.",
+   "orientation": "portrait",
+   "files": {
+    "800": {
+     "file": "d-gen-74-800.webp",
+     "width": 800,
+     "height": 1000,
+     "kb": 37
+    },
+    "1600": {
+     "file": "d-gen-74-1600.webp",
+     "width": 1122,
+     "height": 1402,
+     "kb": 75
+    }
+   }
+  },
+  {
+   "id": "d-hero-outdoor",
+   "description": "Outdoor doubles at golden hour with Black Forest hills behind. A woman in her 60s hits a forehand; her partner, a man in his 20s, moves to cover. Warm low sun, long shadows, rim light.",
+   "orientation": "landscape",
+   "files": {
+    "800": {
+     "file": "d-hero-outdoor-800.webp",
+     "width": 800,
+     "height": 533,
+     "kb": 42
+    },
+    "1600": {
+     "file": "d-hero-outdoor-1600.webp",
+     "width": 1536,
+     "height": 1024,
+     "kb": 131
+    }
+   }
+  },
+  {
+   "id": "d-paddle-macro",
+   "description": "Macro: a solid paddle face meeting the perforated ball, a little motion blur, hall lights as bokeh. Hand and wrist partly in frame.",
+   "orientation": "square",
+   "files": {
+    "800": {
+     "file": "d-paddle-macro-800.webp",
+     "width": 800,
+     "height": 800,
+     "kb": 25
+    },
+    "1600": {
+     "file": "d-paddle-macro-1600.webp",
+     "width": 1254,
+     "height": 1254,
+     "kb": 55
+    }
+   }
+  },
+  {
+   "id": "d-paddles-in",
+   "description": "Overhead shot of eight hands holding paddles meeting in the centre for a team cheer, on the court floor with lines visible; varied skin tones and ages (a child's hand, an older hand).",
+   "orientation": "square",
+   "files": {
+    "800": {
+     "file": "d-paddles-in-800.webp",
+     "width": 800,
+     "height": 800,
+     "kb": 47
+    },
+    "1600": {
+     "file": "d-paddles-in-1600.webp",
+     "width": 1254,
+     "height": 1254,
+     "kb": 101
+    }
+   }
+  },
+  {
+   "id": "d-vineyard-court",
+   "description": "An outdoor court beside terraced vineyards (Kaiserstuhl-like) in summer: a family game, a grandmother and her grandson against the parents, a grandfather and a girl watching from the stone wall, dappled late light.",
+   "orientation": "landscape",
+   "files": {
+    "800": {
+     "file": "d-vineyard-court-800.webp",
+     "width": 800,
+     "height": 533,
+     "kb": 77
+    },
+    "1600": {
+     "file": "d-vineyard-court-1600.webp",
+     "width": 1536,
+     "height": 1024,
+     "kb": 243
+    }
+   }
+  }
+ ]
+}

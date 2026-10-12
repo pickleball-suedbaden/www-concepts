@@ -1,0 +1,4 @@
+# Local tool state (never commit)
+.claude/
+
+.DS_Store

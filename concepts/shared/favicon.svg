@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <title>Pickleball Südbaden e.V.</title>
+  <!-- Simplified ball for small sizes: 1 + 6 holes, thicker outline. -->
+  <circle cx="16" cy="16" r="14" fill="#FEDD02" stroke="#052443" stroke-width="2.6"/>
+  <g fill="#052443">
+    <circle cx="16" cy="16" r="2.6"/>
+    <ellipse cx="23.53" cy="18.02" rx="1.6" ry="2.3" transform="rotate(15 23.53 18.02)"/>
+    <ellipse cx="18.02" cy="23.53" rx="1.6" ry="2.3" transform="rotate(75 18.02 23.53)"/>
+    <ellipse cx="10.48" cy="21.52" rx="1.6" ry="2.3" transform="rotate(135 10.48 21.52)"/>
+    <ellipse cx="8.47" cy="13.98" rx="1.6" ry="2.3" transform="rotate(195 8.47 13.98)"/>
+    <ellipse cx="13.98" cy="8.47" rx="1.6" ry="2.3" transform="rotate(255 13.98 8.47)"/>
+    <ellipse cx="21.52" cy="10.48" rx="1.6" ry="2.3" transform="rotate(315 21.52 10.48)"/>
+  </g>
+</svg>

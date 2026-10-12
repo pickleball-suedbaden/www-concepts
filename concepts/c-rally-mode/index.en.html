@@ -1,0 +1,1638 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pickleball Südbaden e.V. · Concept C: Rally Mode</title>
+<meta name="description" content="Pickleball is the racket sport you can play in your first hour. Learn it in 60 seconds, then try it free with Pickleball Südbaden e.V. in Freiburg. Paddles on us.">
+<link rel="alternate" hreflang="de" href="index.html">
+<link rel="alternate" hreflang="en" href="index.en.html">
+<link rel="alternate" hreflang="x-default" href="index.html">
+<!-- Saira and Inter load from Google Fonts here; the live site self-hosts them (GDPR). -->
+<link rel="icon" href="../shared/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../shared/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../shared/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira:ital,wdth,wght@0,50..125,100..900;1,50..125,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap">
+<link rel="stylesheet" href="style.css">
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+
+<!-- ============ SVG sprite (shared assets inlined so CSS can recolour them) ============ -->
+<svg class="sprite" width="0" height="0" aria-hidden="true" focusable="false">
+  <defs>
+    <!-- ball.svg (outline = currentColor; holes stay navy, as in logo-on-dark.png) -->
+    <symbol id="i-ball" viewBox="0 0 100 100">
+      <circle cx="50" cy="50" r="45" fill="#FEDD02" stroke="currentColor" stroke-width="5"/>
+      <g fill="#052443">
+        <ellipse cx="50.7" cy="17.7" rx="4" ry="6.6" transform="rotate(-89 50.7 17.7)"/>
+        <ellipse cx="27.3" cy="23.2" rx="3.3" ry="6.6" transform="rotate(-130 27.3 23.2)"/>
+        <ellipse cx="65.9" cy="34.7" rx="5.5" ry="6.6" transform="rotate(-44 65.9 34.7)"/>
+        <ellipse cx="33.8" cy="40.7" rx="5.9" ry="6.6" transform="rotate(-150 33.8 40.7)"/>
+        <ellipse cx="83.9" cy="47.6" rx="3.6" ry="6.6" transform="rotate(-4 83.9 47.6)"/>
+        <circle cx="53.6" cy="57" r="6.6"/>
+        <ellipse cx="20.1" cy="59.6" rx="4.2" ry="6.6" transform="rotate(162 20.1 59.6)"/>
+        <ellipse cx="72.4" cy="69.8" rx="4.4" ry="6.6" transform="rotate(42 72.4 69.8)"/>
+        <ellipse cx="39.2" cy="75.8" rx="4.8" ry="6.6" transform="rotate(113 39.2 75.8)"/>
+        <ellipse cx="53.9" cy="87.7" rx="2.3" ry="6.6" transform="rotate(84 53.9 87.7)"/>
+      </g>
+    </symbol>
+    <!-- paddle.svg, ids prefixed (pd-) -->
+    <symbol id="i-paddle" viewBox="0 0 200 420">
+      <path id="pd-face" d="M52 8H148C174 8 192 26 192 52V178C192 204 182 218 164 228C146 238 132 246 127 262V272H73V262C68 246 54 238 36 228C18 218 8 204 8 178V52C8 26 26 8 52 8Z" fill="#FEDD02"/>
+      <clipPath id="pd-faceClip"><path d="M52 8H148C174 8 192 26 192 52V178C192 204 182 218 164 228C146 238 132 246 127 262V272H73V262C68 246 54 238 36 228C18 218 8 204 8 178V52C8 26 26 8 52 8Z"/></clipPath>
+      <clipPath id="pd-gripClip"><rect x="74" y="281" width="52" height="132" rx="12"/></clipPath>
+      <path clip-path="url(#pd-faceClip)" fill="#EA162C" d="M0 64L200 116V174L0 122Z"/>
+      <path d="M52 8H148C174 8 192 26 192 52V178C192 204 182 218 164 228C146 238 132 246 127 262V272H73V262C68 246 54 238 36 228C18 218 8 204 8 178V52C8 26 26 8 52 8Z" fill="none" stroke="currentColor" stroke-width="9" stroke-linejoin="round"/>
+      <rect x="69" y="258" width="62" height="18" rx="4" fill="currentColor"/>
+      <rect x="74" y="281" width="52" height="132" rx="12" fill="currentColor"/>
+      <g clip-path="url(#pd-gripClip)" fill="none" stroke="#7A96B6" stroke-width="4.5" stroke-linecap="round">
+        <path d="M70 302Q100 293 130 302"/><path d="M70 322Q100 313 130 322"/><path d="M70 342Q100 333 130 342"/><path d="M70 362Q100 353 130 362"/><path d="M70 382Q100 373 130 382"/>
+      </g>
+    </symbol>
+    <!-- the logo's three motion swooshes -->
+    <symbol id="i-speed" viewBox="0 0 64 40">
+      <g fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round">
+        <path d="M6 26C18 12 34 6 58 6"/>
+        <path d="M16 32C27 23 40 18 60 18"/>
+        <path d="M30 37C38 33 47 31 61 30"/>
+      </g>
+    </symbol>
+    <!-- court-lines.svg; surfaces take --cs (court) and --ck (kitchen) -->
+    <symbol id="i-court" viewBox="-18 -18 564 276">
+      <rect x="0" y="0" width="528" height="240" style="fill:var(--cs,none)"/>
+      <rect x="180" y="0" width="84" height="240" style="fill:var(--ck,none)"/>
+      <rect x="264" y="0" width="84" height="240" style="fill:var(--ck,none)"/>
+      <g fill="currentColor">
+        <rect x="0" y="0" width="528" height="2"/><rect x="0" y="238" width="528" height="2"/>
+        <rect x="0" y="0" width="2" height="240"/><rect x="526" y="0" width="2" height="240"/>
+        <rect x="180" y="0" width="2" height="240"/><rect x="346" y="0" width="2" height="240"/>
+        <rect x="2" y="119" width="178" height="2"/><rect x="348" y="119" width="178" height="2"/>
+      </g>
+      <g fill="currentColor" opacity=".6"><rect x="263" y="-12" width="2" height="264"/><circle cx="264" cy="-12" r="3"/><circle cx="264" cy="252" r="3"/></g>
+    </symbol>
+    <symbol id="i-cam" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M4 7.5h3.2L9 5h6l1.8 2.5H20a1 1 0 0 1 1 1V18a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V8.5a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.6" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+    <symbol id="i-tick" viewBox="0 0 20 20"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="M4.5 10.5l3.6 3.6 7.4-8"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path fill="currentColor" d="M8 5.5v13l11-6.5z"/></symbol>
+  </defs>
+</svg>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- ======================= HEADER ======================= -->
+<header class="site-header" id="siteHeader">
+  <div class="hdr">
+    <a class="brand" href="#top">
+      <img src="../shared/logo-mark-on-dark.png" alt="" width="59" height="40">
+      <span class="brand-name">Pickleball Südbaden e.V.</span>
+    </a>
+    <nav class="hdr-nav" aria-label="Main">
+      <ul>
+        <li><a href="#game" data-expand-court>Learn</a></li>
+        <li><a href="#sessions">Sessions</a></li>
+        <li><a href="#join">Join</a></li>
+        <li><a href="#club">Club</a></li>
+      </ul>
+    </nav>
+    <div class="lang" role="group" aria-label="Language">
+      <span class="lang-ball" aria-hidden="true"></span>
+      <a href="index.html" lang="de" hreflang="de" aria-label="Deutsch, DE">DE</a>
+      <button type="button" lang="fr" aria-label="Français, FR" data-lang="fr">FR</button>
+      <a href="index.en.html" lang="en" hreflang="en" aria-label="English, EN" aria-current="page">EN</a>
+    </div>
+    <button type="button" class="btn btn-ghost hdr-login" data-open="login">Member login</button>
+    <button type="button" class="btn btn-red btn-slant hdr-try" data-open="trial">Try it free</button>
+    <button type="button" class="menu-btn" data-open="menu" aria-haspopup="dialog">
+      <span class="menu-lines" aria-hidden="true"><i></i><i></i><i></i></span><span class="menu-txt">Menu</span>
+    </button>
+  </div>
+  <div class="rally-bar" aria-hidden="true"><span class="rb-net"></span><span class="rb-ball"></span></div>
+</header>
+
+<main id="main" tabindex="-1">
+
+<!-- ======================= 1. HERO · 0–0–2 · SERVE ======================= -->
+<section class="hero zone-play" id="top" aria-labelledby="heroTitle">
+  <svg class="hero-court" aria-hidden="true" focusable="false"><use href="#i-court"/></svg>
+  <div class="wrap hero-wrap">
+    <p class="call"><span class="call-score">0–0–2</span><span class="call-label">Serve</span></p>
+    <h1 class="loud hero-title" id="heroTitle"><span class="hl1">Easy to learn.</span> <span class="hl2">Hard to stop.<span class="ball-slot hero-slot" id="slotHero" aria-hidden="true"><svg class="slot-ball"><use href="#i-ball"/></svg></span></span></h1>
+
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <p class="hero-sub">Pickleball is the racket sport you can play in your first hour. Now in Südbaden: first session free, paddles on us.</p>
+        <div class="hero-ctas">
+          <button type="button" class="btn btn-red btn-slant btn-lg" data-open="trial" data-session="S2">Try it free</button>
+          <a class="link-under" href="#game" data-expand-court>Learn it in 60 seconds <span aria-hidden="true">↓</span></a>
+        </div>
+        <ul class="reassure" aria-label="What to expect">
+          <li>First session free</li><li>Paddles on loan</li><li>Just bring indoor shoes</li>
+        </ul>
+      </div>
+      <div class="hero-aside">
+        <a class="next-chip" href="#sessions" id="heroChip">
+          <span class="nc-top"><span class="nc-dot" aria-hidden="true"></span>Next First Serve <span class="sample sample-dark">Sample</span></span>
+          <span class="nc-main">Thu 15 Oct · 18:30 · Freiburg</span>
+          <span class="nc-left"><span data-left="S2">6</span> spots left</span>
+        </a>
+        <p class="trust">Volunteer-run club · hosts speak <span class="ph" title="Placeholder: to be confirmed">[DE&nbsp;·&nbsp;EN&nbsp;·&nbsp;FR&nbsp;TBC]</span></p>
+      </div>
+    </div>
+
+    <div class="router" role="group" aria-labelledby="routerTitle">
+      <h2 class="router-title" id="routerTitle">Where do you land?</h2>
+      <div class="router-court" id="routerCourt">
+        <button type="button" class="svc svc-a" data-route="new"><span class="svc-t">I'm new</span><span class="svc-s">Learn the game in 60 seconds</span></button>
+        <button type="button" class="svc svc-b" data-route="play"><span class="svc-t">I already play</span><span class="svc-s">Open Play sessions</span></button>
+        <div class="router-net" aria-hidden="true"><span class="rn-k"></span><span class="rn-n"></span><span class="rn-k"></span></div>
+        <button type="button" class="svc svc-c" data-route="member"><span class="svc-t">I'm a member</span><span class="svc-s">Log in to the member area</span></button>
+        <button type="button" class="svc svc-d" data-route="cross"><span class="svc-t">Coming from France or Switzerland?</span><span class="svc-s"><span lang="fr">Bienvenue</span> · <span lang="de-CH">Grüezi</span></span></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= 2. THE GAME · 1–0–2 ======================= -->
+<section class="game zone-play cut-bottom" id="game" aria-labelledby="gameTitle">
+  <div class="wrap game-grid">
+    <div class="game-head">
+      <p class="call"><span class="call-score">1–0–2</span><span class="call-label">The game</span></p>
+      <h2 class="loud h2" id="gameTitle"><span class="ball-slot" aria-hidden="true"><svg class="slot-ball"><use href="#i-ball"/></svg></span>0–0–2? You'll know in 60 seconds.</h2>
+      <p class="what-is">Pickleball is a racket sport played with a solid paddle and a light plastic ball with holes, on a court the size of a badminton doubles court. It's mostly played as doubles, the serve is underhand, and the rallies are long. Imagine tennis, badminton and table tennis had a very friendly baby.</p>
+    </div>
+
+    <button type="button" class="court-teaser js-only" id="courtTeaser" aria-expanded="false" aria-controls="courtMore">
+      <svg class="ct-court" aria-hidden="true" focusable="false"><use href="#i-court"/></svg>
+      <span class="ct-title">Play the 60-second court</span>
+      <span class="ct-steps" aria-hidden="true">Underhand serve · two bounces · no volleys in the kitchen · games to 11</span>
+      <span class="ct-row"><span class="ct-go">Start <svg aria-hidden="true"><use href="#i-play"/></svg></span><span class="ct-kicker">5 steps · about 60 seconds</span></span>
+    </button>
+
+    <div class="court-more" id="courtMore">
+      <aside class="rules-card" aria-labelledby="rulesTitle">
+        <h3 class="rules-title" id="rulesTitle">The whole game in four lines</h3>
+        <ol class="rules">
+          <li>Serve underhand, diagonally across the court.</li>
+          <li>Let it bounce once on each side before anyone volleys. That's the two-bounce rule.</li>
+          <li>Don't volley from the kitchen: the 2.13&nbsp;m (7&nbsp;ft) zone on each side of the net. Step in any time, but there the ball has to bounce first.</li>
+          <li>Games go to 11, win by 2. Only the serving side scores.</li>
+        </ol>
+        <p class="kueche"><span class="loud kueche-line" lang="de">Badische Küche,</span> <span class="loud kueche-line">now with a net.</span></p>
+        <p class="kueche-plain">The kitchen is the zone next to the net. You can stand in it, but you can't volley from it: in there, the ball has to bounce first.</p>
+      </aside>
+
+      <!-- The 60-second court: five steps, every step has a text twin -->
+      <div class="court-app" id="courtApp">
+        <h3 class="vh" id="courtAppTitle">The 60-second court</h3>
+        <div class="ca-top">
+          <ol class="ca-tabs js-only" aria-label="Steps">
+            <li><button type="button" data-goto="0" aria-current="step"><b>1</b><span class="tab-name">Serve</span></button></li>
+            <li><button type="button" data-goto="1"><b>2</b><span class="tab-name">Two bounces</span></button></li>
+            <li><button type="button" data-goto="2"><b>3</b><span class="tab-name">The kitchen</span></button></li>
+            <li><button type="button" data-goto="3"><b>4</b><span class="tab-name">The dink</span></button></li>
+            <li><button type="button" data-goto="4"><b>5</b><span class="tab-name">Scoring</span></button></li>
+          </ol>
+          <div class="ca-progress js-only" aria-hidden="true">
+            <span class="cp-track"><i></i><i></i><i></i><i></i><i></i></span>
+            <span class="cp-fill"></span>
+            <span class="cp-ball"><svg><use href="#i-ball"/></svg></span>
+          </div>
+          <p class="ca-count js-only" id="caCount">Step 1 of 5</p>
+        </div>
+
+        <div class="ca-body">
+          <div class="court-frame" id="courtFrame">
+            <div class="court-stage" id="courtStage">
+              <svg class="court-svg" viewBox="-18 -18 564 276" role="img" aria-labelledby="courtSvgT">
+                <title id="courtSvgT">Pickleball court seen from above, with the net in the middle and a kitchen zone on each side of it. Your side has the white players.</title>
+                <rect class="cs-surface" x="0" y="0" width="528" height="240"/>
+                <rect class="cs-kitchen" id="kNear" x="180" y="0" width="84" height="240"/>
+                <rect class="cs-kitchen" x="264" y="0" width="84" height="240"/>
+                <rect class="cs-flash" id="kFlash" x="180" y="0" width="84" height="240"/>
+                <g class="cs-side" id="sideNear"><rect x="3" y="3" width="258" height="234"/><text class="upr" x="222" y="200" text-anchor="middle">Serving</text></g>
+                <g class="cs-side" id="sideFar"><rect x="267" y="3" width="258" height="234"/><text class="upr" x="306" y="200" text-anchor="middle">Serving</text></g>
+                <g class="cs-lines" fill="#fff">
+                  <rect x="0" y="0" width="528" height="2"/><rect x="0" y="238" width="528" height="2"/>
+                  <rect x="0" y="0" width="2" height="240"/><rect x="526" y="0" width="2" height="240"/>
+                  <rect x="180" y="0" width="2" height="240"/><rect x="346" y="0" width="2" height="240"/>
+                  <rect x="2" y="119" width="178" height="2"/><rect x="348" y="119" width="178" height="2"/>
+                </g>
+                <g class="cs-net" fill="#fff"><rect x="262.5" y="-12" width="3" height="264" opacity=".85"/><circle cx="264" cy="-12" r="4"/><circle cx="264" cy="252" r="4"/></g>
+                <path class="cs-path" id="cPath" d="" />
+                <g id="cMarks"></g>
+                <!-- pictogram players: neutral, varied in build and age -->
+                <g class="pl" id="pl1" transform="translate(26 214)"><circle class="srv-ring" cx="6" cy="-25.5" r="30"/><g class="upr">
+                  <rect x="-9" y="-32" width="18" height="32" rx="7" fill="#fff"/><circle cx="0" cy="-42" r="9" fill="#fff"/>
+                  <g transform="translate(13 -26) rotate(18)"><rect x="-6" y="-9" width="12" height="15" rx="5" fill="#FEDD02" stroke="#052443" stroke-width="1.6"/><rect x="-1.4" y="6" width="2.8" height="7" rx="1.2" fill="#052443"/></g>
+                </g></g>
+                <g class="pl" id="pl2" transform="translate(40 86)"><g class="upr">
+                  <rect x="-12.5" y="-26" width="25" height="26" rx="9" fill="#fff"/><circle cx="0" cy="-36" r="10" fill="#fff"/>
+                  <path d="M-10 -38a10 10 0 0 1 20 0h4" fill="none" stroke="#052443" stroke-width="2.4" stroke-linecap="round"/>
+                  <g transform="translate(-17 -20) rotate(-16)"><rect x="-6" y="-9" width="12" height="15" rx="5" fill="#FEDD02" stroke="#052443" stroke-width="1.6"/><rect x="-1.4" y="6" width="2.8" height="7" rx="1.2" fill="#052443"/></g>
+                </g></g>
+                <g class="pl" id="pl3" transform="translate(492 74)"><g class="upr">
+                  <rect x="-8" y="-22" width="16" height="22" rx="6" fill="#052443" stroke="#fff" stroke-width="2"/><circle cx="0" cy="-30" r="7.5" fill="#052443" stroke="#fff" stroke-width="2"/>
+                  <g transform="translate(-13 -18) rotate(-14)"><rect x="-6" y="-9" width="12" height="15" rx="5" fill="#FEDD02" stroke="#052443" stroke-width="1.6"/><rect x="-1.4" y="6" width="2.8" height="7" rx="1.2" fill="#052443"/></g>
+                </g></g>
+                <g class="pl" id="pl4" transform="translate(496 206)"><g class="upr">
+                  <rect x="-11" y="-33" width="22" height="33" rx="8" fill="#052443" stroke="#fff" stroke-width="2"/><circle cx="0" cy="-43" r="9.5" fill="#052443" stroke="#fff" stroke-width="2"/>
+                  <path d="M-8.5 -47a9 9 0 0 1 17 0" fill="none" stroke="#DCE4EE" stroke-width="3.2" stroke-linecap="round"/>
+                  <g transform="translate(-15 -24) rotate(-18)"><rect x="-6" y="-9" width="12" height="15" rx="5" fill="#FEDD02" stroke="#052443" stroke-width="1.6"/><rect x="-1.4" y="6" width="2.8" height="7" rx="1.2" fill="#052443"/></g>
+                </g></g>
+                <g class="pl pl-k" id="plK" transform="translate(226 158)"><g id="plKmove"><g class="upr">
+                  <rect x="-10" y="-29" width="20" height="29" rx="8" fill="#fff"/><circle cx="0" cy="-39" r="9" fill="#fff"/>
+                  <g transform="translate(14 -34) rotate(28)"><rect x="-6" y="-9" width="12" height="15" rx="5" fill="#FEDD02" stroke="#052443" stroke-width="1.6"/><rect x="-1.4" y="6" width="2.8" height="7" rx="1.2" fill="#052443"/></g>
+                </g></g></g>
+                <g id="cBall" class="c-ball"><circle r="7.5" fill="#FEDD02" stroke="#052443" stroke-width="2"/><circle cx="-2" cy="-2" r="1.4" fill="#052443"/><circle cx="2.6" cy="1.6" r="1.4" fill="#052443"/></g>
+              </svg>
+              <button type="button" class="serve-box sb-top" data-serve="good" aria-label="Here? Serve into the box diagonally across the court"><span class="upr-h">Here?</span></button>
+              <button type="button" class="serve-box sb-bot" data-serve="bad" aria-label="Here? Serve into the box straight ahead"><span class="upr-h">Here?</span></button>
+              <p class="stamp" id="stamp" aria-hidden="true"></p>
+            </div>
+          </div>
+
+          <div class="ca-steps">
+            <section class="ca-step" data-step="0" aria-labelledby="st0">
+              <h4 class="loud st-title" id="st0"><span class="st-n">1</span> Serve</h4>
+              <p class="st-rule calm">Serve underhand and diagonally, into the box across the court.</p>
+              <p class="st-do js-only">Your server holds the ball, inside the yellow ring <span class="o-land">(bottom left)</span><span class="o-port">(bottom right)</span>. Tap the box you'd serve into.</p>
+            </section>
+            <section class="ca-step" data-step="1" aria-labelledby="st1">
+              <h4 class="loud st-title" id="st1"><span class="st-n">2</span> Two bounces</h4>
+              <p class="st-rule calm">Let it bounce once on each side before anyone volleys.</p>
+              <div class="st-act js-only">
+                <button type="button" class="btn btn-yellow" id="playPoint">Play the point</button>
+                <p class="bounce-ticker" id="bounceTicker" aria-hidden="true"><span data-b="1">Bounce 1 <b>✓</b></span><span data-b="2">Bounce 2 <b>✓</b></span><span data-b="3">Now you may volley</span></p>
+              </div>
+            </section>
+            <section class="ca-step" data-step="2" aria-labelledby="st2">
+              <h4 class="loud st-title" id="st2"><span class="st-n">3</span> The kitchen</h4>
+              <p class="st-rule calm">The kitchen is the 2.13&nbsp;m (7&nbsp;ft) zone on each side of the net. You can stand in it, but you can't volley there.</p>
+              <div class="st-act js-only">
+                <button type="button" class="btn btn-outline-light" data-kitchen="in">Volley from here</button>
+                <button type="button" class="btn btn-outline-light" data-kitchen="back">Step back and volley</button>
+              </div>
+            </section>
+            <section class="ca-step" data-step="3" aria-labelledby="st3">
+              <h4 class="loud st-title" id="st3"><span class="st-n">4</span> The dink</h4>
+              <p class="st-rule calm">A dink is a soft shot that drops into the opponent's kitchen.</p>
+              <div class="st-act js-only dink">
+                <label for="dinkRange" class="dink-label">How hard do you hit it?</label>
+                <input type="range" id="dinkRange" min="0" max="100" step="1" value="72" aria-describedby="dinkEnds" aria-valuetext="Fairly hard">
+                <p class="dink-ends" id="dinkEnds"><span>Soft</span><span>Hard</span></p>
+              </div>
+            </section>
+            <section class="ca-step" data-step="4" aria-labelledby="st4">
+              <h4 class="loud st-title" id="st4"><span class="st-n">5</span> Scoring</h4>
+              <p class="st-rule calm">Games go to 11, win by 2. Only the serving side scores. In doubles the call has three numbers: the serving side's score, the receiving side's score, and whether the first or second server is serving.</p>
+              <div class="st-act js-only score">
+                <div class="score-call" aria-hidden="true"><span id="scoreCall">0–0–2</span><small><i>serving</i><i>receiving</i><i>server</i></small></div>
+                <div class="score-btns">
+                  <button type="button" class="btn btn-outline-light" data-rally="serve">Serving side wins the rally</button>
+                  <button type="button" class="btn btn-outline-light" data-rally="recv">Receiving side wins the rally</button>
+                  <button type="button" class="linkbtn-light" data-rally="reset">Start the game again</button>
+                </div>
+              </div>
+            </section>
+            <p class="ca-feedback js-only" id="caFeedback" aria-hidden="true"></p>
+            <p class="vh" id="courtLive" aria-live="polite"></p>
+            <div class="ca-nav js-only">
+              <button type="button" class="btn btn-outline-light" id="caBack">Back</button>
+              <button type="button" class="btn btn-yellow" id="caNext">Next</button>
+            </div>
+          </div>
+        </div>
+
+        <details class="twin">
+          <summary>Show all rules as text</summary>
+          <ol class="twin-list">
+            <li><b>Serve.</b> Serve underhand and diagonally, into the box across the court.</li>
+            <li><b>Two bounces.</b> Let it bounce once on each side before anyone volleys.</li>
+            <li><b>The kitchen.</b> The kitchen is the 2.13&nbsp;m (7&nbsp;ft) zone on each side of the net. You can stand in it, but you can't volley there.</li>
+            <li><b>The dink.</b> A dink is a soft shot that drops into the opponent's kitchen.</li>
+            <li><b>Scoring.</b> Games go to 11, win by 2. Only the serving side scores. In doubles the call has three numbers: the serving side's score, the receiving side's score, and whether the first or second server is serving. A game starts at 0–0–2.</li>
+          </ol>
+        </details>
+      </div>
+
+      <div class="endcard" id="endcard">
+        <div class="ec-copy">
+          <p class="loud ec-title"><span>Theory: done.</span> <span>Practice: Thursday?</span></p>
+          <p class="ec-sub">Thu 15 Oct, 18:30, Freiburg. First session free, paddles on us.</p>
+          <button type="button" class="btn btn-red btn-slant btn-lg" data-open="trial" data-session="S2">Try it free</button>
+        </div>
+        <button type="button" class="video-slot has-poster" data-toast="video">
+          <img class="vs-poster" src="../shared/photos/01-800.webp" srcset="../shared/photos/01-800.webp 800w, ../shared/photos/01-1600.webp 1536w" sizes="(min-width: 1328px) 560px, (min-width: 900px) 42vw, calc(100vw - 32px)" width="800" height="533" loading="lazy" decoding="async" alt="">
+          <span class="ai-tag" aria-hidden="true">AI sample · 01</span>
+          <span class="vs-play" aria-hidden="true"><svg><use href="#i-play"/></svg></span>
+          <span class="vs-label">Video 01 · What is pickleball? in 60 seconds</span>
+          <span class="vs-meta">German voice-over, French and English subtitles · Click to load: plays from our own server once it exists</span>
+        </button>
+      </div>
+
+      <div class="played">
+        <h3 class="played-title" id="playedTitle">I've played…</h3>
+        <div class="played-chips js-only" role="group" aria-label="Pick the sport you know">
+          <button type="button" class="chip-dark" aria-pressed="false" data-played="tennis">Tennis</button>
+          <button type="button" class="chip-dark" aria-pressed="false" data-played="badminton">Badminton</button>
+          <button type="button" class="chip-dark" aria-pressed="false" data-played="tt">Table tennis</button>
+          <button type="button" class="chip-dark" aria-pressed="false" data-played="padel">Padel</button>
+          <button type="button" class="chip-dark" aria-pressed="false" data-played="none">Nothing at all</button>
+        </div>
+        <p class="played-hint js-only" id="playedHint">Pick one to see what carries over.</p>
+        <dl class="played-list" id="playedList" aria-live="polite">
+          <div data-played-a="tennis"><dt>Tennis</dt><dd>Smaller court, underhand serve, no big serve to learn. Your volleys will feel at home.</dd></div>
+          <div data-played-a="badminton"><dt>Badminton</dt><dd>Same court size, lower net, and the ball bounces. Your quick hands will love it.</dd></div>
+          <div data-played-a="tt"><dt>Table tennis</dt><dd>The same feel for spin and touch, but now you move around a court.</dd></div>
+          <div data-played-a="padel"><dt>Padel</dt><dd>No walls, a solid paddle, and softer, longer rallies.</dd></div>
+          <div data-played-a="none"><dt>Nothing at all</dt><dd>Perfect. Most people at First Serve have never held a paddle.</dd></div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= 3. SESSIONS · 2–0–2 ======================= -->
+<section class="sessions zone-info" id="sessions" aria-labelledby="sessTitle">
+  <div class="wrap">
+    <p class="call"><span class="call-score">2–0–2</span><span class="call-label">On court this week</span><span class="sample">Sample</span></p>
+    <h2 class="loud h2 h2-ink" id="sessTitle"><span class="ball-slot" aria-hidden="true"><svg class="slot-ball"><use href="#i-ball"/></svg></span>Zero experience. Zero euros. Start <span class="swipe">this week.</span></h2>
+
+    <div class="sess-bar">
+      <div class="tonight" id="tonight" data-state="on">
+        <span class="tn-light" aria-hidden="true"></span>
+        <p class="tn-on">Tonight: <b>ON</b> · First Serve · 18:30 · <span class="nw">nets up 18:15</span></p>
+        <p class="tn-off">Tonight: <b>OFF</b> · next session Tue 20 Oct</p>
+        <span class="tn-meta"><span class="sample">Sample</span>
+        <button type="button" class="linkbtn tn-toggle js-only" id="tnToggle" aria-pressed="false">Show the OFF state</button></span>
+      </div>
+      <div class="filters js-only" role="group" aria-label="Filter sessions">
+        <button type="button" class="chip" data-filter="all" aria-pressed="true">All</button>
+        <button type="button" class="chip" data-filter="beginner" aria-pressed="false">Beginners</button>
+        <button type="button" class="chip" data-filter="open" aria-pressed="false">Open Play</button>
+        <button type="button" class="chip" data-filter="course" aria-pressed="false">Kitchen School</button>
+        <button type="button" class="chip" data-filter="fr" aria-pressed="false">French-speaking host</button>
+        <button type="button" class="chip" data-filter="weekend" aria-pressed="false">Weekend</button>
+      </div>
+    </div>
+    <p class="vh" id="sessCount" aria-live="polite"></p>
+    <p class="vh swipe-hint">Swipe for more sessions</p>
+
+    <ul class="sess-list" id="sessList">
+      <li class="sess" data-id="S1" data-tags="open">
+        <article class="sc" aria-labelledby="s1t">
+          <div class="sc-date"><span class="sc-day">Tue 13 Oct</span><span class="sc-time">19:00–20:30</span></div>
+          <div class="sc-body">
+            <h3 class="sc-title" id="s1t">Open Play</h3>
+            <p class="sc-venue"><span class="ph" title="Placeholder: to be confirmed">[Venue TBC]</span>, Freiburg <span class="tag" title="Germany">DE</span></p>
+            <p class="sc-level"><span class="lvl">Level 1–2</span> "I can rally" and up</p>
+            <p class="sc-host"><span class="ph" title="Placeholder: to be confirmed">[Host name]</span> speaks <span class="lchip">DE</span><span class="lchip">EN</span></p>
+            <p class="sc-price">Members €0 · <span class="nw">Guests <span class="nw">€<span class="ph" title="Placeholder: to be confirmed">[__]</span></span></span></p>
+            <div class="sc-cap" data-cap="16" data-left="8"><span class="cap-balls" aria-hidden="true"></span><span class="cap-txt"><b data-left="S1">8</b> spots left <span class="cap-of">of 16</span></span></div>
+            <p class="sc-shoes">Indoor shoes with non-marking soles. We bring the paddles.</p>
+            <button type="button" class="btn btn-red sc-btn" data-open="trial" data-session="S1">Save my spot<span class="vh"> at Open Play, Tue 13 Oct</span></button>
+          </div>
+        </article>
+      </li>
+      <li class="sess" data-id="S2" data-tags="beginner">
+        <article class="sc" aria-labelledby="s2t">
+          <div class="sc-date"><span class="sc-day">Thu 15 Oct</span><span class="sc-time">18:30–20:00</span></div>
+          <div class="sc-body">
+            <h3 class="sc-title" id="s2t">First Serve <span class="sc-sub">free taster</span></h3>
+            <p class="sc-venue"><span class="ph" title="Placeholder: to be confirmed">[Venue TBC]</span>, Freiburg <span class="tag" title="Germany">DE</span></p>
+            <p class="sc-level"><span class="lvl">Level 0</span> never held a paddle</p>
+            <p class="sc-host"><span class="ph" title="Placeholder: to be confirmed">[Host name]</span> speaks <span class="lchip">DE</span><span class="lchip">EN</span></p>
+            <p class="sc-price">Free first time</p>
+            <div class="sc-cap" data-cap="16" data-left="6"><span class="cap-balls" aria-hidden="true"></span><span class="cap-txt"><b data-left="S2">6</b> spots left <span class="cap-of">of 16</span></span></div>
+            <p class="sc-shoes">Indoor shoes with non-marking soles. We bring the paddles.</p>
+            <button type="button" class="btn btn-red sc-btn" data-open="trial" data-session="S2">Save my spot<span class="vh"> at First Serve, Thu 15 Oct</span></button>
+          </div>
+        </article>
+      </li>
+      <li class="sess is-full" data-id="S3" data-tags="beginner fr weekend">
+        <article class="sc sc-wait" aria-labelledby="s3t">
+          <div class="sc-date"><span class="sc-day">Sat 17 Oct</span><span class="sc-time">10:00–11:30</span></div>
+          <div class="sc-body">
+            <h3 class="sc-title" id="s3t">First Serve <span class="sc-sub">family-friendly</span></h3>
+            <p class="sc-venue"><span class="ph" title="Placeholder: to be confirmed">[Venue TBC]</span>, Freiburg <span class="tag" title="Germany">DE</span></p>
+            <p class="sc-level"><span class="lvl">Level 0</span> never held a paddle</p>
+            <p class="sc-host"><span class="ph" title="Placeholder: to be confirmed">[Host name]</span> speaks <span class="lchip">DE</span><span class="lchip">FR</span><span class="lchip">EN</span></p>
+            <p class="sc-price">Free first time</p>
+            <div class="sc-cap" data-cap="16" data-left="0"><span class="cap-balls" aria-hidden="true"></span><span class="cap-txt"><b>Full</b> · waitlist: <b data-wait="S3">2</b></span></div>
+            <p class="sc-waitline">Full, which is a good sign. Join the waitlist.</p>
+            <button type="button" class="btn btn-navy sc-btn" data-open="trial" data-session="S3">Join the waitlist<span class="vh"> for First Serve, Sat 17 Oct</span></button>
+          </div>
+        </article>
+      </li>
+      <li class="sess" data-id="S4" data-tags="beginner course">
+        <article class="sc" aria-labelledby="s4t">
+          <div class="sc-date"><span class="sc-day">Tue 20 Oct</span><span class="sc-time">19:00–20:30</span></div>
+          <div class="sc-body">
+            <h3 class="sc-title" id="s4t">Kitchen School <span class="sc-sub">week 1 of 4</span></h3>
+            <p class="sc-venue"><span class="ph" title="Placeholder: to be confirmed">[Venue TBC]</span>, Freiburg <span class="tag" title="Germany">DE</span></p>
+            <p class="sc-level"><span class="lvl">Level 0–1</span> new, or "I can rally"</p>
+            <p class="sc-host"><span class="ph" title="Placeholder: to be confirmed">[Coach name]</span> speaks <span class="lchip">DE</span><span class="lchip">EN</span></p>
+            <p class="sc-price">4-week course: <span class="nw">Members <span class="nw">€<span class="ph" title="Placeholder: to be confirmed">[__]</span></span></span> · <span class="nw">Guests <span class="nw">€<span class="ph" title="Placeholder: to be confirmed">[__]</span></span></span></p>
+            <div class="sc-cap" data-cap="12" data-left="3"><span class="cap-balls" aria-hidden="true"></span><span class="cap-txt"><b data-left="S4">3</b> spots left <span class="cap-of">of 12</span></span></div>
+            <p class="sc-shoes">Indoor shoes with non-marking soles. We bring the paddles.</p>
+            <button type="button" class="btn btn-red sc-btn" data-open="trial" data-session="S4">Save my spot<span class="vh"> at Kitchen School, Tue 20 Oct</span></button>
+          </div>
+        </article>
+      </li>
+      <li class="sess" data-id="S5" data-tags="beginner fr">
+        <article class="sc" aria-labelledby="s5t">
+          <div class="sc-date"><span class="sc-day">Thu 22 Oct</span><span class="sc-time">18:30–20:00</span></div>
+          <div class="sc-body">
+            <h3 class="sc-title" id="s5t">First Serve</h3>
+            <p class="sc-venue"><span class="ph" title="Placeholder: to be confirmed">[Venue TBC]</span>, Freiburg <span class="tag" title="Germany">DE</span></p>
+            <p class="sc-level"><span class="lvl">Level 0</span> never held a paddle</p>
+            <p class="sc-host"><span class="ph" title="Placeholder: to be confirmed">[Host name]</span> speaks <span class="lchip">DE</span><span class="lchip">FR</span></p>
+            <p class="sc-price">Free first time</p>
+            <div class="sc-cap" data-cap="16" data-left="10"><span class="cap-balls" aria-hidden="true"></span><span class="cap-txt"><b data-left="S5">10</b> spots left <span class="cap-of">of 16</span></span></div>
+            <p class="sc-shoes">Indoor shoes with non-marking soles. We bring the paddles.</p>
+            <button type="button" class="btn btn-red sc-btn" data-open="trial" data-session="S5">Save my spot<span class="vh"> at First Serve, Thu 22 Oct</span></button>
+          </div>
+        </article>
+      </li>
+      <li class="sess-more" id="sessMore">
+        <div class="sm-card">
+          <p class="loud sm-t">Nothing fits?</p>
+          <p class="sm-d">New dates are announced on <span class="ph" title="Placeholder: to be confirmed">[1 Nov, TBC]</span>. The full schedule shows every session.</p>
+          <div class="sm-acts">
+            <button type="button" class="btn btn-yellow" data-toast="schedule">See all sessions</button>
+            <a class="sm-link" href="#newsletter">Get new dates by newsletter</a>
+          </div>
+        </div>
+      </li>
+    </ul>
+
+    <div class="sess-empty" id="sessEmpty" hidden>
+      <p>No sessions match these filters. New dates are announced on <span class="ph" title="Placeholder: to be confirmed">[1 Nov, TBC]</span>. <a href="#newsletter">Get the monthly newsletter.</a></p>
+      <button type="button" class="linkbtn" data-filter-reset>Show all sessions</button>
+    </div>
+
+    <div class="sess-foot">
+      <p class="roster"><span class="sample">Sample</span> Thursday's First Serve: Lena, Markus, Gisela and 7 others are coming. 4 are first-timers too.</p>
+      <button type="button" class="linkbtn sess-all" data-toast="schedule">See all sessions</button>
+    </div>
+
+    <div class="hooks">
+      <h3 class="hooks-title" id="hooksTitle">Why it hooks people</h3>
+      <ul class="hooks-list">
+        <li><span class="hk-big">15 min</span><p><b>Easy to start.</b> Most beginners are rallying in their first session.</p></li>
+        <li><span class="hk-big">4 players</span><p><b>Made for company.</b> It's mostly doubles on a small court, so you talk, laugh and swap partners.</p></li>
+        <li><span class="hk-big">€0</span><p><b>Nothing to buy.</b> Your first session is free and the paddles are on us.</p></li>
+        <li><span class="hk-big">All ages</span><p><b>Every age, one court.</b> Students, parents and retirees play together.</p></li>
+        <li><span class="hk-big">Your pace</span><p><b>Your pace.</b> The ball is slow and the court is small, so gentle or fast is up to you.</p></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= 4. PATH · 3–0–2 ======================= -->
+<section class="path zone-info" id="path" aria-labelledby="pathTitle">
+  <div class="wrap">
+    <p class="call"><span class="call-score">3–0–2</span><span class="call-label">Your path</span></p>
+    <h2 class="loud h2 h2-ink" id="pathTitle"><span class="ball-slot" aria-hidden="true"><svg class="slot-ball"><use href="#i-ball"/></svg></span>From First Serve to Founders' Cup.</h2>
+
+    <ol class="levelmap">
+      <li class="lm">
+        <span class="lm-n" aria-hidden="true">1</span>
+        <h3 class="lm-t">First Serve</h3>
+        <p class="lm-k">Free</p>
+        <p>Your first 90 minutes with a host. Never held a paddle? Perfect.</p>
+      </li>
+      <li class="lm">
+        <span class="lm-n" aria-hidden="true">2</span>
+        <h3 class="lm-t">Kitchen School</h3>
+        <p class="lm-k">4 weeks</p>
+        <ul class="lm-syl">
+          <li><b>Week 1</b> serve and return</li>
+          <li><b>Week 2</b> the kitchen and the dink</li>
+          <li><b>Week 3</b> the third shot and moving as a pair</li>
+          <li><b>Week 4</b> scoring, etiquette and your first open-play game</li>
+        </ul>
+        <p class="lm-price"><span class="nw">Members <span class="nw">€<span class="ph" title="Placeholder: to be confirmed">[__]</span></span></span> · <span class="nw">Guests <span class="nw">€<span class="ph" title="Placeholder: to be confirmed">[__]</span></span></span></p>
+      </li>
+      <li class="lm">
+        <span class="lm-n" aria-hidden="true">3</span>
+        <h3 class="lm-t">Open Play</h3>
+        <p class="lm-k">By level</p>
+        <p>Regular evenings where players of a similar level mix and rotate partners.</p>
+      </li>
+      <li class="lm">
+        <span class="lm-n" aria-hidden="true">4</span>
+        <h3 class="lm-t">Member</h3>
+        <p class="lm-k">Your club</p>
+        <p>Regular sessions, the Paddle Library and a vote at the general assembly.</p>
+      </li>
+      <li class="lm">
+        <span class="lm-n" aria-hidden="true">5</span>
+        <h3 class="lm-t">Founders' Cup</h3>
+        <p class="lm-k">Spring 2027</p>
+        <p>A fun tournament for founding members and friends. Every level welcome.</p>
+      </li>
+    </ol>
+
+    <div class="path-facts calm">
+      <div class="first90">
+        <h3 class="fact-h" id="f90t">Your first 90 minutes</h3>
+        <div class="tl-bar" aria-hidden="true">
+          <span style="--w:10">0:00</span><span style="--w:15">0:10</span><span style="--w:50">0:25</span><span style="--w:15">1:15</span>
+        </div>
+        <ol class="tl-list">
+          <li><span class="tl-time">00:00</span><span><b>Welcome:</b> name tag, loan paddle, "who's new?"</span></li>
+          <li><span class="tl-time">00:10</span><span><b>The basics with a host:</b> grip, underhand serve, two bounces, the kitchen.</span></li>
+          <li><span class="tl-time">00:25</span><span><b>Play:</b> easy doubles with rotating partners, beginners together first.</span></li>
+          <li><span class="tl-time">01:15</span><span><b>Wrap-up:</b> questions, next dates, an optional drink (alcohol-free too).</span></li>
+        </ol>
+      </div>
+
+      <div class="bring">
+        <h3 class="fact-h" id="bringT">What to bring</h3>
+        <div class="bring-cols">
+          <div>
+            <h4 class="mini-h">You bring</h4>
+            <ul class="checks">
+              <li><svg aria-hidden="true"><use href="#i-tick"/></svg><span>Indoor shoes with light, non-marking soles <b>(essential)</b></span></li>
+              <li><svg aria-hidden="true"><use href="#i-tick"/></svg><span>Sports clothes</span></li>
+              <li><svg aria-hidden="true"><use href="#i-tick"/></svg><span>A water bottle</span></li>
+              <li><svg aria-hidden="true"><use href="#i-tick"/></svg><span>Optional: sports glasses</span></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="mini-h">We bring</h4>
+            <ul class="checks">
+              <li><svg aria-hidden="true"><use href="#i-tick"/></svg><span>Paddles from the Paddle Library</span></li>
+              <li><svg aria-hidden="true"><use href="#i-tick"/></svg><span>Balls and nets</span></li>
+              <li><svg aria-hidden="true"><use href="#i-tick"/></svg><span>A host who explains everything</span></li>
+            </ul>
+          </div>
+        </div>
+        <p class="shoe-rule">Indoor shoes with non-marking soles only. Our hall partners love clean floors, and we love our hall partners.</p>
+      </div>
+
+      <div class="ladder">
+        <h3 class="fact-h" id="ladderT">The Level Ladder</h3>
+        <ol class="ladder-list" start="0">
+          <li><span class="ld-n">0</span>Never held a paddle.</li>
+          <li><span class="ld-n">1</span>I can rally.</li>
+          <li><span class="ld-n">2</span>I know the kitchen.</li>
+          <li><span class="ld-n">3</span>I dink with a plan.</li>
+          <li><span class="ld-n">4</span>Tournament-ready.</li>
+        </ol>
+      </div>
+
+      <div class="path-notes">
+        <p class="notice">[Insurance for taster sessions is being confirmed with the Badischer Sportbund Freiburg and ARAG. We'll state the cover here before bookings open.]</p>
+        <p class="photo-line">We sometimes take photos at sessions. Tell the host if you'd rather not be in them.</p>
+      </div>
+
+      <figure class="photo photo-path1">
+        <div class="photo-frame has-img">
+          <img class="photo-img" src="../shared/photos/03-800.webp" srcset="../shared/photos/03-800.webp 800w, ../shared/photos/03-1600.webp 1448w" sizes="(min-width: 1328px) 520px, (min-width: 900px) 40vw, calc(100vw - 32px)" width="800" height="600" loading="lazy" decoding="async" alt="In a sports hall, a smiling woman coaches beside a man who beams as he meets the ball with his paddle, a low net in front of them.">
+          <span class="vf" aria-hidden="true"></span>
+          <span class="ai-tag" aria-hidden="true">AI sample · 03</span>
+        </div>
+        <figcaption>AI sample · Photo 03 · real photo to come (written consent, one person in focus)</figcaption>
+      </figure>
+      <figure class="photo photo-path2">
+        <div class="photo-frame has-img">
+          <img class="photo-img" style="object-position: 50% 60%" src="../shared/photos/14-800.webp" srcset="../shared/photos/14-800.webp 800w, ../shared/photos/14-1600.webp 1254w" sizes="(min-width: 1328px) 302px, (min-width: 900px) 24vw, calc(100vw - 32px)" width="800" height="800" loading="lazy" decoding="async" alt="Close-up of grey indoor court shoes with gum soles on a wooden hall floor, beside a blue court line and a yellow pickleball with round holes.">
+          <span class="vf" aria-hidden="true"></span>
+          <span class="ai-tag" aria-hidden="true">AI sample · 14</span>
+        </div>
+        <figcaption>AI sample · Photo 14 · real photo to come (no people needed)</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= 5. JOIN · 4–0–2 ======================= -->
+<section class="join cut-top" id="join" aria-labelledby="joinTitle">
+  <div class="baden-band" aria-hidden="true"></div>
+  <div class="wrap">
+    <p class="call call-onyellow"><span class="call-score">4–0–2</span><span class="call-label">Membership</span></p>
+    <h2 class="loud h2 h2-navy" id="joinTitle"><span class="ball-slot" aria-hidden="true"><svg class="slot-ball"><use href="#i-ball"/></svg></span>Join the first 100.</h2>
+
+    <div class="join-grid">
+      <div class="founders">
+        <div class="flip" id="flipCounter" role="img" aria-label="37 of 100 founding spots taken (sample)">
+          <span class="flip-tiles" aria-hidden="true"><span class="ft">0</span><span class="ft">3</span><span class="ft">7</span></span>
+          <span class="flip-of" aria-hidden="true">/ 100</span>
+          <svg class="flip-speed" viewBox="0 0 240 26" aria-hidden="true" focusable="false"><path d="M60 8C130 4 190 2 236 2.2a2.6 2.6 0 0 1 0 5.2C190 7.6 130 8.2 60 8Z"/><path d="M110 15C160 12 200 11 236 11a2.6 2.6 0 0 1 0 5.2C200 16.4 160 16.2 110 15Z"/><path d="M160 22C190 20 215 19.6 236 19.8a2.6 2.6 0 0 1 0 5.2C215 25 190 24.4 160 22Z"/></svg>
+        </div>
+        <p class="founders-meta">founding spots taken <span class="sample">Sample</span></p>
+        <p class="founders-next">Next free founder number: <b class="num" id="nextFounder">#038</b></p>
+        <p class="founders-prev"><span class="sample">Sample</span> <span>#036 Jonas, Kenzingen</span> · <span>#035 Claire, Breisach</span> · <span>#034 Amir, Freiburg</span></p>
+        <ul class="perks">
+          <li>No joining fee</li>
+          <li>Your founder number, for good</li>
+          <li>Your name on the board at the hall</li>
+          <li>An invitation to the Founders' Cup</li>
+        </ul>
+        <p class="stats"><span class="sample">Sample</span> 53 people have tried pickleball with us · 12 sessions held · 6 towns voting</p>
+        <div class="join-cta">
+          <button type="button" class="btn btn-red btn-slant btn-lg" data-open="member">Become a founding member</button>
+          <p class="taxnote">Membership fees are not tax-deductible.</p>
+        </div>
+      </div>
+
+      <div class="fees">
+        <p class="ribbon">First 100: no joining fee <span class="ribbon-sub">Joining fee <span class="nw">€<span class="ph" title="Placeholder: to be confirmed">[__]</span></span>, or €0 for the First 100</span></p>
+        <div class="fee-cards">
+          <article class="fee">
+            <h3 class="fee-t">Adult</h3>
+            <p class="fee-p"><span class="nw">€<span class="ph" title="Placeholder: to be confirmed">[__]</span></span> <small>/ year</small></p>
+            <p class="fee-d">Play every regular session.</p>
+            <button type="button" class="linkbtn" data-open="member" data-tier="adult">Apply as an adult</button>
+          </article>
+          <article class="fee">
+            <h3 class="fee-t">Reduced</h3>
+            <p class="fee-p"><span class="nw">€<span class="ph" title="Placeholder: to be confirmed">[__]</span></span> <small>/ year</small></p>
+            <p class="fee-d">Students, trainees, volunteer service.</p>
+            <button type="button" class="linkbtn" data-open="member" data-tier="reduced">Apply at the reduced rate</button>
+          </article>
+          <article class="fee">
+            <h3 class="fee-t">Family</h3>
+            <p class="fee-p"><span class="nw">€<span class="ph" title="Placeholder: to be confirmed">[__]</span></span> <small>/ year</small></p>
+            <p class="fee-d">One household, all ages.</p>
+            <button type="button" class="linkbtn" data-open="member" data-tier="family">Apply as a family</button>
+          </article>
+        </div>
+        <p class="fee-line"><b>Youth</b> (under 18) <span class="nw">€<span class="ph" title="Placeholder: to be confirmed">[__]</span></span> / year · <b>Supporting member</b> (doesn't play) <span class="nw">€<span class="ph" title="Placeholder: to be confirmed">[__]</span></span> / year</p>
+        <p class="fee-line"><b>Guest:</b> first session free, then <span class="nw">€<span class="ph" title="Placeholder: to be confirmed">[__]</span></span> per session <span class="ph" title="Placeholder: to be confirmed">[up to 2 visits, TBC]</span>.</p>
+        <p class="fee-line">Membership pays for itself after about <span class="ph" title="Placeholder: to be confirmed">[N]</span> sessions a year.</p>
+        <p class="fee-label">Example placeholders. The general assembly sets the fees in the Beitragsordnung.</p>
+        <details class="verein">
+          <summary>Why a Verein?</summary>
+          <p>In Germany most sport is organised in non-profit clubs run by their members. Joining is simpler than it sounds: one form, one direct-debit mandate, and you're part of the club. Members get regular sessions, a say at the general assembly and <span class="ph ph-l" title="Placeholder: to be confirmed">[sports insurance through the regional federation, pending]</span>.</p>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= 6. MAP · 5–0–2 ======================= -->
+<section class="mapsec zone-dark cut-top cut-bottom" id="map" aria-labelledby="mapTitle">
+  <div class="wrap">
+    <p class="call"><span class="call-score">5–0–2</span><span class="call-label">Where we play</span></p>
+    <h2 class="loud h2" id="mapTitle"><span class="ball-slot" aria-hidden="true"><svg class="slot-ball"><use href="#i-ball"/></svg></span>Three countries. One net.</h2>
+
+    <div class="map-grid">
+      <div class="map-col">
+        <figure class="map" aria-labelledby="mapCap">
+          <div class="map-box">
+            <svg class="map-svg" viewBox="0 0 1000 880" aria-hidden="true" focusable="false">
+              <defs>
+                <pattern id="mHatch" width="14" height="14" patternUnits="userSpaceOnUse" patternTransform="rotate(-81)"><rect width="14" height="14" fill="none"/><line x1="0" y1="0" x2="0" y2="14" stroke="#174A80" stroke-width="5"/></pattern>
+                <clipPath id="mClip"><rect width="1000" height="880"/></clipPath>
+              </defs>
+              <g clip-path="url(#mClip)">
+                <rect width="1000" height="880" fill="#0C3561"/>
+                <polygon points="300,140 560,170 640,420 560,700 330,720 300,560" fill="url(#mHatch)"/>
+                <text class="m-region" x="470" y="300">Black Forest</text>
+                <!-- Lake Constance -->
+                <g fill="#174A80" stroke="#7A96B6" stroke-width="2">
+                  <ellipse cx="850" cy="690" rx="75" ry="18"/>
+                  <path d="M866 579C871 571 881 573 889 581L930 623C944 637 960 650 982 652L1000 653V768C986 766 966 760 952 748C940 738 930 724 932 708C933 698 940 690 944 684C936 668 924 652 912 636L882 600C872 590 862 587 866 579Z" stroke-linejoin="round"/>
+                </g>
+                <!-- Rhine -->
+                <polyline points="777,693 672,667 619,751 475,732 404,761 349,769 278,768 185,759 180,741 166,585 179,433 187,357 239,231 283,54 309,0" fill="none" stroke="#7A96B6" stroke-width="10" stroke-linejoin="round" stroke-linecap="round"/>
+                <polyline points="777,693 672,667 619,751 475,732 404,761 349,769 278,768 185,759 180,741 166,585 179,433 187,357 239,231 283,54 309,0" fill="none" stroke="#174A80" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+                <!-- Borders -->
+                <g fill="none" stroke="#B5C5D8" stroke-width="2" stroke-dasharray="8 7" opacity=".9">
+                  <polyline points="180,741 166,585 179,433 187,357 239,231 283,54 309,0" transform="translate(-9 0)"/>
+                  <polyline points="185,759 278,768 349,769 404,761 475,732 619,751 672,667 777,693 850,690 930,698 1000,724" transform="translate(0 10)"/>
+                  <polyline points="182,752 159,770 134,807 0,805"/>
+                </g>
+                <text class="m-country" x="60" y="210">FR</text>
+                <text class="m-country" x="720" y="230">DE</text>
+                <text class="m-country" x="560" y="860">CH</text>
+                <text class="m-river" x="140" y="300" transform="rotate(-80 140 300)">Rhein · Rhin</text>
+                <!-- Landmarks -->
+                <path d="M210 395l10-18 10 18z" fill="#7A96B6"/><text class="m-small" x="236" y="404">Kaiserstuhl</text>
+                <path d="M367 553l10-20 10 20z" fill="#B5C5D8"/><text class="m-small" x="392" y="560">Feldberg 1,493 m</text>
+                <!-- Optional labels -->
+                <g class="m-opt">
+                  <circle cx="74" cy="400" r="4"/><text x="84" y="406">Colmar</text>
+                  <circle cx="64" cy="630" r="4"/><text x="74" y="636">Mulhouse</text>
+                  <circle cx="178" cy="433" r="4"/><text x="168" y="440" text-anchor="end">Breisach</text>
+                  <circle cx="266" cy="321" r="4"/><text x="276" y="327">Kenzingen</text>
+                  <circle cx="315" cy="218" r="4"/><text x="325" y="224">Lahr</text>
+                  <circle cx="473" cy="516" r="4"/><text x="483" y="522">Titisee-Neustadt</text>
+                  <circle cx="610" cy="488" r="4"/><text x="620" y="494">Donaueschingen</text>
+                  <circle cx="669" cy="337" r="4"/><text x="679" y="343">Rottweil</text>
+                  <circle cx="758" cy="465" r="4"/><text x="768" y="471">Tuttlingen</text>
+                  <circle cx="768" cy="624" r="4"/><text x="778" y="630">Singen</text>
+                  <circle cx="197" cy="739" r="4"/>
+                </g>
+                <!-- Neighbours: white rings -->
+                <g fill="none" stroke="#fff" stroke-width="4">
+                  <circle cx="318" cy="470" r="9"/><path d="M318 479v14" stroke-width="2" stroke-dasharray="3 3"/><circle cx="182" cy="764" r="9"/><circle cx="252" cy="790" r="8"/><circle cx="250" cy="816" r="8"/><circle cx="259" cy="54" r="9"/><circle cx="10" cy="518" r="9"/>
+                </g>
+                <!-- Vote buckets -->
+                <g class="m-buckets">
+                  <g class="bk" data-town="Lörrach" transform="translate(216 724)"><path d="M-13 -10h26l-4 18h-18z"/><g class="bk-balls"></g></g>
+                  <g class="bk" data-town="Offenburg" transform="translate(348 125)"><path d="M-13 -10h26l-4 18h-18z"/><g class="bk-balls"></g></g>
+                  <g class="bk" data-town="Konstanz" transform="translate(925 693)"><path d="M-13 -10h26l-4 18h-18z"/><g class="bk-balls"></g></g>
+                  <g class="bk" data-town="Waldshut-Tiengen" transform="translate(475 719)"><path d="M-13 -10h26l-4 18h-18z"/><g class="bk-balls"></g></g>
+                  <g class="bk" data-town="Villingen-Schwenningen" transform="translate(606 412)"><path d="M-13 -10h26l-4 18h-18z"/><g class="bk-balls"></g></g>
+                  <g class="bk" data-town="Emmendingen" transform="translate(304 370)"><path d="M-13 -10h26l-4 18h-18z"/><g class="bk-balls"></g></g>
+                </g>
+                <!-- Our venue: the ball -->
+                <use href="#i-ball" x="282" y="437" width="44" height="44" style="color:#052443"/>
+                <!-- Phone-only labels (desktop uses the pin buttons) -->
+                <g class="m-mob">
+                  <text x="336" y="452">Freiburg</text>
+                  <text x="236" y="700">Lörrach</text>
+                  <text x="190" y="800" text-anchor="end">Basel</text>
+                  <text x="912" y="668" text-anchor="end">Konstanz</text>
+                  <text x="366" y="118">Offenburg</text>
+                </g>
+              </g>
+            </svg>
+            <!-- Pins: real buttons (desktop and tablet); phones use the list below -->
+            <div class="pins" id="pins">
+              <button type="button" class="pin pin-us" style="--x:30.4;--y:52.16" data-pin="us"><span class="pin-dot" aria-hidden="true"></span><span class="pin-l">Freiburg · <span class="ph" title="Placeholder: to be confirmed">[Venue TBC]</span></span></button>
+              <button type="button" class="pin pin-nb pin-racket" style="--x:31.8;--y:56.5" data-pin="racket"><span class="pin-dot" aria-hidden="true"></span><span class="pin-l"><span class="vh">FT 1844 </span>RACKETzone</span></button>
+              <button type="button" class="pin pin-nb pin-left" style="--x:18.2;--y:86.8" data-pin="basel"><span class="pin-dot" aria-hidden="true"></span><span class="pin-l"><span class="vh">Pickleball Hub </span>Basel</span></button>
+              <button type="button" class="pin pin-nb" style="--x:25.1;--y:91.3" data-pin="giebenach"><span class="pin-dot" aria-hidden="true"></span><span class="pin-l">Giebenach · Liestal</span></button>
+              <button type="button" class="pin pin-nb" style="--x:25.9;--y:6.1" data-pin="strasbourg"><span class="pin-dot" aria-hidden="true"></span><span class="pin-l">Strasbourg</span></button>
+              <button type="button" class="pin pin-nb" style="--x:1;--y:58.9" data-pin="guebwiller"><span class="pin-dot" aria-hidden="true"></span><span class="pin-l">Guebwiller</span></button>
+              <button type="button" class="pin pin-bk pin-up" style="--x:21.6;--y:82.3" data-pin="Lörrach"><span class="pin-dot" aria-hidden="true"></span><span class="pin-l">Lörrach <b data-votes="Lörrach">43</b></span></button>
+              <button type="button" class="pin pin-bk" style="--x:34.8;--y:14.2" data-pin="Offenburg"><span class="pin-dot" aria-hidden="true"></span><span class="pin-l">Offenburg <b data-votes="Offenburg">28</b></span></button>
+              <button type="button" class="pin pin-bk pin-up pin-left" style="--x:92.5;--y:78.75" data-pin="Konstanz"><span class="pin-dot" aria-hidden="true"></span><span class="pin-l">Konstanz <b data-votes="Konstanz">19</b></span></button>
+              <button type="button" class="pin pin-bk pin-up" style="--x:47.5;--y:81.7" data-pin="Waldshut-Tiengen"><span class="pin-dot" aria-hidden="true"></span><span class="pin-l">Waldshut-Tiengen <b data-votes="Waldshut-Tiengen">11</b></span></button>
+              <button type="button" class="pin pin-bk" style="--x:60.6;--y:46.8" data-pin="Villingen-Schwenningen"><span class="pin-dot" aria-hidden="true"></span><span class="pin-l">Villingen-Schwenningen <b data-votes="Villingen-Schwenningen">9</b></span></button>
+              <button type="button" class="pin pin-bk pin-up" style="--x:30.4;--y:42.05" data-pin="Emmendingen"><span class="pin-dot" aria-hidden="true"></span><span class="pin-l">Emmendingen <b data-votes="Emmendingen">7</b></span></button>
+            </div>
+          </div>
+          <figcaption id="mapCap"><span>Schematic map</span> <span class="map-key"><span class="mk"><i class="k-us" aria-hidden="true"></i>We play here</span> <span class="mk"><i class="k-nb" aria-hidden="true"></i>Also playing nearby, not run by us</span> <span class="mk"><i class="k-bk" aria-hidden="true"></i>Towns voting <span class="sample sample-dark">Sample</span></span></span></figcaption>
+        </figure>
+        <p class="pin-info" id="pinInfo" aria-live="polite"><span class="o-land">Tap a place on the map for details.</span><span class="o-port">Every place on the map is listed below it.</span></p>
+        <div class="teaser">
+          <p class="loud teaser-t">Three Countries Open · 2027 <span>(planned)</span></p>
+          <p class="teaser-d">A cross-border fun tournament with friends from Alsace and Basel. Idea stage.</p>
+        </div>
+      </div>
+
+      <div class="map-side">
+        <article class="venue-card" aria-labelledby="venueT">
+          <h3 class="vc-t" id="venueT">Our hall in Freiburg</h3>
+          <dl class="vc-dl">
+            <div><dt>Venue</dt><dd><span class="ph" title="Placeholder: to be confirmed">[Venue TBC]</span></dd></div>
+            <div><dt>Address</dt><dd><span class="ph" title="Placeholder: to be confirmed">[Street TBC]</span>, Freiburg</dd></div>
+            <div><dt>Tram and bus</dt><dd><span class="ph" title="Placeholder: to be confirmed">[Line and stop TBC]</span></dd></div>
+            <div><dt>Bikes and parking</dt><dd><span class="ph" title="Placeholder: to be confirmed">[TBC]</span></dd></div>
+            <div><dt>Step-free entrance</dt><dd><span class="ph" title="Placeholder: to be confirmed">[TBC]</span></dd></div>
+          </dl>
+          <p class="vc-maps"><span class="fake-link" aria-disabled="true">Open in maps</span> <span class="vc-note">Link added once the venue is confirmed</span></p>
+        </article>
+
+        <article class="cross" id="crossborder" aria-labelledby="crossT" tabindex="-1">
+          <h3 class="cross-t" id="crossT">Coming from France or Switzerland?</h3>
+          <p>Coming from Alsace or Basel? You're very welcome. Hosts who speak French are marked FR on every session. Membership is open to everyone, and Swiss bank accounts can pay by bank transfer. <span class="ph ph-l" title="Placeholder: to be confirmed">[Transit tips per venue: TBC]</span></p>
+        </article>
+
+        <form class="vote" id="voteForm" novalidate aria-labelledby="voteT">
+          <h3 class="vote-t" id="voteT">Bring pickleball to my town</h3>
+          <p class="demo"><span class="demo-tag">Demo · nothing is sent</span> <span class="integ">Later: counted by our own form, no account needed.</span></p>
+          <div class="field">
+            <label for="voteTown">Your town</label>
+            <select id="voteTown" name="town" aria-describedby="voteTownErr">
+              <option value="">Choose a town</option>
+              <option>Lörrach</option><option>Offenburg</option><option>Konstanz</option><option>Waldshut-Tiengen</option><option>Villingen-Schwenningen</option><option>Emmendingen</option><option value="Other">Other</option>
+            </select>
+            <p class="err" id="voteTownErr" hidden></p>
+          </div>
+          <div class="field">
+            <label for="voteEmail">Email <span class="opt-l">optional</span></label>
+            <input type="email" id="voteEmail" name="email" autocomplete="email" aria-describedby="voteEmailHint voteEmailErr">
+            <p class="hint" id="voteEmailHint">Tell me when it happens.</p>
+            <p class="err" id="voteEmailErr" hidden></p>
+          </div>
+          <button type="submit" class="btn btn-yellow">Vote</button>
+          <p class="vote-ok" id="voteOk" role="status"></p>
+        </form>
+      </div>
+    </div>
+
+    <div class="places">
+      <h3 class="places-t">Everything on the map, as a list</h3>
+      <div class="places-cols">
+        <div>
+          <h4 class="places-h">We play here</h4>
+          <ul>
+            <li><b>Freiburg</b> · <span class="ph" title="Placeholder: to be confirmed">[Venue TBC]</span><br><span class="fake-link" aria-disabled="true">Open in maps</span> <span class="muted">Link added once the venue is confirmed</span></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="places-h">Also playing nearby · not run by us · to confirm with partners</h4>
+          <ul>
+            <li>FT 1844 RACKETzone, Freiburg</li>
+            <li>Pickleball Hub Basel</li>
+            <li>Public courts, Giebenach</li>
+            <li>Liestal</li>
+            <li>Alsace clubs <span class="ph" title="Placeholder: to be confirmed">[to confirm]</span>: Strasbourg, Guebwiller</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="places-h">Towns voting <span class="sample sample-dark">Sample</span></h4>
+          <ul class="town-list">
+            <li><button type="button" class="linkbtn-light" data-vote-town="Lörrach">Lörrach</button> <b data-votes="Lörrach">43</b> votes</li>
+            <li><button type="button" class="linkbtn-light" data-vote-town="Offenburg">Offenburg</button> <b data-votes="Offenburg">28</b> votes</li>
+            <li><button type="button" class="linkbtn-light" data-vote-town="Konstanz">Konstanz</button> <b data-votes="Konstanz">19</b> votes</li>
+            <li><button type="button" class="linkbtn-light" data-vote-town="Waldshut-Tiengen">Waldshut-Tiengen</button> <b data-votes="Waldshut-Tiengen">11</b> votes</li>
+            <li><button type="button" class="linkbtn-light" data-vote-town="Villingen-Schwenningen">Villingen-Schwenningen</button> <b data-votes="Villingen-Schwenningen">9</b> votes</li>
+            <li><button type="button" class="linkbtn-light" data-vote-town="Emmendingen">Emmendingen</button> <b data-votes="Emmendingen">7</b> votes</li>
+          </ul>
+          <p class="muted">At 50 votes we plan a free Pickle Pop-up.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= 7. CLUB LIFE · 6–0–2 ======================= -->
+<section class="events zone-info" id="events" aria-labelledby="evTitle">
+  <div class="wrap">
+    <p class="call"><span class="call-score">6–0–2</span><span class="call-label">Events</span></p>
+    <h2 class="loud h2 h2-ink" id="evTitle"><span class="ball-slot" aria-hidden="true"><svg class="slot-ball"><use href="#i-ball"/></svg></span>Club life.</h2>
+
+    <ul class="ev-grid">
+      <li class="ev ev-1">
+        <article class="evc" aria-labelledby="e1t">
+          <p class="ev-date">Fri 6 Nov 2026 · from 20:00</p>
+          <h3 class="loud ev-t" id="e1t">Dink &amp; Drink</h3>
+          <p class="ev-where">After Open Play · <span class="ph" title="Placeholder: to be confirmed">[Venue TBC]</span>, Freiburg</p>
+          <p class="ev-d">Social night. Alcohol-free drinks always on the table.</p>
+          <button type="button" class="btn btn-yellow ev-btn" data-toast="rsvp" data-event="Dink &amp; Drink">Count me in<span class="vh"> for Dink &amp; Drink</span></button>
+        </article>
+      </li>
+      <li class="ev ev-photo">
+        <figure class="photo">
+          <div class="photo-frame has-img">
+            <img class="photo-img" style="object-position: 50% 45%" src="../shared/photos/26-800.webp" srcset="../shared/photos/26-800.webp 800w, ../shared/photos/26-1600.webp 1254w" sizes="(min-width: 1328px) 306px, (min-width: 1100px) 23vw, (min-width: 640px) 46vw, calc(100vw - 32px)" width="800" height="800" loading="lazy" decoding="async" alt="Six players of different ages laugh around a wooden terrace table at sunset, with paddles, a ball, water, spritzers and beers on the table and wooded hills behind.">
+            <span class="vf" aria-hidden="true"></span>
+            <span class="ai-tag" aria-hidden="true">AI sample · 26</span>
+          </div>
+          <figcaption>AI sample · Photo 26 · real photo to come (adults informed in advance)</figcaption>
+        </figure>
+      </li>
+      <li class="ev">
+        <article class="evc" aria-labelledby="e2t">
+          <p class="ev-date">Sat 21 Nov 2026 · 10:00–13:00</p>
+          <h3 class="loud ev-t" id="e2t">Pickle Pop-up Lörrach</h3>
+          <p class="ev-where"><span class="ph" title="Placeholder: to be confirmed">[Venue TBC]</span>, Lörrach</p>
+          <p class="ev-d">A free taster in a new town. It happens if Lörrach reaches 50 votes.</p>
+          <button type="button" class="btn btn-yellow ev-btn" data-toast="rsvp" data-event="Pickle Pop-up Lörrach">Count me in<span class="vh"> for the Pickle Pop-up Lörrach</span></button>
+        </article>
+      </li>
+      <li class="ev ev-photo">
+        <figure class="photo">
+          <div class="photo-frame has-img">
+            <img class="photo-img" style="object-position: 50% 22%" src="../shared/photos/02-800.webp" srcset="../shared/photos/02-800.webp 800w, ../shared/photos/02-1600.webp 1254w" sizes="(min-width: 1328px) 306px, (min-width: 1100px) 23vw, (min-width: 640px) 46vw, calc(100vw - 32px)" width="800" height="800" loading="lazy" decoding="async" alt="A boy and a laughing woman tap paddles across the low net in a sports hall after a point.">
+            <span class="vf" aria-hidden="true"></span>
+            <span class="ai-tag at-bl" aria-hidden="true">AI sample · 02</span>
+          </div>
+          <figcaption>AI sample · Photo 02 · real photo to come (adults informed in advance, guardian consent for minors)</figcaption>
+        </figure>
+      </li>
+      <li class="ev">
+        <article class="evc" aria-labelledby="e3t">
+          <p class="ev-date">Spring 2027 · <span class="ph" title="Placeholder: to be confirmed">[date TBC]</span></p>
+          <h3 class="loud ev-t" id="e3t">Founders' Cup</h3>
+          <p class="ev-d">A fun tournament for founding members and friends. Every level welcome.</p>
+          <button type="button" class="btn btn-yellow ev-btn" data-toast="rsvp" data-event="the Founders' Cup">Count me in<span class="vh"> for the Founders' Cup</span></button>
+        </article>
+      </li>
+      <li class="ev">
+        <article class="evc" aria-labelledby="e4t">
+          <p class="ev-date">October 2027 · <span class="ph" title="Placeholder: to be confirmed">[date TBC]</span></p>
+          <h3 class="loud ev-t" id="e4t">World Pickleball Day open day</h3>
+          <p class="ev-d">Open doors for everyone, on the same weekend as the open days in France.</p>
+          <button type="button" class="btn btn-yellow ev-btn" data-toast="rsvp" data-event="the World Pickleball Day open day">Count me in<span class="vh"> for the open day</span></button>
+        </article>
+      </li>
+      <li class="ev">
+        <article class="evc" aria-labelledby="e5t">
+          <p class="ev-date">Summer 2027 · idea stage</p>
+          <h3 class="loud ev-t" id="e5t">Three Countries Open</h3>
+          <p class="ev-d">A cross-border fun tournament with friends from Alsace and Basel.</p>
+          <button type="button" class="btn btn-yellow ev-btn" data-toast="rsvp" data-event="the Three Countries Open">Count me in<span class="vh"> for the Three Countries Open</span></button>
+        </article>
+      </li>
+      <li class="ev ev-photo">
+        <figure class="photo">
+          <div class="photo-frame has-img">
+            <img class="photo-img" src="../shared/photos/04-800.webp" srcset="../shared/photos/04-800.webp 800w, ../shared/photos/04-1600.webp 1536w" sizes="(min-width: 1328px) 306px, (min-width: 1100px) 23vw, (min-width: 640px) 46vw, calc(100vw - 32px)" width="800" height="533" loading="lazy" decoding="async" alt="About sixteen players of all ages, two children kneeling at the front, raise their paddles and laugh on the court after a session.">
+            <span class="vf" aria-hidden="true"></span>
+            <span class="ai-tag at-bl" aria-hidden="true">AI sample · 04</span>
+          </div>
+          <figcaption>AI sample · Photo 04 · real photo to come (written consent, guardian consent for minors)</figcaption>
+        </figure>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ======================= 8. PLAY YOUR PART · 7–0–2 ======================= -->
+<section class="help zone-info" id="help" aria-labelledby="helpTitle">
+  <div class="wrap">
+    <p class="call"><span class="call-score">7–0–2</span><span class="call-label">Get involved</span></p>
+    <h2 class="loud h2 h2-ink" id="helpTitle"><span class="ball-slot" aria-hidden="true"><svg class="slot-ball"><use href="#i-ball"/></svg></span>Play your part.</h2>
+
+    <div class="iwant">
+      <p class="loud iwant-t" id="iwantT">I want to…</p>
+      <div class="iwant-chips" role="group" aria-labelledby="iwantT">
+        <button type="button" class="chip chip-lg" data-topic="Volunteering" data-msg="I'd like to host a session.">Host a session</button>
+        <button type="button" class="chip chip-lg" data-topic="Volunteering" data-msg="I'd like to coach.">Coach</button>
+        <button type="button" class="chip chip-lg" data-topic="Volunteering" data-msg="I can translate (FR/EN).">Translate (FR/EN)</button>
+        <button type="button" class="chip chip-lg" data-topic="Volunteering" data-msg="I can help set up nets.">Set up nets</button>
+        <button type="button" class="chip chip-lg" data-topic="Volunteering" data-msg="I'd like to take photos at sessions.">Take photos</button>
+        <button type="button" class="chip chip-lg" data-topic="Venues and councils" data-msg="I can help scout a venue.">Scout a venue</button>
+        <button type="button" class="chip chip-lg" data-topic="Volunteering" data-msg="I'd like to start a group in my town.">Start a group in your town</button>
+        <button type="button" class="chip chip-lg" data-topic="Volunteering" data-msg="I can help with social media.">Social media</button>
+        <button type="button" class="chip chip-lg" data-topic="Venues and councils" data-msg="I can offer a hall.">Offer a hall</button>
+        <button type="button" class="chip chip-lg" data-topic="Groups and companies" data-msg="I'd like to book a group or company session.">Book a group or company session</button>
+        <button type="button" class="chip chip-lg" data-topic="Sponsoring" data-msg="I'd like to sponsor the club.">Sponsor</button>
+      </div>
+    </div>
+
+    <div class="help-grid">
+      <article class="factblock" aria-labelledby="fbT">
+        <div class="fb-copy">
+          <h3 class="fb-t" id="fbT">Your hall already has the lines.</h3>
+          <p>A pickleball court is the size of a badminton doubles court (6.10 × 13.41 m). We bring portable nets, play only in non-marking indoor shoes, and are a registered club <span class="ph ph-l" title="Placeholder: to be confirmed">[register number and insurance: pending]</span>. We can show how many people in your town want to play.</p>
+          <div class="fb-btns">
+            <button type="button" class="btn btn-yellow" data-toast="factsheet">Download the venue fact sheet</button>
+            <button type="button" class="btn btn-outline-light" data-topic="Venues and councils" data-msg="I'd like to talk about a venue."><span>Talk to <span class="ph" title="Placeholder: to be confirmed">[Name]</span>, venue partnerships</span></button>
+          </div>
+        </div>
+        <figure class="fb-court" aria-labelledby="fbCap">
+          <svg viewBox="-60 -40 660 362" role="img" aria-labelledby="fbCap">
+            <use href="#i-court" x="-18" y="-18" width="564" height="276" style="--cs:#1F5EA8;--ck:#0C3561;color:#fff"/>
+            <g stroke="#B5C5D8" stroke-width="2" fill="none"><path d="M0 268v18M528 268v18M0 278h528"/><path d="M-30 0h-14M-30 240h-14M-38 0v240"/></g>
+            <text x="264" y="304" text-anchor="middle" class="dim">13.41 m</text>
+            <text x="-46" y="120" text-anchor="middle" class="dim" transform="rotate(-90 -46 120)">6.10 m</text>
+          </svg>
+          <figcaption id="fbCap">Court plan: 6.10 × 13.41 m, the same as badminton doubles</figcaption>
+        </figure>
+      </article>
+
+      <div class="partners">
+        <h3 class="sub-h" id="partT">Our first partners</h3>
+        <ul class="partner-wall">
+          <li>Founding partner place</li><li>Founding partner place</li><li>Founding partner place</li><li>Founding partner place</li><li>Founding partner place</li>
+          <li>Founding partner place</li><li>Founding partner place</li><li>Founding partner place</li><li>Founding partner place</li><li>Founding partner place</li>
+        </ul>
+        <button type="button" class="btn btn-navy" data-topic="Sponsoring" data-msg="We'd like to become a founding partner.">Become a founding partner</button>
+      </div>
+
+      <div class="donate">
+        <h3 class="sub-h" id="donT">Donations</h3>
+        <p>Donations: coming soon. We can issue donation receipts once the tax office confirms our charitable status. Until then, the best support is your time or a partnership.</p>
+        <button type="button" class="btn btn-disabled" disabled>Donate (coming soon)</button>
+      </div>
+
+      <figure class="photo photo-help">
+        <div class="photo-frame has-img">
+          <img class="photo-img" style="object-position: 50% 40%" src="../shared/photos/15-800.webp" srcset="../shared/photos/15-800.webp 800w, ../shared/photos/15-1600.webp 1448w" sizes="(min-width: 1328px) 517px, (min-width: 1000px) 39vw, calc(100vw - 32px)" width="800" height="600" loading="lazy" decoding="async" alt="Three volunteers set up a portable net in an empty sports hall before a session; one carries a mesh bag of balls.">
+          <span class="vf" aria-hidden="true"></span>
+          <span class="ai-tag" aria-hidden="true">AI sample · 15</span>
+        </div>
+        <figcaption>AI sample · Photo 15 · real photo to come (adults informed in advance)</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<div class="paddle-divider" aria-hidden="true">
+  <svg class="pd pd-l"><use href="#i-paddle"/></svg><svg class="pd pd-r"><use href="#i-paddle"/></svg>
+</div>
+
+<!-- ======================= 9. THE CLUB · 8–0–2 (calmest section: no motion) ======================= -->
+<section class="club zone-info calm" id="club" aria-labelledby="clubTitle">
+  <div class="wrap">
+    <p class="call"><span class="call-score">8–0–2</span><span class="call-label">The club</span></p>
+    <h2 class="loud h2 h2-ink" id="clubTitle"><span class="ball-slot" aria-hidden="true"><svg class="slot-ball"><use href="#i-ball"/></svg></span>Run by volunteers. Elected by members.</h2>
+
+    <div class="club-intro">
+      <div class="story">
+        <h3 class="sub-h">How we started</h3>
+        <p class="ph-block">[Three sentences: who founded the club, when (founding meeting on [date]), and why Südbaden needed a pickleball club. Example shape: 'In [month] 2026, [number] friends who'd caught the pickleball bug met in [place] and founded Pickleball Südbaden e.V. We wanted a club for beginners, in three languages, right here in the south-west. Now we're looking for the first 100 members.']</p>
+        <p class="arms">Our paddles carry the Baden arms: a red band on gold. <span class="muted">A nod to the arms, not the official state emblem.</span></p>
+      </div>
+      <img class="club-logo" src="../shared/logo-transparent.png" alt="Pickleball Südbaden e.V." width="200" height="179">
+      <figure class="photo photo-club">
+        <div class="photo-frame"><span class="vf" aria-hidden="true"></span>
+          <svg class="photo-cam" aria-hidden="true"><use href="#i-cam"/></svg>
+          <span class="photo-label">Photo 05 · Shot list</span>
+          <span class="photo-brief">Founders' group photo, outdoors, Freiburg backdrop or the venue. A phone photo is fine.</span>
+        </div>
+        <figcaption><b>Real photo needed: our founders.</b> Crop 3:2 · Written consent</figcaption>
+      </figure>
+    </div>
+
+    <div class="board">
+      <h3 class="sub-h" id="boardT">The board and your contacts</h3>
+      <p class="board-note"><span class="photo-label">Photo 23 · Shot list</span> <b>Real portraits needed.</b> Head-and-shoulders, same background for everyone · Crop 1:1 · Written consent</p>
+      <ul class="board-list">
+        <li><span class="portrait" aria-hidden="true"><b>?</b>Chair</span><p class="bd-name"><span class="ph" title="Placeholder: to be confirmed">[Name]</span></p><p class="bd-role">Chair</p><p class="bd-topic">General questions, press</p><p class="bd-mail">vorsitz<wbr>@<span class="ph" title="Placeholder: to be confirmed">[domain TBC]</span></p></li>
+        <li><span class="portrait" aria-hidden="true"><b>?</b>Vice-chair</span><p class="bd-name"><span class="ph" title="Placeholder: to be confirmed">[Name]</span></p><p class="bd-role">Vice-chair</p><p class="bd-topic">Sponsoring</p><p class="bd-mail">stellv-vorsitz<wbr>@<span class="ph" title="Placeholder: to be confirmed">[domain TBC]</span></p></li>
+        <li><span class="portrait" aria-hidden="true"><b>?</b>Treasurer</span><p class="bd-name"><span class="ph" title="Placeholder: to be confirmed">[Name]</span></p><p class="bd-role">Treasurer</p><p class="bd-topic">Membership and fees</p><p class="bd-mail">finanzen<wbr>@<span class="ph" title="Placeholder: to be confirmed">[domain TBC]</span></p></li>
+        <li><span class="portrait" aria-hidden="true"><b>?</b>Secretary</span><p class="bd-name"><span class="ph" title="Placeholder: to be confirmed">[Name]</span></p><p class="bd-role">Secretary</p><p class="bd-topic">Documents, the general assembly</p><p class="bd-mail">schriftfuehrung<wbr>@<span class="ph" title="Placeholder: to be confirmed">[domain TBC]</span></p></li>
+        <li><span class="portrait" aria-hidden="true"><b>?</b>Sport</span><p class="bd-name"><span class="ph" title="Placeholder: to be confirmed">[Name]</span></p><p class="bd-role">Sport and coaching</p><p class="bd-topic">Sessions, Kitchen School</p><p class="bd-mail">sport<wbr>@<span class="ph" title="Placeholder: to be confirmed">[domain TBC]</span></p></li>
+        <li><span class="portrait" aria-hidden="true"><b>?</b>Child protection</span><p class="bd-name"><span class="ph" title="Placeholder: to be confirmed">[Name]</span></p><p class="bd-role">Child protection contact</p><p class="bd-topic">Kinderschutz, confidential</p><p class="bd-mail">kinderschutz<wbr>@<span class="ph" title="Placeholder: to be confirmed">[domain TBC]</span></p></li>
+        <li><span class="portrait" aria-hidden="true"><b>?</b>Venues</span><p class="bd-name"><span class="ph" title="Placeholder: to be confirmed">[Name]</span></p><p class="bd-role">Venue partnerships</p><p class="bd-topic">Venues and councils</p><p class="bd-mail">hallen<wbr>@<span class="ph" title="Placeholder: to be confirmed">[domain TBC]</span></p></li>
+      </ul>
+    </div>
+
+    <div class="status">
+      <p class="register">Registered association · Amtsgericht Freiburg i. Br. · VR <span class="ph" title="Placeholder: to be confirmed">[pending]</span> (e.V. i.G. until the entry is confirmed)</p>
+      <ul class="status-list">
+        <li><span class="st-k">Sports insurance</span><span class="ph ph-l" title="Placeholder: to be confirmed">[being confirmed with BSB Freiburg / ARAG]</span><span class="pend">being confirmed</span></li>
+        <li><span class="st-k">Charitable status</span><span class="ph" title="Placeholder: to be confirmed">[pending]</span><span class="pend">pending</span></li>
+        <li><span class="st-k">Affiliations</span><span><span class="ph ph-l" title="Placeholder: to be confirmed">[Badischer Sportbund Freiburg, pending]</span> · <span class="ph" title="Placeholder: to be confirmed">[Federation, pending]</span></span><span class="pend">pending</span></li>
+      </ul>
+    </div>
+
+    <div class="docs">
+      <table class="doc-table">
+        <caption>Statutes, rules and policies</caption>
+        <thead><tr><th scope="col">Document</th><th scope="col">Version</th><th scope="col">Adopted</th><th scope="col">Languages</th><th scope="col">Note</th></tr></thead>
+        <tbody>
+          <tr><th scope="row" data-label="Document"><button type="button" class="linkbtn" data-toast="doc" data-doc="Satzung">Satzung (statutes)</button></th><td data-label="Version"><span class="ph" title="Placeholder: to be confirmed">[v1.0]</span></td><td data-label="Adopted"><span class="ph" title="Placeholder: to be confirmed">[date]</span></td><td data-label="Languages">DE, with EN/FR courtesy versions</td><td data-label="Note">German version is binding</td></tr>
+          <tr><th scope="row" data-label="Document"><button type="button" class="linkbtn" data-toast="doc" data-doc="Beitragsordnung">Beitragsordnung (fee rules)</button></th><td data-label="Version"><span class="ph" title="Placeholder: to be confirmed">[draft]</span></td><td data-label="Adopted"><span class="ph ph-l" title="Placeholder: to be confirmed">[general assembly, date TBC]</span></td><td data-label="Languages">DE</td><td data-label="Note">–</td></tr>
+          <tr><th scope="row" data-label="Document"><button type="button" class="linkbtn" data-toast="doc" data-doc="code of conduct">Code of conduct</button></th><td data-label="Version"><span class="ph" title="Placeholder: to be confirmed">[draft]</span></td><td data-label="Adopted">–</td><td data-label="Languages">–</td><td data-label="Note">–</td></tr>
+          <tr><th scope="row" data-label="Document"><button type="button" class="linkbtn" data-toast="doc" data-doc="Kinderschutz concept">Kinderschutz concept</button></th><td data-label="Version"><span class="ph" title="Placeholder: to be confirmed">[draft]</span></td><td data-label="Adopted">–</td><td data-label="Languages">–</td><td data-label="Note">–</td></tr>
+          <tr><th scope="row" data-label="Document"><button type="button" class="linkbtn" data-toast="doc" data-doc="privacy policy">Datenschutz (privacy policy)</button></th><td data-label="Version"><span class="ph" title="Placeholder: to be confirmed">[draft]</span></td><td data-label="Adopted">–</td><td data-label="Languages">DE · FR · EN before launch</td><td data-label="Note">–</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= 10. FAQ · 9–0–2 ======================= -->
+<section class="faq zone-info calm" id="faq" aria-labelledby="faqTitle">
+  <div class="wrap faq-wrap">
+    <div class="faq-head">
+      <p class="call"><span class="call-score">9–0–2</span><span class="call-label">Questions</span></p>
+      <h2 class="loud h2 h2-ink" id="faqTitle"><span class="ball-slot" aria-hidden="true"><svg class="slot-ball"><use href="#i-ball"/></svg></span>Good questions.</h2>
+      <p class="faq-side">Not answered here? <a href="#contact-form" data-focus="#cTopic">Ask the club</a>. We reply within 2 working days (target).</p>
+    </div>
+    <div class="faq-list">
+      <details><summary>Do I need any experience?</summary><p>None at all. First Serve sessions are made for people who have never held a paddle.</p></details>
+      <details><summary>Do I need my own paddle?</summary><p>No. We lend paddles and balls from our Paddle Library. Just bring indoor shoes with non-marking soles.</p></details>
+      <details><summary>What does it cost?</summary><p>Your first session is free. After that, guests pay <span class="nw">€<span class="ph" title="Placeholder: to be confirmed">[__]</span></span> per session <span class="ph" title="Placeholder: to be confirmed">[up to 2 visits, TBC]</span>. Members play regular sessions <span class="ph" title="Placeholder: to be confirmed">[at no extra cost, TBC]</span>.</p></details>
+      <details><summary>What if I'm the worst one there?</summary><p>You won't be, and nobody minds. Beginners play with beginners first, and hosts pair people sensibly.</p></details>
+      <details><summary>Which languages are spoken?</summary><p>Sessions run in German, and most hosts also speak English. Hosts who speak French are marked FR on the schedule.</p></details>
+      <details><summary>Can I bring a friend or my kids?</summary><p>Please bring a friend. Add them when you book, so we bring enough paddles. Children from <span class="ph" title="Placeholder: to be confirmed">[age TBC]</span> are welcome at family sessions with a parent.</p></details>
+      <details><summary>Am I insured at a free session?</summary><p><span class="ph ph-l" title="Placeholder: to be confirmed">[Being confirmed with the Badischer Sportbund Freiburg and ARAG. We'll state the cover here before bookings open.]</span></p></details>
+      <details><summary>Is pickleball only for older people?</summary><p>No. Students, families, ex-tennis players and retirees play on the same court.</p></details>
+      <details><summary>How do I join the club?</summary><p>Fill in one form and sign a direct-debit mandate, or pay by bank transfer, for example from a Swiss account. We'll confirm by email.</p></details>
+      <details><summary>Can I join if I live in France or Switzerland?</summary><p>Yes. Membership is open to everyone.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= 11. STAY IN THE RALLY · 10–0–2 ======================= -->
+<section class="contact zone-cream" id="contact" aria-labelledby="contactTitle">
+  <div class="wrap">
+    <p class="call"><span class="call-score">10–0–2</span><span class="call-label">News and contact</span></p>
+    <h2 class="loud h2 h2-ink" id="contactTitle"><span class="ball-slot" aria-hidden="true"><svg class="slot-ball"><use href="#i-ball"/></svg></span>Stay in the rally.</h2>
+
+    <div class="contact-top">
+      <form class="newsletter card-calm" id="newsletter" novalidate aria-labelledby="nlT">
+        <h3 class="sub-h" id="nlT">The monthly newsletter</h3>
+        <p class="demo"><span class="demo-tag">Demo · nothing is sent</span> <span class="integ">Later: Brevo, MailerLite or CleverReach <span class="ph" title="Placeholder: to be confirmed">[TBC]</span>, with double opt-in.</span></p>
+        <div class="field">
+          <label for="nlEmail">Email</label>
+          <input type="email" id="nlEmail" name="email" autocomplete="email" required aria-describedby="nlEmailErr">
+          <p class="err" id="nlEmailErr" hidden></p>
+        </div>
+        <fieldset class="field radios-inline">
+          <legend>Newsletter language</legend>
+          <label><input type="radio" name="nlLang" value="de"> <span lang="de">Deutsch</span></label>
+          <label><input type="radio" name="nlLang" value="fr"> <span lang="fr">Français</span></label>
+          <label><input type="radio" name="nlLang" value="en" checked> English</label>
+        </fieldset>
+        <p class="small">We'll send you a confirmation link first. Your subscription starts only when you click it. One email a month, unsubscribe any time with one click.</p>
+        <div class="submit-row">
+          <button type="submit" class="btn btn-red">Stay in the rally</button>
+          <p class="privacy-l">How we handle your data: <button type="button" class="linkbtn" data-open="datenschutz">Privacy policy</button></p>
+        </div>
+        <p class="ok" id="nlOk" role="status"></p>
+      </form>
+
+      <article class="chat card-calm" aria-labelledby="chatT">
+        <div>
+          <h3 class="sub-h" id="chatT">The club chat</h3>
+          <p>Last-minute court news, lifts to the hall and the occasional photo of a very good dink.</p>
+          <p><span class="fake-link" aria-disabled="true">Join the club chat</span> <span class="muted">Link added once the chat is set up</span></p>
+          <button type="button" class="linkbtn" data-toast="houserules">House rules</button>
+        </div>
+        <figure class="qr" aria-label="QR code placeholder">
+          <svg viewBox="0 0 120 120" aria-hidden="true">
+            <rect width="120" height="120" fill="#fff"/>
+            <g fill="#052443"><rect x="8" y="8" width="30" height="30"/><rect x="82" y="8" width="30" height="30"/><rect x="8" y="82" width="30" height="30"/></g>
+            <g fill="#fff"><rect x="13" y="13" width="20" height="20"/><rect x="87" y="13" width="20" height="20"/><rect x="13" y="87" width="20" height="20"/></g>
+            <g fill="#052443"><rect x="18" y="18" width="10" height="10"/><rect x="92" y="18" width="10" height="10"/><rect x="18" y="92" width="10" height="10"/></g>
+            <g fill="none" stroke="#052443" stroke-width="3"><rect x="48" y="48" width="56" height="30"/><path d="M76 48v30M48 63h14M90 63h14M48 90h24M84 90v22M96 90h12v12"/><path d="M48 8v24M60 20h12M48 32h12"/></g>
+          </svg>
+          <figcaption>QR code placeholder</figcaption>
+        </figure>
+      </article>
+    </div>
+
+    <div class="talk">
+      <form class="contact-form card-calm" id="contact-form" novalidate aria-labelledby="talkT">
+        <h3 class="sub-h" id="talkT">Talk to the club</h3>
+        <p class="demo"><span class="demo-tag">Demo · nothing is sent</span> <span class="integ">Later: our own form, sent to the club mailbox.</span></p>
+        <div class="field">
+          <label for="cTopic">Topic</label>
+          <select id="cTopic" name="topic">
+            <option value="General">General</option><option value="Trying pickleball">Trying pickleball</option><option value="Membership and fees">Membership and fees</option><option value="Groups and companies">Groups and companies</option><option value="Venues and councils">Venues and councils</option><option value="Sponsoring">Sponsoring</option><option value="Press">Press</option><option value="Volunteering">Volunteering</option><option value="Child protection (confidential)">Child protection (confidential)</option>
+          </select>
+          <p class="hint" id="cTopicWho">You'll hear from the Chair.</p>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="cName">Name</label>
+            <input type="text" id="cName" name="name" autocomplete="name" required aria-describedby="cNameErr">
+            <p class="err" id="cNameErr" hidden></p>
+          </div>
+          <div class="field">
+            <label for="cEmail">Email</label>
+            <input type="email" id="cEmail" name="email" autocomplete="email" required aria-describedby="cEmailErr">
+            <p class="err" id="cEmailErr" hidden></p>
+          </div>
+        </div>
+        <div class="field">
+          <label for="cMsg">Message</label>
+          <textarea id="cMsg" name="message" rows="5" required aria-describedby="cMsgErr"></textarea>
+          <p class="err" id="cMsgErr" hidden></p>
+        </div>
+        <div class="hp" aria-hidden="true"><label for="cWebsite">Website</label><input type="text" id="cWebsite" name="website" tabindex="-1" autocomplete="off"></div>
+        <button type="submit" class="btn btn-red">Send message</button>
+        <p class="privacy-l">How we handle your data: <button type="button" class="linkbtn" data-open="datenschutz">Privacy policy</button></p>
+        <p class="ok" id="cOk" role="status"></p>
+      </form>
+
+      <div class="contacts">
+        <h3 class="sub-h" id="whoT">Who answers what</h3>
+        <p class="small">We reply within 2 working days (target).</p>
+        <dl class="who">
+          <div><dt>General questions and press</dt><dd><span class="ph" title="Placeholder: to be confirmed">[Name]</span>, Chair · vorsitz@<span class="ph" title="Placeholder: to be confirmed">[domain TBC]</span></dd></div>
+          <div><dt>Trying pickleball, sessions, Kitchen School</dt><dd><span class="ph" title="Placeholder: to be confirmed">[Name]</span>, Sport and coaching · sport@<span class="ph" title="Placeholder: to be confirmed">[domain TBC]</span></dd></div>
+          <div><dt>Membership and fees</dt><dd><span class="ph" title="Placeholder: to be confirmed">[Name]</span>, Treasurer · finanzen@<span class="ph" title="Placeholder: to be confirmed">[domain TBC]</span></dd></div>
+          <div><dt>Sponsoring</dt><dd><span class="ph" title="Placeholder: to be confirmed">[Name]</span>, Vice-chair · stellv-vorsitz@<span class="ph" title="Placeholder: to be confirmed">[domain TBC]</span></dd></div>
+          <div><dt>Venues and councils</dt><dd><span class="ph" title="Placeholder: to be confirmed">[Name]</span>, Venue partnerships · hallen@<span class="ph" title="Placeholder: to be confirmed">[domain TBC]</span></dd></div>
+          <div><dt>Documents and the general assembly</dt><dd><span class="ph" title="Placeholder: to be confirmed">[Name]</span>, Secretary · schriftfuehrung@<span class="ph" title="Placeholder: to be confirmed">[domain TBC]</span></dd></div>
+          <div><dt>Child protection (confidential)</dt><dd><span class="ph" title="Placeholder: to be confirmed">[Name]</span>, Child protection contact · kinderschutz@<span class="ph" title="Placeholder: to be confirmed">[domain TBC]</span></dd></div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ======================= 12. FOOTER · 11–0–2 · GAME. ======================= -->
+<footer class="site-footer cut-top" aria-labelledby="footGame">
+  <div class="wrap">
+    <p class="loud foot-game" id="footGame"><span class="ball-slot" aria-hidden="true"><svg class="slot-ball"><use href="#i-ball"/></svg></span>11–0–2. Game.</p>
+    <div class="foot-grid">
+      <img class="foot-logo" src="../shared/logo-on-dark.png" alt="Pickleball Südbaden e.V." width="134" height="120">
+      <div class="foot-main">
+        <ul class="foot-links">
+          <li><button type="button" class="linkbtn-light" data-open="impressum">Impressum</button></li>
+          <li><button type="button" class="linkbtn-light" data-open="datenschutz">Datenschutz</button></li>
+          <li><button type="button" class="linkbtn-light" data-open="docs">Satzung &amp; Dokumente</button></li>
+          <li><button type="button" class="linkbtn-light" data-open="kinderschutz">Kinderschutz</button></li>
+          <li><a class="linkbtn-light" href="#contact-form" data-focus="#cTopic">Kontakt</a></li>
+          <li><button type="button" class="linkbtn-light" data-open="presse">Presse</button></li>
+        </ul>
+        <p class="foot-reg">Registered association · Amtsgericht Freiburg i. Br. · VR <span class="ph" title="Placeholder: to be confirmed">[pending]</span> (e.V. i.G. until the entry is confirmed)</p>
+        <div class="foot-row">
+          <div class="lang lang-foot" role="group" aria-label="Language">
+            <span class="lang-ball" aria-hidden="true"></span>
+            <a href="index.html" lang="de" hreflang="de" aria-label="Deutsch, DE">DE</a>
+            <button type="button" lang="fr" aria-label="Français, FR" data-lang="fr">FR</button>
+            <a href="index.en.html" lang="en" hreflang="en" aria-label="English, EN" aria-current="page">EN</a>
+          </div>
+          <button type="button" class="btn btn-ghost" data-open="login">Member login</button>
+        </div>
+        <p class="foot-nocookie">No tracking. No cookie banner. Just pickleball.</p>
+        <p class="foot-small">This site sets no cookies and stores nothing in your browser.</p>
+        <p class="foot-sign">Run by volunteers in Südbaden, with friends in Alsace and Basel.</p>
+        <p class="foot-small">© 2026 Pickleball Südbaden e.V.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ======================= FIXED UI ======================= -->
+<div class="sticky-bar" id="stickyBar">
+  <a class="sb-chip" href="#sessions"><span class="sb-k">Next:</span> Thu 15 Oct · 18:30 · Freiburg</a>
+  <button type="button" class="btn btn-red btn-slant" data-open="trial" data-session="S2">Try it free</button>
+</div>
+
+<button type="button" class="concept-badge" data-open="about">Concept · placeholder content</button>
+
+<div class="toast" id="toast" role="status">
+  <p class="toast-msg" id="toastMsg"></p>
+  <button type="button" class="toast-x" id="toastX" aria-label="Close">×</button>
+</div>
+
+<div class="traveller" id="traveller" aria-hidden="true">
+  <div class="tv-x"><div class="tv-y"><div class="tv-s">
+    <svg class="tv-speed"><use href="#i-speed"/></svg>
+    <svg class="tv-ball"><use href="#i-ball"/></svg>
+  </div></div></div>
+</div>
+<button type="button" class="rally-egg" id="rallyEgg" aria-label="Keep the ball in the air: a little game" hidden><span class="egg-count" id="eggCount" aria-hidden="true"></span></button>
+
+<!-- ======================= DIALOGS ======================= -->
+
+<!-- Mobile menu (full-screen sheet) -->
+<dialog class="menu-sheet" id="dlg-menu" aria-labelledby="menuT">
+  <div class="ms-head">
+    <p class="ms-title" id="menuT">Menu</p>
+    <button type="button" class="x x-light" data-close aria-label="Close">×</button>
+  </div>
+  <nav aria-label="Menu">
+    <ul class="ms-nav">
+      <li><a href="#game" data-close data-expand-court>Learn</a></li>
+      <li><a href="#sessions" data-close>Sessions</a></li>
+      <li><a href="#join" data-close>Join</a></li>
+      <li><a href="#club" data-close>Club</a></li>
+      <li><a href="#faq" data-close>Questions</a></li>
+      <li><a href="#contact" data-close>Contact</a></li>
+    </ul>
+  </nav>
+  <div class="ms-actions">
+    <button type="button" class="btn btn-red btn-slant btn-lg" data-open="trial">Try it free</button>
+    <button type="button" class="btn btn-ghost btn-lg" data-open="login">Member login</button>
+  </div>
+</dialog>
+
+<!-- Trial booking -->
+<dialog class="sheet" id="dlg-trial" aria-labelledby="trialT">
+  <div class="sh-head">
+    <div class="sh-top">
+      <h2 class="sh-title" id="trialT">Book your free first session</h2>
+      <button type="button" class="x" data-close aria-label="Close">×</button>
+    </div>
+    <div class="zones" data-zones="3" style="--n:3;--i:0" aria-hidden="true">
+      <span class="z-court"><i></i><i></i><i></i></span><span class="z-ball"></span>
+      <span class="z-labels"><b>Session</b><b>About you</b><b>Done</b></span>
+    </div>
+    <p class="z-sr vh" data-progress>Step 1 of 3: Session</p>
+    <p class="demo"><span class="demo-tag">Demo · nothing is sent</span> <span class="integ">Later: Spond, Reclub or our own form.</span></p>
+  </div>
+  <form class="sh-body" id="trialForm" novalidate>
+    <fieldset class="step" data-step="0">
+      <legend class="step-legend">Pick a session</legend>
+      <div class="opts" id="trialOpts">
+        <label class="opt"><input type="radio" name="session" value="S1"><span class="opt-main">Tue 13 Oct · 19:00–20:30</span><span class="opt-sub">Open Play · Level 1–2 · <span data-optleft="S1">8 spots left</span></span><span class="opt-price">Members €0 · <span class="nw">Guests <span class="nw">€<span class="ph" title="Placeholder: to be confirmed">[__]</span></span></span></span></label>
+        <label class="opt"><input type="radio" name="session" value="S2"><span class="opt-main">Thu 15 Oct · 18:30–20:00</span><span class="opt-sub">First Serve, free taster · Level 0 · <span data-optleft="S2">6 spots left</span></span><span class="opt-price">Free first time</span></label>
+        <label class="opt"><input type="radio" name="session" value="S3"><span class="opt-main">Sat 17 Oct · 10:00–11:30</span><span class="opt-sub">First Serve, family-friendly · Level 0 · <span data-optleft="S3">Full: waitlist</span></span><span class="opt-price">Free first time</span></label>
+        <label class="opt"><input type="radio" name="session" value="S4"><span class="opt-main">Tue 20 Oct · 19:00–20:30</span><span class="opt-sub">Kitchen School, week 1 of 4 · Level 0–1 · <span data-optleft="S4">3 spots left</span></span><span class="opt-price">4-week course: <span class="nw">Members <span class="nw">€<span class="ph" title="Placeholder: to be confirmed">[__]</span></span></span> · <span class="nw">Guests <span class="nw">€<span class="ph" title="Placeholder: to be confirmed">[__]</span></span></span></span></label>
+        <label class="opt"><input type="radio" name="session" value="S5"><span class="opt-main">Thu 22 Oct · 18:30–20:00</span><span class="opt-sub">First Serve · Level 0 · <span data-optleft="S5">10 spots left</span></span><span class="opt-price">Free first time</span></label>
+      </div>
+      <p class="err" id="trialSessErr" hidden></p>
+      <p class="note-wait" id="trialWaitNote" hidden>This session is full, which is a good sign. You'll join the waitlist, and we'll email you the moment a spot opens.</p>
+      <p class="small">All sessions: <span class="ph" title="Placeholder: to be confirmed">[Venue TBC]</span>, Freiburg. Indoor shoes with non-marking soles. We bring the paddles.</p>
+    </fieldset>
+
+    <fieldset class="step" data-step="1" hidden>
+      <legend class="step-legend">About you</legend>
+      <div class="field-row">
+        <div class="field">
+          <label for="tFirst">First name</label>
+          <input id="tFirst" name="first" autocomplete="given-name" required aria-describedby="tFirstErr">
+          <p class="err" id="tFirstErr" hidden></p>
+        </div>
+        <div class="field">
+          <label for="tLast">Last name <span class="opt-l">optional</span></label>
+          <input id="tLast" name="last" autocomplete="family-name">
+        </div>
+      </div>
+      <div class="field">
+        <label for="tEmail">Email</label>
+        <input id="tEmail" name="email" type="email" autocomplete="email" required aria-describedby="tEmailErr">
+        <p class="err" id="tEmailErr" hidden></p>
+      </div>
+      <div class="field">
+        <label for="tPhone">Phone <span class="opt-l">optional</span></label>
+        <input id="tPhone" name="phone" type="tel" autocomplete="tel" aria-describedby="tPhoneHint">
+        <p class="hint" id="tPhoneHint">Only for last-minute changes.</p>
+      </div>
+      <fieldset class="field checks-inline" aria-describedby="tLangHint">
+        <legend>Languages you're comfortable in</legend>
+        <label><input type="checkbox" name="langs" value="de"> <span lang="de">Deutsch</span></label>
+        <label><input type="checkbox" name="langs" value="fr"> <span lang="fr">Français</span></label>
+        <label><input type="checkbox" name="langs" value="en"> English</label>
+        <p class="hint" id="tLangHint">We'll pair you with a host who speaks them.</p>
+      </fieldset>
+      <fieldset class="field radios-stack" aria-describedby="tRacketHint">
+        <legend>Played a racket sport before? <span class="opt-l">optional</span></legend>
+        <label><input type="radio" name="racket" value="no"> No, never</label>
+        <label><input type="radio" name="racket" value="yes"> Yes: tennis, badminton, table tennis or padel</label>
+        <label><input type="radio" name="racket" value="pb"> I already play pickleball</label>
+        <p class="hint" id="tRacketHint">No wrong answers. It just helps us pair you well.</p>
+      </fieldset>
+      <div class="field">
+        <p class="lbl" id="tFriendL">Bringing a friend?</p>
+        <div class="stepper" role="group" aria-labelledby="tFriendL" aria-describedby="tFriendHint">
+          <button type="button" class="st-btn" data-step-friend="-1" aria-label="One friend fewer">−</button>
+          <output id="tFriends" aria-live="polite">0</output>
+          <button type="button" class="st-btn" data-step-friend="1" aria-label="One more friend">+</button>
+        </div>
+        <p class="hint" id="tFriendHint">Up to 2. So we bring enough paddles.</p>
+      </div>
+      <fieldset class="field radios-inline">
+        <legend>Need a loan paddle?</legend>
+        <label><input type="radio" name="paddle" value="yes" checked> Yes</label>
+        <label><input type="radio" name="paddle" value="no"> No, I'll bring my own</label>
+      </fieldset>
+      <div class="field">
+        <label class="check"><input type="checkbox" id="tU18" aria-controls="tGuardian" aria-expanded="false"> I'm under 18</label>
+      </div>
+      <div class="guardian" id="tGuardian" hidden>
+        <div class="field">
+          <label for="tGName">Guardian name</label>
+          <input id="tGName" name="gname" autocomplete="off" aria-describedby="tGNameErr">
+          <p class="err" id="tGNameErr" hidden></p>
+        </div>
+        <div class="field">
+          <label for="tGEmail">Guardian email</label>
+          <input id="tGEmail" name="gemail" type="email" autocomplete="off" aria-describedby="tGEmailErr">
+          <p class="err" id="tGEmailErr" hidden></p>
+        </div>
+        <p class="small">A parent or guardian must agree before you play. Younger children join family sessions with a parent <span class="ph" title="Placeholder: to be confirmed">[minimum age TBC]</span>.</p>
+      </div>
+      <p class="notice">[Insurance for taster sessions is being confirmed with the Badischer Sportbund Freiburg and ARAG. We'll state the cover here before bookings open.]</p>
+      <p class="small">We sometimes take photos at sessions. Tell the host if you'd rather not be in them.</p>
+    </fieldset>
+  </form>
+  <div class="sh-done" id="trialDone" hidden tabindex="-1">
+    <div class="win">
+      <div class="win-paddles" aria-hidden="true"><svg class="wp wp-l"><use href="#i-paddle"/></svg><svg class="wp wp-r"><use href="#i-paddle"/></svg></div>
+      <p class="win-t" id="trialWinT">You're in! 1–0 to you.</p>
+    </div>
+    <div class="done-body" id="trialDoneBody"></div>
+  </div>
+  <div class="sh-foot" id="trialFoot">
+    <button type="button" class="btn btn-quiet" data-back>Back</button>
+    <div class="sh-foot-main">
+      <button type="button" class="btn btn-navy" data-next>Next</button>
+      <button type="submit" form="trialForm" class="btn btn-red" data-submit hidden>Save my spot</button>
+      <p class="privacy-l" data-privacy hidden>How we handle your data: <button type="button" class="linkbtn" data-open="datenschutz">Privacy policy</button></p>
+    </div>
+  </div>
+</dialog>
+
+<!-- Membership application -->
+<dialog class="sheet" id="dlg-member" aria-labelledby="memT">
+  <div class="sh-head">
+    <div class="sh-top">
+      <h2 class="sh-title" id="memT">Apply for membership</h2>
+      <button type="button" class="x" data-close aria-label="Close">×</button>
+    </div>
+    <div class="zones" data-zones="4" style="--n:4;--i:0" aria-hidden="true">
+      <span class="z-court"><i></i><i></i><i></i><i></i></span><span class="z-ball"></span>
+      <span class="z-labels"><b>You</b><b>Membership</b><b>Payment</b><b>Confirm</b></span>
+    </div>
+    <p class="z-sr vh" data-progress>Step 1 of 4: You</p>
+    <p class="demo"><span class="demo-tag">Demo · nothing is sent</span> <span class="integ">Later: the application form of our member software (for example easyVerein or Vereinsplaner) <span class="ph" title="Placeholder: to be confirmed">[TBC]</span>.</span></p>
+  </div>
+  <form class="sh-body" id="memForm" novalidate>
+    <fieldset class="step" data-step="0">
+      <legend class="step-legend">You</legend>
+      <div class="field-row">
+        <div class="field"><label for="mFirst">First name</label><input id="mFirst" name="first" autocomplete="given-name" required aria-describedby="mFirstErr"><p class="err" id="mFirstErr" hidden></p></div>
+        <div class="field"><label for="mLast">Last name</label><input id="mLast" name="last" autocomplete="family-name" required aria-describedby="mLastErr"><p class="err" id="mLastErr" hidden></p></div>
+      </div>
+      <div class="field"><label for="mDob">Date of birth</label><input id="mDob" name="dob" type="date" autocomplete="bday" required aria-describedby="mDobErr"><p class="err" id="mDobErr" hidden></p></div>
+      <div class="field"><label for="mStreet">Street and number</label><input id="mStreet" name="street" autocomplete="street-address" required aria-describedby="mStreetErr"><p class="err" id="mStreetErr" hidden></p></div>
+      <div class="field-row">
+        <div class="field f-short"><label for="mZip">Postcode</label><input id="mZip" name="zip" autocomplete="postal-code" inputmode="numeric" required aria-describedby="mZipErr"><p class="err" id="mZipErr" hidden></p></div>
+        <div class="field"><label for="mTown">Town</label><input id="mTown" name="town" autocomplete="address-level2" required aria-describedby="mTownErr"><p class="err" id="mTownErr" hidden></p></div>
+      </div>
+      <div class="field"><label for="mCountry">Country</label>
+        <select id="mCountry" name="country" autocomplete="country-name"><option>Germany</option><option>France</option><option>Switzerland</option><option>Other</option></select>
+      </div>
+      <div class="field"><label for="mEmail">Email</label><input id="mEmail" name="email" type="email" autocomplete="email" required aria-describedby="mEmailErr"><p class="err" id="mEmailErr" hidden></p></div>
+      <fieldset class="field radios-inline">
+        <legend>Preferred language</legend>
+        <label><input type="radio" name="mlang" value="de"> <span lang="de">Deutsch</span></label>
+        <label><input type="radio" name="mlang" value="fr"> <span lang="fr">Français</span></label>
+        <label><input type="radio" name="mlang" value="en" checked> English</label>
+      </fieldset>
+      <div class="guardian" id="mGuardian" hidden>
+        <p class="note-wait">You're under 18, so we've chosen the Youth membership for you.</p>
+        <div class="field"><label for="mGName">Guardian name</label><input id="mGName" name="gname" autocomplete="off" aria-describedby="mGNameErr"><p class="err" id="mGNameErr" hidden></p></div>
+        <div class="field"><label for="mGEmail">Guardian email</label><input id="mGEmail" name="gemail" type="email" autocomplete="off" aria-describedby="mGEmailErr"><p class="err" id="mGEmailErr" hidden></p></div>
+        <p class="small">Your guardian signs the application with you.</p>
+      </div>
+    </fieldset>
+
+    <fieldset class="step" data-step="1" hidden>
+      <legend class="step-legend">Membership</legend>
+      <p class="ribbon-calm">First 100: joining fee €0 · You'd be founder <span id="mFounderNo">#038</span> (sample)</p>
+      <div class="tiers">
+        <label class="tier"><input type="radio" name="tier" value="adult" checked><span class="tier-t">Adult</span><span class="tier-p"><span class="nw">€<span class="ph" title="Placeholder: to be confirmed">[__]</span></span> / year</span></label>
+        <label class="tier"><input type="radio" name="tier" value="reduced"><span class="tier-t">Reduced</span><span class="tier-d">Students, trainees, volunteer service</span><span class="tier-p"><span class="nw">€<span class="ph" title="Placeholder: to be confirmed">[__]</span></span> / year</span></label>
+        <label class="tier"><input type="radio" name="tier" value="youth"><span class="tier-t">Youth</span><span class="tier-d">Under 18</span><span class="tier-p"><span class="nw">€<span class="ph" title="Placeholder: to be confirmed">[__]</span></span> / year</span></label>
+        <label class="tier"><input type="radio" name="tier" value="family"><span class="tier-t">Family</span><span class="tier-d">One household</span><span class="tier-p"><span class="nw">€<span class="ph" title="Placeholder: to be confirmed">[__]</span></span> / year</span></label>
+        <label class="tier"><input type="radio" name="tier" value="supporting"><span class="tier-t">Supporting member</span><span class="tier-d">Doesn't play</span><span class="tier-p"><span class="nw">€<span class="ph" title="Placeholder: to be confirmed">[__]</span></span> / year</span></label>
+      </div>
+      <p class="note-wait" id="mTierNote" hidden></p>
+      <p class="small" id="mFamilyNote" hidden>We'll ask for your family members' details by email <span class="ph" title="Placeholder: to be confirmed">[process TBC]</span>.</p>
+      <p class="small">Example placeholders. The general assembly sets the fees in the Beitragsordnung. Membership fees are not tax-deductible.</p>
+    </fieldset>
+
+    <fieldset class="step" data-step="2" hidden>
+      <legend class="step-legend">Payment</legend>
+      <div class="radios-stack field">
+        <label><input type="radio" name="pay" value="sepa" checked> SEPA direct debit</label>
+        <label><input type="radio" name="pay" value="transfer"> Bank transfer (for example from a Swiss account)</label>
+      </div>
+      <div class="sepa" id="sepaBlock">
+        <dl class="sepa-dl">
+          <div><dt>Creditor</dt><dd>Pickleball Südbaden e.V.</dd></div>
+          <div><dt>Creditor ID</dt><dd>DE<span class="ph" title="Placeholder: to be confirmed">[__]</span>ZZZ<span class="ph" title="Placeholder: to be confirmed">[________]</span></dd></div>
+          <div><dt>Mandate reference</dt><dd><span class="ph ph-l" title="Placeholder: to be confirmed">[assigned after approval]</span></dd></div>
+        </dl>
+        <div class="field"><label for="mHolder">Account holder</label><input id="mHolder" name="holder" autocomplete="off"></div>
+        <div class="field"><label for="mIban">IBAN</label><div class="lockfield"><input id="mIban" name="iban" disabled aria-describedby="mIbanNote"><svg class="lock" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><rect x="4" y="9" width="12" height="9" rx="2" fill="currentColor"/><path d="M6.5 9V6.5a3.5 3.5 0 0 1 7 0V9" fill="none" stroke="currentColor" stroke-width="2"/></svg></div><p class="hint" id="mIbanNote">Demo: no bank details are collected in this concept.</p></div>
+        <blockquote class="mandate" lang="de"><p><b>SEPA-Lastschriftmandat.</b> Ich ermächtige den Pickleball Südbaden e.V., Zahlungen von meinem Konto mittels Lastschrift einzuziehen. Zugleich weise ich mein Kreditinstitut an, die vom Pickleball Südbaden e.V. auf mein Konto gezogenen Lastschriften einzulösen. Hinweis: Ich kann innerhalb von acht Wochen, beginnend mit dem Belastungsdatum, die Erstattung des belasteten Betrages verlangen. Es gelten dabei die mit meinem Kreditinstitut vereinbarten Bedingungen.</p></blockquote>
+        <p class="mandate-en">I authorise Pickleball Südbaden e.V. to collect payments from my account by direct debit. At the same time I instruct my bank to pay the direct debits that Pickleball Südbaden e.V. draws on my account. Note: I can ask for a refund within eight weeks of the debit date, under the conditions agreed with my bank. <b>German version is binding.</b></p>
+        <p class="small">Annual fee collected on <span class="ph" title="Placeholder: to be confirmed">[1 February, TBC]</span>. We'll tell you the date and amount <span class="ph" title="Placeholder: to be confirmed">[14 days, TBC]</span> beforehand.</p>
+      </div>
+      <p class="note-wait" id="transferNote" hidden>We'll email you our bank details and your reference after approval.</p>
+    </fieldset>
+
+    <fieldset class="step" data-step="3" hidden>
+      <legend class="step-legend">Confirm</legend>
+      <dl class="summary" id="memSummary"></dl>
+      <div class="field">
+        <label class="check"><input type="checkbox" id="mAccept" aria-describedby="mAcceptErr"> <span>I accept the <button type="button" class="linkbtn" data-open="docs">Satzung</button> (statutes) and the <button type="button" class="linkbtn" data-open="docs">Beitragsordnung</button> (fee rules).</span></label>
+        <p class="err" id="mAcceptErr" hidden></p>
+      </div>
+      <div class="field"><label class="check"><input type="checkbox" name="photos"> <span>You may use photos of me from club sessions on the website and social media. <span class="opt-l">optional</span></span></label></div>
+      <div class="field"><label class="check"><input type="checkbox" name="news"> <span>Send me the monthly newsletter. <span class="opt-l">optional</span></span></label></div>
+    </fieldset>
+  </form>
+  <div class="sh-done" id="memDone" hidden tabindex="-1">
+    <div class="win win-founder">
+      <p class="win-k">Founder number reserved (sample)</p>
+      <p class="win-num" id="memWinNo">#038</p>
+    </div>
+    <div class="done-body" id="memDoneBody"></div>
+  </div>
+  <div class="sh-foot">
+    <button type="button" class="btn btn-quiet" data-back>Back</button>
+    <div class="sh-foot-main">
+      <button type="button" class="btn btn-navy" data-next>Next</button>
+      <button type="submit" form="memForm" class="btn btn-red" data-submit hidden>Send my application</button>
+      <p class="privacy-l" data-privacy hidden>How we handle your data: <button type="button" class="linkbtn" data-open="datenschutz">Privacy policy</button></p>
+    </div>
+  </div>
+</dialog>
+
+<!-- Member login + dashboard preview -->
+<dialog class="sheet" id="dlg-login" aria-labelledby="loginT">
+  <div class="sh-head">
+    <div class="sh-top">
+      <h2 class="sh-title" id="loginT">Member login</h2>
+      <button type="button" class="x" data-close aria-label="Close">×</button>
+    </div>
+    <p class="demo"><span class="demo-tag">Demo · nothing is sent</span> <span class="integ">Later: the member portal of our club software <span class="ph" title="Placeholder: to be confirmed">[TBC]</span>.</span></p>
+  </div>
+  <div class="sh-body">
+    <form id="loginForm" novalidate data-view="a">
+      <p>No password to remember. We email you a link that signs you in.</p>
+      <div class="field"><label for="lEmail">Email</label><input id="lEmail" type="email" autocomplete="email" required aria-describedby="lEmailErr"><p class="err" id="lEmailErr" hidden></p></div>
+      <button type="submit" class="btn btn-navy">Email me a login link</button>
+    </form>
+    <div id="loginSent" hidden tabindex="-1">
+      <p class="note-wait">Demo: in the live tool you'd get a sign-in link by email.</p>
+      <button type="button" class="btn btn-navy" id="loginPreview">Preview the member area</button>
+    </div>
+    <div class="dash" id="dash" hidden tabindex="-1">
+      <p class="preview-tag">Preview · member tools not chosen yet</p>
+      <h3 class="dash-hi">Hallo, <span class="ph" title="Placeholder: to be confirmed">[Member]</span></h3>
+      <p class="dash-founder">Founder #012 <span class="sample">Sample</span></p>
+      <div class="dash-block">
+        <h4 class="mini-h">Your ladder</h4>
+        <div class="ladder-bar" role="img" aria-label="Level 1, I can rally, about 60 percent of the way to Level 2 (sample)"><span style="width:60%"></span></div>
+        <p class="ladder-ends"><span>Level 1 · I can rally</span><span>Level 2 · I know the kitchen</span></p>
+        <p class="small"><span class="fake-link" aria-disabled="true">Ratings: DUPR club <span class="ph" title="Placeholder: to be confirmed">[TBC]</span></span></p>
+      </div>
+      <div class="dash-block">
+        <h4 class="mini-h">My next sessions</h4>
+        <ul class="dash-rows">
+          <li><span><b>Thu 15 Oct · 18:30</b> First Serve, Freiburg</span><button type="button" class="linkbtn" data-toast="cancel">Cancel<span class="vh"> Thu 15 Oct, First Serve</span></button></li>
+          <li><span><b>Sat 17 Oct · 10:00</b> First Serve, family-friendly · Waitlist: number 2</span><button type="button" class="linkbtn" data-toast="cancel">Cancel<span class="vh"> Sat 17 Oct, First Serve family-friendly</span></button></li>
+        </ul>
+      </div>
+      <div class="dash-block">
+        <h4 class="mini-h">Annual fee</h4>
+        <p>Collected by SEPA on <span class="ph" title="Placeholder: to be confirmed">[1 Feb, TBC]</span>: paid (sample)</p>
+      </div>
+      <div class="dash-block dash-two">
+        <div><h4 class="mini-h">Paddle Library</h4><button type="button" class="linkbtn" data-toast="paddle">Reserve a paddle for Thursday</button></div>
+        <div><h4 class="mini-h">Volunteer rota</h4><p>Net set-up, Thu 22 Oct: 1 helper needed · <button type="button" class="linkbtn" data-toast="rota">Sign up</button></p></div>
+      </div>
+      <div class="dash-block">
+        <h4 class="mini-h">Documents</h4>
+        <p><button type="button" class="linkbtn" data-toast="doc" data-doc="Satzung">Satzung</button> · <button type="button" class="linkbtn" data-toast="doc" data-doc="Beitragsordnung">Beitragsordnung</button> · <button type="button" class="linkbtn" data-toast="doc" data-doc="AGM invitation">AGM invitation</button> <span class="ph" title="Placeholder: to be confirmed">[date TBC]</span></p>
+      </div>
+      <div class="dash-block">
+        <h4 class="mini-h">Profile and consents</h4>
+        <button type="button" class="linkbtn" data-toast="profile">Edit profile and consents</button>
+      </div>
+      <p class="dash-out"><span class="fake-link" aria-disabled="true">Session app <span class="ph" title="Placeholder: to be confirmed">[Spond or Reclub, TBC]</span></span> · <span class="fake-link" aria-disabled="true">Ratings <span class="ph" title="Placeholder: to be confirmed">[DUPR club, TBC]</span></span></p>
+    </div>
+  </div>
+</dialog>
+
+<!-- About this concept -->
+<dialog class="sheet" id="dlg-about" aria-labelledby="aboutT">
+  <div class="sh-head"><div class="sh-top"><h2 class="sh-title" id="aboutT">About this concept</h2><button type="button" class="x" data-close aria-label="Close">×</button></div></div>
+  <div class="sh-body prose" tabindex="0" role="region" aria-labelledby="aboutT">
+    <p><b>Concept C: Rally Mode.</b> The page plays like one rally: the ball from the logo serves into the hero, hops from headline to headline, and teaches the game on a 60-second court. Each section label is a doubles score call.</p>
+    <p><b>Homepage order:</b> Sport-first. The explainer comes second, because most people don't know the sport yet.</p>
+    <p><b>Fonts:</b> Saira (headlines, score calls, dates) and Inter (everything you rely on: facts, prices, forms). Loaded from Google Fonts for this preview only; the live site will self-host them.</p>
+    <p><b>Photos:</b> every photo on this page is an AI-generated sample, marked "AI sample" with its shot number. The people in them are not real club members. They show the kind of shot we want. The live site will use only real photos from club sessions, taken with consent. The founders' photo and the board portraits stay empty on purpose, because they must show the real people.</p>
+    <ul>
+      <li>Everything in [brackets] or marked SAMPLE is a placeholder.</li>
+      <li>Forms are demos and send nothing.</li>
+      <li>Languages: German and English; the French version will follow.</li>
+      <li>A coach must sign off the rules copy before launch: the serve variants, the scoring call and the kitchen wording.</li>
+      <li>On phones the 60-second court opens with one tap, so the sessions stay within two screens.</li>
+    </ul>
+  </div>
+</dialog>
+
+<!-- Legal stubs -->
+<dialog class="sheet" id="dlg-impressum" aria-labelledby="impT">
+  <div class="sh-head"><div class="sh-top"><h2 class="sh-title" id="impT">Impressum</h2><button type="button" class="x" data-close aria-label="Close">×</button></div></div>
+  <div class="sh-body prose">
+    <p>Pickleball Südbaden e.V. <span class="ph" title="Placeholder: to be confirmed">[i.G.]</span><br><span class="ph" title="Placeholder: to be confirmed">[Street, No.]</span><br><span class="ph" title="Placeholder: to be confirmed">[Postcode]</span> Freiburg im Breisgau <span class="ph" title="Placeholder: to be confirmed">[TBC]</span></p>
+    <p>Represented by the board under § 26 BGB: <span class="ph" title="Placeholder: to be confirmed">[Name]</span> (Chair), <span class="ph" title="Placeholder: to be confirmed">[Name]</span> (Vice-chair)</p>
+    <p>Register court: Amtsgericht Freiburg i. Br. · Register number: VR <span class="ph" title="Placeholder: to be confirmed">[pending]</span></p>
+    <p>Email: info@<span class="ph" title="Placeholder: to be confirmed">[domain TBC]</span> · Phone: <span class="ph" title="Placeholder: to be confirmed">[TBC]</span></p>
+    <p>Responsible for content under § 18 Abs. 2 MStV: <span class="ph" title="Placeholder: to be confirmed">[Name, address]</span></p>
+    <p class="muted">Placeholder. The final Impressum will be reviewed before launch.</p>
+  </div>
+</dialog>
+
+<dialog class="sheet" id="dlg-datenschutz" aria-labelledby="dsT">
+  <div class="sh-head"><div class="sh-top"><h2 class="sh-title" id="dsT">Datenschutz</h2><button type="button" class="x" data-close aria-label="Close">×</button></div></div>
+  <div class="sh-body prose">
+    <p>Privacy policy (placeholder). The full policy will be published in German, French and English before launch.</p>
+    <p>In short: this site uses no tracking and sets no cookies. In production, fonts and files come from our own server. Form data goes only to <span class="ph" title="Placeholder: to be confirmed">[processors TBC]</span>, under data-processing agreements.</p>
+    <p>Controller: Pickleball Südbaden e.V., <span class="ph" title="Placeholder: to be confirmed">[address]</span>. Privacy contact: datenschutz@<span class="ph" title="Placeholder: to be confirmed">[domain TBC]</span>.</p>
+  </div>
+</dialog>
+
+<dialog class="sheet" id="dlg-docs" aria-labelledby="docT">
+  <div class="sh-head"><div class="sh-top"><h2 class="sh-title" id="docT">Satzung &amp; Dokumente</h2><button type="button" class="x" data-close aria-label="Close">×</button></div></div>
+  <div class="sh-body prose">
+    <ul class="doc-rows">
+      <li><button type="button" class="linkbtn" data-toast="doc" data-doc="Satzung">Satzung (statutes)</button><span><span class="ph" title="Placeholder: to be confirmed">[v1.0]</span> · adopted <span class="ph" title="Placeholder: to be confirmed">[date]</span> · DE, with EN/FR courtesy versions · German version is binding</span></li>
+      <li><button type="button" class="linkbtn" data-toast="doc" data-doc="Beitragsordnung">Beitragsordnung (fee rules)</button><span><span class="ph" title="Placeholder: to be confirmed">[draft]</span> · <span class="ph ph-l" title="Placeholder: to be confirmed">[general assembly, date TBC]</span> · DE</span></li>
+      <li><button type="button" class="linkbtn" data-toast="doc" data-doc="code of conduct">Code of conduct</button><span><span class="ph" title="Placeholder: to be confirmed">[draft]</span></span></li>
+      <li><button type="button" class="linkbtn" data-toast="doc" data-doc="Kinderschutz concept">Kinderschutz concept</button><span><span class="ph" title="Placeholder: to be confirmed">[draft]</span></span></li>
+      <li><button type="button" class="linkbtn" data-toast="doc" data-doc="privacy policy">Datenschutz (privacy policy)</button><span><span class="ph" title="Placeholder: to be confirmed">[draft]</span> · DE · FR · EN before launch</span></li>
+    </ul>
+  </div>
+</dialog>
+
+<dialog class="sheet" id="dlg-kinderschutz" aria-labelledby="ksT">
+  <div class="sh-head"><div class="sh-top"><h2 class="sh-title" id="ksT">Kinderschutz</h2><button type="button" class="x" data-close aria-label="Close">×</button></div></div>
+  <div class="sh-body prose">
+    <p>Child protection contact: <span class="ph" title="Placeholder: to be confirmed">[Name]</span>, kinderschutz@<span class="ph" title="Placeholder: to be confirmed">[domain TBC]</span>.</p>
+    <p>Everyone who coaches or hosts sessions with young people signs our code of honour (<span lang="de">Ehrenkodex</span>) <span class="ph ph-l" title="Placeholder: to be confirmed">[and provides an extended police certificate, TBC]</span>.</p>
+    <p>Help outside the club: Nummer gegen Kummer 116 111 · Hilfetelefon Sexueller Missbrauch 0800 22 55 530 <span class="ph" title="Placeholder: to be confirmed">[verify before launch]</span>.</p>
+  </div>
+</dialog>
+
+<dialog class="sheet" id="dlg-presse" aria-labelledby="prT">
+  <div class="sh-head"><div class="sh-top"><h2 class="sh-title" id="prT">Presse</h2><button type="button" class="x" data-close aria-label="Close">×</button></div></div>
+  <div class="sh-body prose">
+    <p>Press kit: logo pack, fact sheet and photos with credits <span class="ph" title="Placeholder: to be confirmed">[coming soon]</span>.</p>
+    <p>Press contact: <span class="ph" title="Placeholder: to be confirmed">[Name]</span>, presse@<span class="ph" title="Placeholder: to be confirmed">[domain TBC]</span>.</p>
+  </div>
+</dialog>
+
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 420" width="200" height="420" color="#052443">
+  <title>Pickleball paddle</title>
+  <!-- Pickleball Südbaden e.V. paddle, upright. Yellow face, red diagonal stripe (Baden flag colours),
+       navy outline and grip, blue-grey grip wraps.
+       Outline and grip use currentColor (default navy). When the SVG is inlined, set CSS `color: #fff`
+       on it for dark backgrounds (same rule as logo-on-dark.png). Rotate with CSS to echo the crossed paddles. -->
+  <defs>
+    <path id="face" d="M52 8H148C174 8 192 26 192 52V178C192 204 182 218 164 228C146 238 132 246 127 262V272H73V262C68 246 54 238 36 228C18 218 8 204 8 178V52C8 26 26 8 52 8Z"/>
+    <clipPath id="faceClip"><use href="#face"/></clipPath>
+    <clipPath id="gripClip"><rect x="74" y="281" width="52" height="132" rx="12"/></clipPath>
+  </defs>
+  <use href="#face" fill="#FEDD02"/>
+  <path clip-path="url(#faceClip)" fill="#EA162C" d="M0 64L200 116V174L0 122Z"/>
+  <use href="#face" fill="none" stroke="currentColor" stroke-width="9" stroke-linejoin="round"/>
+  <rect x="69" y="258" width="62" height="18" rx="4" fill="currentColor"/>
+  <rect x="74" y="281" width="52" height="132" rx="12" fill="currentColor"/>
+  <g clip-path="url(#gripClip)" fill="none" stroke="#7A96B6" stroke-width="4.5" stroke-linecap="round">
+    <path d="M70 302Q100 293 130 302"/>
+    <path d="M70 322Q100 313 130 322"/>
+    <path d="M70 342Q100 333 130 342"/>
+    <path d="M70 362Q100 353 130 362"/>
+    <path d="M70 382Q100 373 130 382"/>
+  </g>
+</svg>

@@ -1,0 +1,1810 @@
+<!doctype html>
+<!--
+  Concept A: Paddle Passport.
+  Two language versions: index.html (German, default) and index.en.html (English). French is a stub in the switcher.
+  Planned live paths: /de/ (default), /fr/ (French, to follow), /en/.
+-->
+<html lang="de" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pickleball Südbaden e.V. · Konzept A: Paddle Passport</title>
+<meta name="description" content="Pickleball Südbaden e.V.: der freundliche, dreisprachige Pickleball-Verein im Dreiländereck. Dein erster Termin ist kostenlos, Leih-Paddles gibt’s vor Ort, du bringst nur Hallenschuhe mit.">
+<meta name="theme-color" content="#052443">
+<link rel="icon" href="../shared/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../shared/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../shared/apple-touch-icon.png">
+<link rel="alternate" hreflang="de" href="index.html">
+<link rel="alternate" hreflang="en" href="index.en.html">
+<link rel="alternate" hreflang="x-default" href="index.html">
+<!-- Prototype only: the live site self-hosts these fonts (no Google request at runtime). -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;1,700;1,800;1,900&family=Figtree:ital,wght@0,300..900;1,300..900&display=swap">
+<link rel="stylesheet" href="style.css">
+<script>document.documentElement.className = document.documentElement.className.replace('no-js', 'js');</script>
+<script src="app.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Zum Inhalt springen</a>
+
+<!-- Shared symbols: ball.svg, paddle.svg (ids prefixed pd-), small icons -->
+<svg class="sprite" width="0" height="0" aria-hidden="true" focusable="false">
+  <defs>
+    <path id="pd-face" d="M52 8H148C174 8 192 26 192 52V178C192 204 182 218 164 228C146 238 132 246 127 262V272H73V262C68 246 54 238 36 228C18 218 8 204 8 178V52C8 26 26 8 52 8Z"/>
+    <clipPath id="pd-faceClip"><use href="#pd-face"/></clipPath>
+    <clipPath id="pd-gripClip"><rect x="74" y="281" width="52" height="132" rx="12"/></clipPath>
+  </defs>
+  <symbol id="sym-ball" viewBox="0 0 100 100">
+    <circle cx="50" cy="50" r="45" fill="#FEDD02" stroke="currentColor" stroke-width="5"/>
+    <g fill="#052443">
+      <ellipse cx="50.7" cy="17.7" rx="4" ry="6.6" transform="rotate(-89 50.7 17.7)"/>
+      <ellipse cx="27.3" cy="23.2" rx="3.3" ry="6.6" transform="rotate(-130 27.3 23.2)"/>
+      <ellipse cx="65.9" cy="34.7" rx="5.5" ry="6.6" transform="rotate(-44 65.9 34.7)"/>
+      <ellipse cx="33.8" cy="40.7" rx="5.9" ry="6.6" transform="rotate(-150 33.8 40.7)"/>
+      <ellipse cx="83.9" cy="47.6" rx="3.6" ry="6.6" transform="rotate(-4 83.9 47.6)"/>
+      <circle cx="53.6" cy="57" r="6.6"/>
+      <ellipse cx="20.1" cy="59.6" rx="4.2" ry="6.6" transform="rotate(162 20.1 59.6)"/>
+      <ellipse cx="72.4" cy="69.8" rx="4.4" ry="6.6" transform="rotate(42 72.4 69.8)"/>
+      <ellipse cx="39.2" cy="75.8" rx="4.8" ry="6.6" transform="rotate(113 39.2 75.8)"/>
+      <ellipse cx="53.9" cy="87.7" rx="2.3" ry="6.6" transform="rotate(84 53.9 87.7)"/>
+    </g>
+  </symbol>
+  <symbol id="sym-ball-empty" viewBox="0 0 100 100">
+    <circle cx="50" cy="50" r="44" fill="none" stroke="currentColor" stroke-width="6"/>
+  </symbol>
+  <symbol id="sym-paddle" viewBox="0 0 200 420">
+    <use href="#pd-face" fill="#FEDD02"/>
+    <path clip-path="url(#pd-faceClip)" fill="#EA162C" d="M0 64L200 116V174L0 122Z"/>
+    <use href="#pd-face" fill="none" stroke="currentColor" stroke-width="9" stroke-linejoin="round"/>
+    <rect x="69" y="258" width="62" height="18" rx="4" fill="currentColor"/>
+    <rect x="74" y="281" width="52" height="132" rx="12" fill="currentColor"/>
+    <g clip-path="url(#pd-gripClip)" fill="none" stroke="#7A96B6" stroke-width="4.5" stroke-linecap="round">
+      <path d="M70 302Q100 293 130 302"/><path d="M70 322Q100 313 130 322"/><path d="M70 342Q100 333 130 342"/><path d="M70 362Q100 353 130 362"/><path d="M70 382Q100 373 130 382"/>
+    </g>
+  </symbol>
+  <symbol id="i-ball" viewBox="0 0 32 32">
+    <circle cx="16" cy="16" r="13.5" fill="#FEDD02" stroke="currentColor" stroke-width="3"/>
+    <g fill="#052443"><circle cx="16" cy="16" r="2.6"/><circle cx="23.3" cy="18" r="2"/><circle cx="18" cy="23.4" r="2"/><circle cx="10.5" cy="21.4" r="2"/><circle cx="8.6" cy="14" r="2"/><circle cx="14" cy="8.6" r="2"/><circle cx="21.4" cy="10.5" r="2"/></g>
+  </symbol>
+  <symbol id="i-flag" viewBox="0 0 24 24"><path d="M5.5 21.5V3.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><path d="M6 4h12.5l-2.6 4.4 2.6 4.4H6z" fill="currentColor"/></symbol>
+  <symbol id="i-wait" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12M6 21h12"/><path d="M7.5 3.5c0 4.5 9 5.5 9 8.5s-9 4-9 8.5M16.5 3.5c0 4.5-9 5.5-9 8.5s9 4 9 8.5"/></g><path d="M9.5 19.5c.6-1.6 4.4-1.6 5 0z" fill="currentColor"/></symbol>
+  <symbol id="i-camera" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M3.5 8.5h3.6l1.9-2.8h6l1.9 2.8h3.6v10.8h-17z"/><circle cx="12" cy="13.6" r="3.6"/></g></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></symbol>
+  <symbol id="i-minus" viewBox="0 0 24 24"><path d="M6 12h12" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M6 12h12M12 6v12" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></symbol>
+</svg>
+
+<header class="site-head on-dark">
+  <div class="wrap head-row">
+    <a class="brand" href="#top">
+      <img src="../shared/logo-mark-on-dark.png" alt="Pickleball Südbaden e.V." width="53" height="36">
+      <span class="brand-name" aria-hidden="true"><span>Pickleball</span> <span>Südbaden e.V.</span></span>
+    </a>
+    <nav class="main-nav" aria-label="Hauptnavigation">
+      <ul>
+        <li><a href="#sessions">Abfahrten</a></li>
+        <li><a href="#passport">Passport</a></li>
+        <li><a href="#the-game">Das Spiel</a></li>
+        <li><a href="#map">Karte</a></li>
+        <li><a href="#club">Verein</a></li>
+        <li><a href="#fares">Tarife</a></li>
+      </ul>
+    </nav>
+    <div class="head-actions">
+      <div class="lang" role="group" aria-label="Sprache">
+        <a class="lang-btn" href="index.html" lang="de" hreflang="de" aria-current="true">DE<span class="sr-only"> Deutsch</span></a><span class="lang-dot" aria-hidden="true">·</span><button type="button" class="lang-btn" lang="fr" data-lang-stub="fr">FR<span class="sr-only"> Français</span></button><span class="lang-dot" aria-hidden="true">·</span><a class="lang-btn" href="index.en.html" lang="en" hreflang="en">EN<span class="sr-only"> English</span></a>
+      </div>
+      <button type="button" class="head-login" data-open="login">Login</button>
+      <button type="button" class="btn btn-red head-try" data-open="trial">Gratis testen</button>
+      <button type="button" class="menu-btn" data-open="menu" aria-haspopup="dialog" aria-expanded="false" aria-controls="dlg-menu"><svg aria-hidden="true"><use href="#i-menu"/></svg><span class="sr-only">Menü</span></button>
+    </div>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+
+<!-- 1. HERO POSTER -->
+<section class="hero" id="top" aria-labelledby="hero-title">
+  <div class="wrap hero-grid">
+    <div class="poster">
+      <div class="poster-art">
+        <svg class="poster-svg" viewBox="0 0 400 500" role="img" aria-label="Reiseplakat: Ein gelber Ball geht wie die Sonne über Schwarzwald und Rhein auf, davor ein Doppel auf dem Feld" focusable="false"><defs><clipPath id="pp-hill"><path d="M-4 420L-2.8 418.5L-1.4 416.4L0.4 413.9L2.3 411.2L4.5 408.3L6.7 405.4L9.1 402.6L11.6 400.1L14 398L15.7 396.7L17.6 395.5L19.5 394.3L21.4 393.2L23.4 392.2L25.5 391.2L27.5 390.3L29.6 389.4L31.7 388.6L33.8 387.9L35.9 387.2L38 386.6L40 386L42 385.5L44 385.1L46 384.7L48 384.4L50 384.1L52 383.9L54 383.7L56 383.7L58 383.6L60 383.6L62 383.7L64 383.8L66 384L68 384.2L70 384.5L72 384.9L74 385.3L76 385.8L78 386.3L80 386.9L82 387.5L84 388.1L86 388.8L88 389.5L90 390.2L92 391L94 391.8L96 392.7L98 393.6L100.1 394.5L102.1 395.5L104.1 396.5L106.1 397.6L108.1 398.7L110.1 399.7L112.1 400.8L114.1 401.9L116.1 403L118 404L120.1 405.2L122.4 406.4L124.7 407.8L127 409.1L129.4 410.5L131.6 411.8L133.8 413.1L135.9 414.3L137.7 415.5L139.4 416.5L140.8 417.3L142 418Z"/></clipPath></defs><rect width="400" height="500" fill="#021427"/><rect y="244" width="400" height="56" fill="#0C3561"/><rect y="300" width="400" height="110" fill="#174A80"/><g class="pp-sun"><path d="M96 290Q135.1 273.4 177.1 265.1A3.3 3.3 0 0 0 174.9 258.9Q134 270.4 96 290ZM112 302Q145.9 288.7 181.9 281.8A3 3 0 0 0 180.1 276.2Q145 285.9 112 302ZM130 311Q156.7 302.5 184.7 298.6A2.8 2.8 0 0 0 183.3 293.4Q156 299.8 130 311Z" fill="#FFE95C"/><use href="#sym-ball" x="184.2" y="258.4" width="155.6" height="155.6" color="#021427"/></g><path d="M-2 331L-0.9 330.8L0.4 330.5L1.8 330.2L3.4 329.9L5.1 329.5L7 329.1L9 328.7L11 328.3L13.2 327.8L15.4 327.4L17.6 326.9L19.9 326.4L22.3 325.9L24.6 325.4L26.9 324.9L29.2 324.4L31.5 323.9L33.7 323.4L35.9 322.9L38 322.5L40 322L42 321.5L44.1 321L46.1 320.5L48.2 320L50.2 319.4L52.2 318.9L54.2 318.3L56.2 317.7L58.2 317.2L60.3 316.6L62.2 316.1L64.2 315.5L66.2 315L68.2 314.5L70.2 314L72.2 313.6L74.1 313.1L76.1 312.7L78 312.3L80 312L82.1 311.7L84.1 311.3L86.2 311L88.2 310.7L90.3 310.5L92.4 310.2L94.4 310L96.4 309.7L98.5 309.5L100.5 309.4L102.5 309.2L104.5 309.1L106.5 309L108.5 308.9L110.4 308.9L112.4 308.8L114.3 308.9L116.1 308.9L118 309L120.2 309.2L122.3 309.4L124.3 309.7L126.4 310L128.3 310.3L130.3 310.8L132.3 311.2L134.2 311.7L136.1 312.2L138 312.7L140 313.3L141.9 313.8L143.9 314.4L145.9 314.9L147.9 315.5L150 316L151.9 316.5L153.8 317L155.7 317.5L157.6 318.1L159.5 318.7L161.4 319.3L163.4 319.9L165.3 320.5L167.3 321.1L169.3 321.7L171.3 322.3L173.2 322.9L175.2 323.4L177.2 324L179.1 324.5L181.1 325L183.1 325.5L185 326L186.9 326.4L188.9 326.9L190.8 327.3L192.8 327.7L194.7 328.1L196.7 328.4L198.6 328.8L200.6 329.2L202.5 329.5L204.4 329.8L206.4 330.1L208.3 330.4L210.3 330.7L212.2 331L214.2 331.3L216.1 331.5L218.1 331.8L220 332L221.9 332.2L223.9 332.5L225.8 332.7L227.8 332.9L229.7 333.1L231.7 333.3L233.6 333.5L235.6 333.7L237.5 333.9L239.4 334L241.4 334.1L243.3 334.2L245.3 334.3L247.2 334.3L249.2 334.3L251.1 334.2L253.1 334.1L255 334L257 333.8L258.9 333.6L260.9 333.4L262.9 333.1L264.9 332.8L266.9 332.5L268.9 332.2L270.9 331.8L272.9 331.4L274.9 330.9L276.9 330.4L278.9 329.9L280.8 329.4L282.7 328.8L284.6 328.1L286.4 327.5L288.2 326.8L290 326L292.2 324.9L294.4 323.7L296.5 322.4L298.5 321L300.6 319.5L302.5 317.9L304.5 316.3L306.4 314.7L308.4 313.1L310.3 311.6L312.2 310L314.1 308.6L316 307.2L318 306L320 304.8L321.9 303.7L323.9 302.6L325.8 301.5L327.8 300.4L329.7 299.4L331.7 298.4L333.6 297.4L335.5 296.5L337.5 295.7L339.4 294.9L341.3 294.2L343.1 293.6L345 293L347 292.5L348.9 292L350.8 291.6L352.6 291.2L354.4 291L356.3 290.8L358.1 290.6L360 290.5L361.9 290.5L363.8 290.6L365.8 290.6L367.9 290.8L370 291L371.9 291.2L373.9 291.6L376 292L378.3 292.5L380.6 293L382.9 293.6L385.2 294.2L387.6 294.9L389.8 295.5L392 296.1L394.1 296.8L396.1 297.3L397.9 297.9L399.5 298.3L400.9 298.7L402 299V500H-2Z" fill="#7A96B6"/><path d="M-2 368L-0.9 367.7L0.4 367.4L1.8 367.1L3.4 366.7L5.1 366.2L7 365.8L9 365.3L11 364.8L13.2 364.3L15.4 363.7L17.6 363.2L19.9 362.6L22.3 362L24.6 361.5L26.9 360.9L29.2 360.4L31.5 359.9L33.7 359.4L35.9 358.9L38 358.4L40 358L42 357.6L44.1 357.1L46.1 356.7L48.1 356.2L50.1 355.8L52.1 355.4L54.1 354.9L56.1 354.5L58.1 354.1L60.1 353.7L62.1 353.3L64.1 352.9L66.1 352.6L68.1 352.3L70 352L72 351.7L74 351.5L76 351.3L78 351.1L80 351L82 350.9L84 350.9L86 350.9L88 350.9L90 350.9L92 351L94 351.1L96 351.2L98 351.3L100 351.5L102 351.7L104 351.9L106 352.1L108 352.3L110 352.6L112 352.9L114 353.1L116 353.4L118 353.7L120 354L122 354.3L124 354.7L126 355L128 355.4L130 355.9L132 356.3L134 356.7L136 357.2L138 357.7L140 358.2L142 358.7L144 359.2L146 359.7L148 360.2L150 360.7L152 361.2L154 361.6L156 362.1L158 362.6L160 363L162 363.4L164 363.9L166 364.3L168 364.8L170 365.2L172 365.7L174 366.1L176 366.6L178 367L180 367.4L182 367.9L184 368.3L186 368.7L188 369.1L190 369.4L192 369.8L194 370.1L196 370.4L198 370.7L200 371L202 371.2L204 371.5L206 371.7L208 371.9L210 372.1L212 372.3L214 372.5L216 372.6L218 372.8L220 372.9L222 373L224 373.1L226 373.1L228 373.2L230 373.2L232 373.2L234 373.2L236 373.2L238 373.1L240 373L242 372.9L244 372.7L246 372.6L248 372.4L250 372.2L252 371.9L254 371.7L256 371.4L258 371.1L260 370.8L262 370.4L264 370.1L266 369.7L268 369.3L270 369L272 368.6L274 368.2L276 367.8L278 367.4L280 367L282 366.6L284 366.1L286 365.7L288 365.2L290 364.6L292 364.1L294 363.6L296 363L298 362.4L300 361.9L302 361.3L304 360.8L306 360.2L308 359.7L310 359.2L312 358.7L314 358.2L316 357.8L318 357.4L320 357L322 356.7L324 356.3L326 356L328 355.7L330 355.4L331.9 355.1L333.9 354.8L335.9 354.6L337.9 354.3L339.9 354.1L341.9 353.9L343.9 353.7L345.9 353.6L347.9 353.4L349.9 353.3L351.9 353.2L353.9 353.1L355.9 353L358 353L360 353L362 353L364.1 353.1L366.3 353.2L368.5 353.3L370.8 353.5L373.1 353.7L375.4 353.9L377.7 354.1L380.1 354.4L382.4 354.6L384.6 354.9L386.8 355.1L389 355.4L391 355.7L393 355.9L394.9 356.2L396.6 356.4L398.2 356.6L399.6 356.7L400.9 356.9L402 357V500H-2Z" fill="#0C3561"/><path d="M-1.7 369L2 356.1L5.7 369ZM4.1 367.7L7.5 355.6L10.8 367.7ZM11.4 365.9L14.5 350.8L17.6 365.9ZM18.2 364.1L21.8 353.1L25.5 364.1ZM26 362.2L30 352.7L34 362.2ZM33.6 360.6L37 346.9L40.3 360.6ZM38.8 359.5L42.6 347L46.4 359.5ZM49.9 357.2L53 341.6L56.1 357.2ZM66.6 354L69.8 341.9L72.9 354ZM83.1 352.9L86.4 340.9L89.7 352.9ZM95.8 353.5L99.8 342.5L103.8 353.5ZM105.7 354.6L110.2 342.5L114.7 354.6ZM117.2 356.2L121 344.9L124.9 356.2ZM127.1 358.1L131.3 346.7L135.4 358.1ZM139.9 361L143.1 345.5L146.2 361ZM149.6 363.6L154 351.3L158.3 363.6ZM156 365L159.9 353.2L163.8 365ZM164 366.7L168 356.8L171.9 366.7ZM170.2 368.1L173.9 358.4L177.5 368.1ZM175.4 369.2L179 355.5L182.7 369.2ZM182.2 370.8L186.6 359.5L191.1 370.8ZM189.6 372L193.4 360L197.1 372ZM198.1 373.2L201.7 361.1L205.4 373.2ZM204.4 373.9L207.8 359.7L211.1 373.9ZM209.9 374.4L213.3 360L216.7 374.4ZM217.3 375L221.8 359.5L226.2 375ZM226.1 375.2L230.2 361.7L234.3 375.2ZM234.4 375.1L237.4 363.8L240.4 375.1ZM240.5 374.8L243.8 363L247.2 374.8ZM247.5 374L251.6 363.1L255.7 374ZM257.4 372.7L260.4 361.2L263.4 372.7ZM264.1 371.4L267.8 361.8L271.4 371.4ZM273 369.7L276.7 354.5L280.4 369.7ZM280.4 368.1L284.1 358.2L287.8 368.1ZM287.9 366L292.2 355.2L296.6 366ZM294.1 364.6L297.3 350.7L300.6 364.6ZM301.1 362.5L305.1 347.4L309.1 362.5ZM306.8 360.9L311 350.7L315.3 360.9ZM313.1 359.7L316.2 350.6L319.3 359.7ZM319.1 358.4L323.3 343.5L327.6 358.4ZM325.2 357.5L328.9 348.2L332.7 357.5ZM331.3 356.7L335 347.2L338.8 356.7ZM338.1 356L341.5 344.9L344.8 356ZM346.4 355.3L349.6 345.2L352.8 355.3ZM350.7 355.1L354.6 345.5L358.6 355.1ZM358.1 355L361.2 342.7L364.4 355ZM364.9 355.3L367.9 341L370.9 355.3ZM370.6 355.8L374.7 344.5L378.8 355.8ZM379.4 356.7L383.4 343.3L387.5 356.7ZM386 357.5L389.5 347.9L393 357.5ZM394.9 358.5L398 349.1L401.2 358.5Z" fill="#0C3561"/><path d="M7.5 376L10 369L12.5 376ZM19.4 373.1L21.9 366.1L24.4 373.1ZM30.5 370.5L33 363.5L35.5 370.5ZM43.3 367.8L45.8 360.8L48.3 367.8ZM55.6 365.1L58.1 358.1L60.6 365.1ZM67.8 362.9L70.3 355.9L72.8 362.9ZM80.4 361.9L82.9 354.9L85.4 361.9ZM94.1 362.2L96.6 355.2L99.1 362.2ZM106.7 363.5L109.2 356.5L111.7 363.5ZM118.9 365.2L121.4 358.2L123.9 365.2ZM130.3 367.5L132.8 360.5L135.3 367.5ZM144 370.8L146.5 363.8L149 370.8ZM157 373.9L159.5 366.9L162 373.9ZM169.5 376.7L172 369.7L174.5 376.7ZM183.2 379.6L185.7 372.6L188.2 379.6ZM196.2 381.8L198.7 374.8L201.2 381.8ZM208.6 383.2L211.1 376.2L213.6 383.2ZM222.5 384.1L225 377.1L227.5 384.1ZM236.2 384.1L238.7 377.1L241.2 384.1ZM248.4 383L250.9 376L253.4 383ZM260.9 381.2L263.4 374.2L265.9 381.2ZM274 378.7L276.5 371.7L279 378.7ZM287.4 375.7L289.9 368.7L292.4 375.7ZM301.1 371.9L303.6 364.9L306.1 371.9ZM313.8 368.7L316.3 361.7L318.8 368.7ZM327.7 366.4L330.2 359.4L332.7 366.4ZM340.6 364.8L343.1 357.8L345.6 364.8ZM354.1 364L356.6 357L359.1 364ZM366.4 364.4L368.9 357.4L371.4 364.4ZM377.7 365.4L380.2 358.4L382.7 365.4ZM391.6 367.1L394.1 360.1L396.6 367.1ZM3.5 387L6 380L8.5 387ZM18.5 383.4L21 376.4L23.5 383.4ZM32.6 380L35.1 373L37.6 380ZM47.9 376.8L50.4 369.8L52.9 376.8ZM63.2 373.7L65.7 366.7L68.2 373.7ZM77.7 372L80.2 365L82.7 372ZM92.1 372.1L94.6 365.1L97.1 372.1ZM107.7 373.6L110.2 366.6L112.7 373.6ZM122.9 375.9L125.4 368.9L127.9 375.9ZM136 378.8L138.5 371.8L141 378.8ZM150.1 382.3L152.6 375.3L155.1 382.3ZM164.5 385.5L167 378.5L169.5 385.5ZM180.5 389.1L183 382.1L185.5 389.1ZM195.5 391.7L198 384.7L200.5 391.7ZM209 393.2L211.5 386.2L214 393.2ZM224 394.1L226.5 387.1L229 394.1ZM237.5 394L240 387L242.5 394ZM251.1 392.7L253.6 385.7L256.1 392.7ZM265.7 390.3L268.2 383.3L270.7 390.3ZM279.6 387.6L282.1 380.6L284.6 387.6ZM292.7 384.2L295.2 377.2L297.7 384.2ZM308.6 379.9L311.1 372.9L313.6 379.9ZM323.1 377.1L325.6 370.1L328.1 377.1ZM336.2 375.3L338.7 368.3L341.2 375.3ZM350.4 374.2L352.9 367.2L355.4 374.2ZM363.9 374.2L366.4 367.2L368.9 374.2ZM378.9 375.5L381.4 368.5L383.9 375.5ZM392.6 377.2L395.1 370.2L397.6 377.2Z" fill="#174A80"/><path d="M-2 404L-0.9 403.8L0.3 403.6L1.7 403.4L3.2 403.2L4.8 402.9L6.5 402.6L8.3 402.3L10.2 402L12.2 401.7L14.3 401.3L16.4 401L18.6 400.6L20.9 400.3L23.2 399.9L25.5 399.5L27.8 399.1L30.1 398.8L32.4 398.4L34.8 398.1L37.1 397.7L39.3 397.4L41.6 397.1L43.8 396.8L45.9 396.5L48 396.2L50 396L52 395.8L54.1 395.5L56.1 395.3L58.1 395.1L60.1 394.8L62.1 394.6L64.1 394.4L66.1 394.2L68.1 394L70.1 393.8L72.1 393.6L74.1 393.4L76.1 393.2L78.1 393.1L80.1 392.9L82.1 392.8L84.1 392.6L86.1 392.5L88 392.4L90 392.3L92 392.2L94 392.1L96 392.1L98 392L100 392L102 392L104 392L106 392L108 392L110 392.1L112 392.1L114 392.2L116 392.3L118 392.4L120 392.5L122 392.6L124 392.7L126 392.8L128 393L130 393.1L132 393.3L134 393.4L136 393.6L138 393.8L140 394L142 394.2L144 394.4L146 394.6L148 394.8L150 395L152 395.2L154 395.5L156 395.8L158 396L160 396.3L162 396.7L164 397L166 397.3L168 397.7L170 398L172 398.4L174 398.8L176 399.1L178 399.5L180 399.8L182 400.2L184 400.6L186 400.9L188 401.2L190 401.6L192 401.9L194 402.2L196 402.5L198 402.7L200 403L202 403.2L204 403.5L206 403.7L208 403.9L210 404.2L212 404.4L214 404.6L216 404.8L218 405L220 405.2L222 405.4L224 405.6L226 405.8L228 405.9L230 406.1L232 406.2L234 406.4L236 406.5L238 406.6L240 406.7L242 406.8L244 406.9L246 406.9L248 407L250 407L252 407L254 407L256 407L258 406.9L260 406.9L262 406.8L264 406.8L266 406.7L268 406.6L270 406.4L272 406.3L274 406.2L276 406.1L278 405.9L280 405.8L282 405.6L284 405.4L286 405.3L288 405.1L290 404.9L292 404.7L294 404.5L296 404.4L298 404.2L300 404L302 403.8L304 403.6L306 403.4L308 403.1L310 402.9L312 402.6L313.9 402.3L315.9 402L317.9 401.7L319.9 401.4L321.9 401.1L323.9 400.8L325.9 400.5L327.9 400.3L329.9 400L331.9 399.7L333.9 399.4L335.9 399.2L337.9 399L339.9 398.7L341.9 398.5L343.9 398.4L345.9 398.2L348 398.1L350 398L352 397.9L354.1 397.9L356.2 397.9L358.4 397.9L360.7 397.9L362.9 398L365.2 398L367.6 398.1L369.9 398.2L372.2 398.3L374.5 398.4L376.8 398.5L379.1 398.6L381.4 398.8L383.6 398.9L385.7 399L387.8 399.1L389.8 399.3L391.7 399.4L393.5 399.5L395.2 399.6L396.8 399.7L398.3 399.8L399.7 399.9L400.9 400L402 400V500H-2Z" fill="#021427"/><path d="M135 395V380H136.6V376L140 351L143.4 376V380H145V395ZM132 395V386L133.5 382L135 386V395ZM145 395V386L146.5 382L148 386V395ZM139.5 351V347H140.5V351Z" fill="#021427"/><path d="M-2 414L-1 414L0.2 413.9L1.3 413.9L2.6 413.9L3.9 413.8L5.3 413.8L6.8 413.7L8.3 413.6L9.9 413.6L11.6 413.5L13.3 413.5L15 413.4L16.8 413.3L18.7 413.3L20.6 413.2L22.5 413.1L24.5 413L26.5 413L28.6 412.9L30.7 412.8L32.8 412.7L35 412.7L37.2 412.6L39.4 412.5L41.6 412.4L43.9 412.3L46.2 412.3L48.4 412.2L50.7 412.1L53.1 412L55.4 412L57.7 411.9L60 411.8L62.4 411.7L64.7 411.7L67 411.6L69.4 411.5L71.7 411.5L74 411.4L76.3 411.4L78.6 411.3L80.8 411.3L83.1 411.2L85.3 411.2L87.5 411.1L89.6 411.1L91.8 411.1L93.9 411.1L96 411L98 411L100 411L102 411L104 411L106.1 411L108.1 411L110.1 411L112.1 411L114.1 411L116.1 411L118.1 411.1L120.1 411.1L122.1 411.1L124.1 411.2L126.1 411.2L128.1 411.2L130.1 411.3L132.1 411.3L134.1 411.3L136.1 411.4L138.1 411.4L140.1 411.5L142.1 411.5L144.1 411.6L146.1 411.6L148.1 411.7L150.1 411.8L152.1 411.8L154.1 411.9L156.1 411.9L158.1 412L160.1 412L162.1 412.1L164.1 412.1L166.1 412.2L168.1 412.3L170.1 412.3L172.1 412.4L174.1 412.4L176 412.5L178 412.5L180 412.6L182 412.6L184 412.7L186 412.7L188 412.8L190 412.8L192 412.9L194 412.9L196 412.9L198 413L200 413L202 413L204 413.1L206 413.1L208 413.1L210 413.1L212 413.2L214 413.2L216 413.2L218 413.3L220 413.3L222 413.3L224 413.4L225.9 413.4L227.9 413.4L229.9 413.4L231.9 413.5L233.9 413.5L235.9 413.5L237.9 413.5L239.9 413.6L241.9 413.6L243.9 413.6L245.9 413.6L247.9 413.7L249.9 413.7L251.9 413.7L253.9 413.7L255.9 413.8L257.9 413.8L259.9 413.8L261.9 413.8L263.9 413.8L265.9 413.8L267.9 413.9L269.9 413.9L271.9 413.9L273.9 413.9L275.9 413.9L277.9 413.9L279.9 413.9L281.9 414L283.9 414L285.9 414L287.9 414L289.9 414L291.9 414L293.9 414L296 414L298 414L300 414L302 414L304 414L306.1 414L308.2 414L310.4 414L312.5 414L314.7 414L316.9 413.9L319.2 413.9L321.4 413.9L323.7 413.9L326 413.9L328.3 413.9L330.6 413.8L333 413.8L335.3 413.8L337.6 413.8L340 413.8L342.3 413.7L344.6 413.7L346.9 413.7L349.3 413.7L351.6 413.6L353.8 413.6L356.1 413.6L358.4 413.5L360.6 413.5L362.8 413.5L365 413.5L367.2 413.4L369.3 413.4L371.4 413.4L373.5 413.4L375.5 413.3L377.5 413.3L379.4 413.3L381.3 413.3L383.2 413.2L385 413.2L386.7 413.2L388.4 413.2L390.1 413.1L391.7 413.1L393.2 413.1L394.7 413.1L396.1 413.1L397.4 413.1L398.7 413L399.8 413L401 413L402 413V500H-2Z" fill="#052443"/><path d="M-4 420L-2.8 418.5L-1.4 416.4L0.4 413.9L2.3 411.2L4.5 408.3L6.7 405.4L9.1 402.6L11.6 400.1L14 398L15.7 396.7L17.6 395.5L19.5 394.3L21.4 393.2L23.4 392.2L25.5 391.2L27.5 390.3L29.6 389.4L31.7 388.6L33.8 387.9L35.9 387.2L38 386.6L40 386L42 385.5L44 385.1L46 384.7L48 384.4L50 384.1L52 383.9L54 383.7L56 383.7L58 383.6L60 383.6L62 383.7L64 383.8L66 384L68 384.2L70 384.5L72 384.9L74 385.3L76 385.8L78 386.3L80 386.9L82 387.5L84 388.1L86 388.8L88 389.5L90 390.2L92 391L94 391.8L96 392.7L98 393.6L100.1 394.5L102.1 395.5L104.1 396.5L106.1 397.6L108.1 398.7L110.1 399.7L112.1 400.8L114.1 401.9L116.1 403L118 404L120.1 405.2L122.4 406.4L124.7 407.8L127 409.1L129.4 410.5L131.6 411.8L133.8 413.1L135.9 414.3L137.7 415.5L139.4 416.5L140.8 417.3L142 418Z" fill="#0C3561"/><path d="M-6 312L150 353.8M-6 317.2L150 359M-6 322.4L150 364.2M-6 327.6L150 369.4M-6 332.8L150 374.6M-6 338L150 379.8M-6 343.2L150 385M-6 348.4L150 390.2M-6 353.6L150 395.4M-6 358.8L150 400.6M-6 364L150 405.8M-6 369.2L150 411M-6 374.4L150 416.2M-6 379.6L150 421.4M-6 384.8L150 426.6M-6 390L150 431.8M-6 395.2L150 437M-6 400.4L150 442.2M-6 405.6L150 447.4M-6 410.8L150 452.6M-6 416L150 457.8M-6 421.2L150 463M-6 426.4L150 468.2M-6 431.6L150 473.4" clip-path="url(#pp-hill)" stroke="#174A80" stroke-width="1.7" fill="none"/><path d="M-2 421C120 415 240 428 402 431V440C240 437 120 425 -2 430Z" fill="#B5C5D8"/><path d="M314 435.6L378 437.2" stroke="#fff" stroke-width="1.4"/><path d="M320 435.4Q346 411 372 436.6" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"/><path d="M330 428.9V435.9" stroke="#fff" stroke-width=".8"/><path d="M338 425.5V436.2" stroke="#fff" stroke-width=".8"/><path d="M346 424.5V436.4" stroke="#fff" stroke-width=".8"/><path d="M354 425.9V436.6" stroke="#fff" stroke-width=".8"/><path d="M362 429.6V436.9" stroke="#fff" stroke-width=".8"/><g class="pp-court"><path d="M69.4 546.1L402.6 546.1L288.6 448.9L183.4 448.9Z" fill="#0C3561" opacity=".55"/><path d="M86 532L386 532L290.5 450.5L181.5 450.5Z" fill="#1F5EA8"/><path d="M142 484.2L330 484.2L305.7 463.4L166.3 463.4Z" fill="#0C3561"/><path d="M86 532L386 532M142 484.2L330 484.2M166.3 463.4L305.7 463.4M181.5 450.5L290.5 450.5M86 532L181.5 450.5M386 532L290.5 450.5M236 532V484.2M236 463.4V450.5" fill="none" stroke="#fff" stroke-width="1.3" stroke-linecap="square"/><g class="pp-players-far"><circle cx="212" cy="446.1" r="1.8" fill="#7A96B6"/><path d="M209.8 448.5Q212 447.6 214.2 448.5L213.8 453H210.2Z" fill="#7A96B6"/><path d="M210.9 453L209.4 459M213.1 453L214.6 459M210.2 448.9L206.9 451.5M213.8 448.9L215.6 452.1" fill="none" stroke="#7A96B6" stroke-width="1.3" stroke-linecap="round"/><path d="M206.9 451.5L205.4 449.1" stroke="#7A96B6" stroke-width="0.9" stroke-linecap="round"/><ellipse cx="205.4" cy="449.1" rx="1.1" ry="1.5" transform="rotate(-28 205.4 449.1)" fill="#FEDD02"/><circle cx="262" cy="446.1" r="1.8" fill="#7A96B6"/><path d="M259.8 448.5Q262 447.6 264.2 448.5L263.8 453H260.2Z" fill="#7A96B6"/><path d="M260.9 453L259.4 459M263.1 453L264.6 459M263.8 448.9L267.1 451.5M260.2 448.9L258.4 452.1" fill="none" stroke="#7A96B6" stroke-width="1.3" stroke-linecap="round"/><path d="M267.1 451.5L268.6 449.1" stroke="#7A96B6" stroke-width="0.9" stroke-linecap="round"/><ellipse cx="268.6" cy="449.1" rx="1.1" ry="1.5" transform="rotate(28 268.6 449.1)" fill="#FEDD02"/></g><path d="M150 472.3L322 472.3L322 463.3L150 463.3Z" fill="#021427" opacity=".5"/><path d="M150 463.3L322 463.3" stroke="#fff" stroke-width="1.4"/><path d="M150 472.8V462.3M322 472.8V462.3" stroke="#fff" stroke-width="1.8"/></g><g class="pp-players-near" transform="translate(0 -2)"><circle cx="190" cy="484.5" r="2.2" fill="#021427"/><path d="M187.3 487.4Q190 486.3 192.7 487.4L192.2 492.8H187.8Z" fill="#021427"/><path d="M188.7 492.8L186.9 500M191.3 492.8L193.1 500M192.2 487.9L196.1 491M187.8 487.9L185.7 491.7" fill="none" stroke="#021427" stroke-width="1.5" stroke-linecap="round"/><path d="M196.1 491L197.9 488.1" stroke="#021427" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="197.9" cy="488.1" rx="1.3" ry="1.8" transform="rotate(28 197.9 488.1)" fill="#FEDD02"/><circle cx="286" cy="484.5" r="2.2" fill="#021427"/><path d="M283.3 487.4Q286 486.3 288.7 487.4L288.2 492.8H283.8Z" fill="#021427"/><path d="M284.7 492.8L282.9 500M287.3 492.8L289.1 500M283.8 487.9L279.9 491M288.2 487.9L290.3 491.7" fill="none" stroke="#021427" stroke-width="1.5" stroke-linecap="round"/><path d="M279.9 491L278.1 488.1" stroke="#021427" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="278.1" cy="488.1" rx="1.3" ry="1.8" transform="rotate(-28 278.1 488.1)" fill="#FEDD02"/></g></svg>
+        <div class="poster-copy">
+          <p class="eyebrow">PICKLEBALL IN SÜDBADEN</p>
+          <h1 id="hero-title"><span>DREI</span> <span>LÄNDER.</span> <span>EIN NETZ.</span></h1>
+        </div>
+        <span class="poster-no" aria-hidden="true">Nr.&nbsp;001</span>
+      </div>
+      <p class="poster-credit"><span>PICKLEBALL SÜDBADEN e.V.</span><span class="sep" aria-hidden="true"> · </span><span>FREIBURG IM BREISGAU <span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[vorläufig]</span></span></p>
+    </div>
+
+    <div class="hero-side">
+      <p class="hero-lead">Pickleball ist im sonnigen Südwesten gelandet. Kein Rückschlagsport ist leichter zu lernen, kaum einer ist so gesellig, und dein erster Termin ist kostenlos.</p>
+      <p class="ribbon"><span><span class="nw">Leih-Paddles vor Ort ·</span> <span class="nw">Nur Hallenschuhe ·</span> <span class="nw">Jedes Level willkommen</span></span></p>
+      <div class="hero-ctas">
+        <span class="cta-paddles">
+          <svg class="cta-paddle cta-paddle-l" viewBox="0 0 200 420" aria-hidden="true" focusable="false"><use href="#sym-paddle"/></svg>
+          <button type="button" class="btn btn-red btn-lg" data-open="trial">Kostenlos ausprobieren</button>
+          <svg class="cta-paddle cta-paddle-r" viewBox="0 0 200 420" aria-hidden="true" focusable="false"><use href="#sym-paddle"/></svg>
+        </span>
+        <a class="btn btn-outline" href="#sessions">Alle Termine ansehen</a>
+      </div>
+      <button type="button" class="next-chip" data-open="trial" data-session="S2">
+        <svg class="ico" aria-hidden="true"><use href="#i-ball"/></svg>
+        <span class="chip-text"><strong>Nächstes First Serve:</strong> <span class="nw">Do., 15. Okt. ·</span> <span class="nw">18:30 ·</span> <span class="nw"><span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[Ort folgt]</span>, Freiburg ·</span> <span class="nw">noch 6 Plätze frei</span></span>
+        <span class="sample">Beispiel</span>
+      </button>
+
+      <div class="mini-board on-dark" aria-labelledby="mini-title">
+        <div class="mini-top">
+          <p class="eyebrow" id="mini-title">NÄCHSTE ABFAHRTEN</p>
+          <span class="sample">Beispiel</span>
+        </div>
+        <table class="mini-table">
+          <caption class="sr-only">Nächste Abfahrten: drei Beispieltermine</caption>
+          <thead><tr><th scope="col">Abfahrt</th><th scope="col">Angebot</th><th scope="col">Status</th></tr></thead>
+          <tbody>
+            <tr>
+              <th scope="row"><span class="dep-day" aria-hidden="true">DI 13.10.</span><span class="flap" aria-hidden="true"><i>1</i><i>9</i><b>:</b><i>0</i><i>0</i></span><span class="sr-only">Di., 13. Okt., 19:00&nbsp;Uhr</span></th>
+              <td><span class="svc">Open Play</span><span class="svc-sub">Level 1–2</span></td>
+              <td><span class="status"><svg class="ico" aria-hidden="true"><use href="#i-ball"/></svg>8 Plätze frei</span></td>
+            </tr>
+            <tr>
+              <th scope="row"><span class="dep-day" aria-hidden="true">DO 15.10.</span><span class="flap" aria-hidden="true"><i>1</i><i>8</i><b>:</b><i>3</i><i>0</i></span><span class="sr-only">Do., 15. Okt., 18:30&nbsp;Uhr</span></th>
+              <td><span class="svc">First Serve</span><span class="svc-sub">Schnuppertraining · Level 0</span></td>
+              <td><span class="status"><svg class="ico" aria-hidden="true"><use href="#i-ball"/></svg>6 Plätze frei</span></td>
+            </tr>
+            <tr>
+              <th scope="row"><span class="dep-day" aria-hidden="true">SA 17.10.</span><span class="flap" aria-hidden="true"><i>1</i><i>0</i><b>:</b><i>0</i><i>0</i></span><span class="sr-only">Sa., 17. Okt., 10:00&nbsp;Uhr</span></th>
+              <td><span class="svc">First Serve</span><span class="svc-sub">Familienfreundlich · Level 0</span></td>
+              <td><span class="status status-full"><svg class="ico" aria-hidden="true"><use href="#i-wait"/></svg>Ausgebucht · Warteliste</span></td>
+            </tr>
+          </tbody>
+        </table>
+        <a class="mini-link" href="#sessions">Alle Abfahrten ↓</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 2. NEXT DEPARTURES -->
+<section class="sec sec-board on-dark cut" id="sessions" aria-labelledby="sessions-title">
+  <div class="wrap">
+    <div class="sec-head sec-head-split">
+      <div>
+        <h2 class="title" id="sessions-title">NÄCHSTE ABFAHRTEN</h2>
+        <p class="sub">Termin wählen, hingehen, spielen.</p>
+      </div>
+    </div>
+
+    <div class="board" data-board>
+      <div class="board-top">
+        <div class="tonight-wrap">
+          <p class="tonight" data-tonight data-state="on" aria-live="polite"><span class="lamp" aria-hidden="true"></span><span class="tonight-on"><span class="nw"><strong>HEUTE ABEND: AN</strong> ·</span> <span class="tonight-detail"><span class="nw">First Serve ·</span> <span class="nw">18:30 ·</span> <span class="nw">Netze stehen ab 18:15</span></span></span><span class="tonight-off"><span class="nw"><strong>HEUTE ABEND: AUS</strong> ·</span> <span class="tonight-detail"><span class="nw">nächster Termin Di., 20. Okt.</span></span></span> <span class="sample">Beispiel</span></p>
+          <button type="button" class="link-btn tonight-toggle" data-tonight-toggle>AUS-Zustand zeigen (Demo)</button>
+        </div>
+        <div class="filters" role="group" aria-label="Abfahrten filtern">
+          <button type="button" class="chip" data-filter="all" aria-pressed="true">Alle</button>
+          <button type="button" class="chip" data-filter="beginner" aria-pressed="false">Für Neulinge</button>
+          <button type="button" class="chip" data-filter="fr" aria-pressed="false">Spielleitung auf Französisch</button>
+          <button type="button" class="chip" data-filter="weekend" aria-pressed="false">Wochenende</button>
+          <button type="button" class="chip" data-filter="spots" aria-pressed="false">Nur freie Plätze</button>
+        </div>
+      </div>
+
+      <table class="board-table">
+        <caption class="sr-only">Nächste Abfahrten: fünf Beispieltermine im Oktober 2026</caption>
+        <thead>
+          <tr><th scope="col">Abfahrt</th><th scope="col">Ziel</th><th scope="col">Angebot</th><th scope="col">Level</th><th scope="col">Leitung</th><th scope="col">Status</th><th scope="col"><span class="sr-only">Buchen</span></th></tr>
+        </thead>
+        <tbody>
+          <tr data-session="S1" data-beginner="0" data-fr="0" data-weekend="0" data-spots="1">
+            <th scope="row" class="c-dep"><span class="dep-day" aria-hidden="true">DI 13.10.</span><span class="dep-time" aria-hidden="true"><span class="flap"><i>1</i><i>9</i><b>:</b><i>0</i><i>0</i></span><span class="dep-end">–20:30</span></span><span class="sr-only">Di., 13. Okt., 19:00 bis 20:30&nbsp;Uhr</span></th>
+            <td><span class="dest"><span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[Ort folgt]</span>, Freiburg</span> <abbr class="cc" title="Deutschland">DE</abbr></td>
+            <td><span class="svc">Open Play</span><span class="svc-sub">Mitglieder 0&nbsp;€ · <span class="nw">Gäste <span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[__]&nbsp;€</span></span></span></td>
+            <td><span class="svc">Level 1–2</span><span class="svc-sub">ab „Ich halte den Ball im Spiel“</span></td>
+            <td><span class="host"><span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[Name]</span></span><span class="langs"><abbr title="Deutsch">DE</abbr><abbr title="Englisch">EN</abbr></span></td>
+            <td><span class="status"><svg class="ico" aria-hidden="true"><use href="#i-ball"/></svg>noch 8 frei</span><span class="svc-sub">von 16 Plätzen</span></td>
+            <td class="c-book"><button type="button" class="btn btn-red btn-sm" data-open="trial" data-session="S1">Buchen<span class="sr-only"> Open Play, Di., 13. Okt.</span></button></td>
+          </tr>
+          <tr data-session="S2" data-beginner="1" data-fr="0" data-weekend="0" data-spots="1">
+            <th scope="row" class="c-dep"><span class="dep-day" aria-hidden="true">DO 15.10.</span><span class="dep-time" aria-hidden="true"><span class="flap"><i>1</i><i>8</i><b>:</b><i>3</i><i>0</i></span><span class="dep-end">–20:00</span></span><span class="sr-only">Do., 15. Okt., 18:30 bis 20:00&nbsp;Uhr</span></th>
+            <td><span class="dest"><span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[Ort folgt]</span>, Freiburg</span> <abbr class="cc" title="Deutschland">DE</abbr></td>
+            <td><span class="svc">First Serve</span><span class="svc-sub">Schnuppertraining · erster Termin kostenlos</span></td>
+            <td><span class="svc">Level 0</span><span class="svc-sub">Noch nie ein Paddle in der Hand gehabt</span></td>
+            <td><span class="host"><span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[Name]</span></span><span class="langs"><abbr title="Deutsch">DE</abbr><abbr title="Englisch">EN</abbr></span></td>
+            <td><span class="status"><svg class="ico" aria-hidden="true"><use href="#i-ball"/></svg>noch 6 frei</span><span class="svc-sub">von 16 Plätzen</span></td>
+            <td class="c-book"><button type="button" class="btn btn-red btn-sm" data-open="trial" data-session="S2">Buchen<span class="sr-only"> First Serve, Do., 15. Okt.</span></button></td>
+          </tr>
+          <tr data-session="S3" data-beginner="1" data-fr="1" data-weekend="1" data-spots="0">
+            <th scope="row" class="c-dep"><span class="dep-day" aria-hidden="true">SA 17.10.</span><span class="dep-time" aria-hidden="true"><span class="flap"><i>1</i><i>0</i><b>:</b><i>0</i><i>0</i></span><span class="dep-end">–11:30</span></span><span class="sr-only">Sa., 17. Okt., 10:00 bis 11:30&nbsp;Uhr</span></th>
+            <td><span class="dest"><span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[Ort folgt]</span>, Freiburg</span> <abbr class="cc" title="Deutschland">DE</abbr></td>
+            <td><span class="svc">First Serve, familienfreundlich</span><span class="svc-sub">Erster Termin kostenlos</span></td>
+            <td><span class="svc">Level 0</span><span class="svc-sub">Noch nie ein Paddle in der Hand gehabt</span></td>
+            <td><span class="host"><span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[Name]</span></span><span class="langs"><abbr title="Deutsch">DE</abbr><abbr class="fr" title="Französisch">FR</abbr><abbr title="Englisch">EN</abbr></span></td>
+            <td><span class="status status-full"><svg class="ico" aria-hidden="true"><use href="#i-wait"/></svg>Ausgebucht</span><span class="svc-sub">Warteliste: 2</span></td>
+            <td class="c-book"><button type="button" class="btn btn-ghost-dark btn-sm" data-open="trial" data-session="S3">Warteliste<span class="sr-only">: First Serve, Sa., 17. Okt.</span></button></td>
+          </tr>
+          <tr data-session="S4" data-beginner="1" data-fr="0" data-weekend="0" data-spots="1">
+            <th scope="row" class="c-dep"><span class="dep-day" aria-hidden="true">DI 20.10.</span><span class="dep-time" aria-hidden="true"><span class="flap"><i>1</i><i>9</i><b>:</b><i>0</i><i>0</i></span><span class="dep-end">–20:30</span></span><span class="sr-only">Di., 20. Okt., 19:00 bis 20:30&nbsp;Uhr</span></th>
+            <td><span class="dest"><span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[Ort folgt]</span>, Freiburg</span> <abbr class="cc" title="Deutschland">DE</abbr></td>
+            <td><span class="svc">Kitchen School, Woche 1 von 4</span><span class="svc-sub">4-Wochen-Kurs: <span class="nw">Mitglieder <span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[__]&nbsp;€</span> ·</span> <span class="nw">Gäste <span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[__]&nbsp;€</span></span></span></td>
+            <td><span class="svc">Level 0–1</span><span class="svc-sub">Neu dabei oder erste Ballwechsel</span></td>
+            <td><span class="host"><span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[Name]</span></span><span class="langs"><abbr title="Deutsch">DE</abbr><abbr title="Englisch">EN</abbr></span></td>
+            <td><span class="status status-last"><svg class="ico" aria-hidden="true"><use href="#i-flag"/></svg>Nur noch 3</span><span class="svc-sub">von 12 Plätzen</span></td>
+            <td class="c-book"><button type="button" class="btn btn-red btn-sm" data-open="trial" data-session="S4">Buchen<span class="sr-only"> Kitchen School, Di., 20. Okt.</span></button></td>
+          </tr>
+          <tr data-session="S5" data-beginner="1" data-fr="1" data-weekend="0" data-spots="1">
+            <th scope="row" class="c-dep"><span class="dep-day" aria-hidden="true">DO 22.10.</span><span class="dep-time" aria-hidden="true"><span class="flap"><i>1</i><i>8</i><b>:</b><i>3</i><i>0</i></span><span class="dep-end">–20:00</span></span><span class="sr-only">Do., 22. Okt., 18:30 bis 20:00&nbsp;Uhr</span></th>
+            <td><span class="dest"><span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[Ort folgt]</span>, Freiburg</span> <abbr class="cc" title="Deutschland">DE</abbr></td>
+            <td><span class="svc">First Serve</span><span class="svc-sub">Erster Termin kostenlos</span></td>
+            <td><span class="svc">Level 0</span><span class="svc-sub">Noch nie ein Paddle in der Hand gehabt</span></td>
+            <td><span class="host"><span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[Name]</span></span><span class="langs"><abbr title="Deutsch">DE</abbr><abbr class="fr" title="Französisch">FR</abbr></span></td>
+            <td><span class="status"><svg class="ico" aria-hidden="true"><use href="#i-ball"/></svg>noch 10 frei</span><span class="svc-sub">von 16 Plätzen</span></td>
+            <td class="c-book"><button type="button" class="btn btn-red btn-sm" data-open="trial" data-session="S5">Buchen<span class="sr-only"> First Serve, Do., 22. Okt.</span></button></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <ol class="passes" aria-label="Nächste Abfahrten: fünf Beispieltermine im Oktober 2026">
+        <li class="pass" data-session="S1" data-beginner="0" data-fr="0" data-weekend="0" data-spots="1">
+          <div class="pass-l"><span class="pl-day">DI 13.10.</span><span class="pl-time">19:00</span><span class="pl-end">bis 20:30</span></div>
+          <div class="pass-m">
+            <p class="pm-svc">Open Play</p>
+            <p class="pm-fare">Mitglieder 0&nbsp;€ · <span class="nw">Gäste <span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[__]&nbsp;€</span></span></p>
+            <p class="pm-dest"><span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[Ort folgt]</span>, Freiburg</p>
+            <p class="pm-meta">Level 1–2: ab „Ich halte den Ball im Spiel“</p>
+            <p class="pm-meta pm-host">Spielleitung <span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[Name]</span> · spricht <span class="langs"><abbr title="Deutsch">DE</abbr><abbr title="Englisch">EN</abbr></span></p>
+          </div>
+          <div class="pass-r"><p class="status"><svg class="ico" aria-hidden="true"><use href="#i-ball"/></svg><span><span class="nw">8 von 16</span> frei</span></p><button type="button" class="btn btn-red btn-sm" data-open="trial" data-session="S1">Buchen<span class="sr-only"> Open Play, Di., 13. Okt.</span></button></div>
+        </li>
+        <li class="pass" data-session="S2" data-beginner="1" data-fr="0" data-weekend="0" data-spots="1">
+          <div class="pass-l"><span class="pl-day">DO 15.10.</span><span class="pl-time">18:30</span><span class="pl-end">bis 20:00</span></div>
+          <div class="pass-m">
+            <p class="pm-svc">First Serve</p>
+            <p class="pm-fare">Schnuppertraining · erster Termin kostenlos</p>
+            <p class="pm-dest"><span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[Ort folgt]</span>, Freiburg</p>
+            <p class="pm-meta">Level 0: noch nie ein Paddle in der Hand gehabt</p>
+            <p class="pm-meta pm-host">Spielleitung <span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[Name]</span> · spricht <span class="langs"><abbr title="Deutsch">DE</abbr><abbr title="Englisch">EN</abbr></span></p>
+          </div>
+          <div class="pass-r"><p class="status"><svg class="ico" aria-hidden="true"><use href="#i-ball"/></svg><span><span class="nw">6 von 16</span> frei</span></p><button type="button" class="btn btn-red btn-sm" data-open="trial" data-session="S2">Buchen<span class="sr-only"> First Serve, Do., 15. Okt.</span></button></div>
+        </li>
+        <li class="pass" data-session="S3" data-beginner="1" data-fr="1" data-weekend="1" data-spots="0">
+          <div class="pass-l"><span class="pl-day">SA 17.10.</span><span class="pl-time">10:00</span><span class="pl-end">bis 11:30</span></div>
+          <div class="pass-m">
+            <p class="pm-svc">First Serve, familienfreundlich</p>
+            <p class="pm-fare">Erster Termin kostenlos</p>
+            <p class="pm-dest"><span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[Ort folgt]</span>, Freiburg</p>
+            <p class="pm-meta">Level 0: noch nie ein Paddle in der Hand gehabt</p>
+            <p class="pm-meta pm-host">Spielleitung <span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[Name]</span> · spricht <span class="langs"><abbr title="Deutsch">DE</abbr><abbr class="fr" title="Französisch">FR</abbr><abbr title="Englisch">EN</abbr></span></p>
+          </div>
+          <div class="pass-r"><p class="status status-full"><svg class="ico" aria-hidden="true"><use href="#i-wait"/></svg><span>Ausgebucht <span class="status-sub">Warteliste: 2</span></span></p><button type="button" class="btn btn-ghost-dark btn-sm" data-open="trial" data-session="S3">Warteliste<span class="sr-only">: First Serve, Sa., 17. Okt.</span></button></div>
+        </li>
+        <li class="pass" data-session="S4" data-beginner="1" data-fr="0" data-weekend="0" data-spots="1">
+          <div class="pass-l"><span class="pl-day">DI 20.10.</span><span class="pl-time">19:00</span><span class="pl-end">bis 20:30</span></div>
+          <div class="pass-m">
+            <p class="pm-svc">Kitchen School <span class="pm-free">Woche 1 von 4</span></p>
+            <p class="pm-fare">4-Wochen-Kurs: <span class="nw">Mitglieder <span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[__]&nbsp;€</span> ·</span> <span class="nw">Gäste <span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[__]&nbsp;€</span></span></p>
+            <p class="pm-dest"><span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[Ort folgt]</span>, Freiburg</p>
+            <p class="pm-meta">Level 0–1: neu dabei oder erste Ballwechsel</p>
+            <p class="pm-meta pm-host">Kursleitung <span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[Name]</span> · spricht <span class="langs"><abbr title="Deutsch">DE</abbr><abbr title="Englisch">EN</abbr></span></p>
+          </div>
+          <div class="pass-r"><p class="status status-last"><svg class="ico" aria-hidden="true"><use href="#i-flag"/></svg><span>Nur noch 3 <span class="nw">von 12</span></span></p><button type="button" class="btn btn-red btn-sm" data-open="trial" data-session="S4">Buchen<span class="sr-only"> Kitchen School, Di., 20. Okt.</span></button></div>
+        </li>
+        <li class="pass" data-session="S5" data-beginner="1" data-fr="1" data-weekend="0" data-spots="1">
+          <div class="pass-l"><span class="pl-day">DO 22.10.</span><span class="pl-time">18:30</span><span class="pl-end">bis 20:00</span></div>
+          <div class="pass-m">
+            <p class="pm-svc">First Serve</p>
+            <p class="pm-fare">Erster Termin kostenlos</p>
+            <p class="pm-dest"><span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[Ort folgt]</span>, Freiburg</p>
+            <p class="pm-meta">Level 0: noch nie ein Paddle in der Hand gehabt</p>
+            <p class="pm-meta pm-host">Spielleitung <span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[Name]</span> · spricht <span class="langs"><abbr title="Deutsch">DE</abbr><abbr class="fr" title="Französisch">FR</abbr></span></p>
+          </div>
+          <div class="pass-r"><p class="status"><svg class="ico" aria-hidden="true"><use href="#i-ball"/></svg><span><span class="nw">10 von 16</span> frei</span></p><button type="button" class="btn btn-red btn-sm" data-open="trial" data-session="S5">Buchen<span class="sr-only"> First Serve, Do., 22. Okt.</span></button></div>
+        </li>
+      </ol>
+
+      <div class="board-empty" data-empty hidden>
+        <p><strong>Keine passenden Abfahrten.</strong> Der neue Fahrplan kommt am <span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[1. Nov., vorläufig]</span>. <a href="#news">Monatspostkarte abonnieren ↓</a></p>
+        <button type="button" class="btn btn-ghost-dark btn-sm" data-filter-reset>Alle Abfahrten zeigen</button>
+      </div>
+      <p class="sr-only" aria-live="polite" data-filter-status></p>
+    </div>
+
+    <div class="board-foot">
+      <p>Zum ersten Mal dabei? Kostet nichts. Bring Hallenschuhe mit nicht abfärbender Sohle und etwas zu trinken mit, die Paddles haben wir dabei.</p>
+      <button type="button" class="link-btn" data-toast="Demo: Hier öffnet sich der ganze Fahrplan, sobald der Verein sein Termin-Tool gewählt hat.">Ganzer Fahrplan</button>
+    </div>
+  </div>
+</section>
+
+<!-- 3. PADDLE PASSPORT -->
+<section class="sec sec-chalk" id="passport" aria-labelledby="passport-title">
+  <div class="wrap pp-grid">
+    <div class="pp-intro">
+      <h2 class="title" id="passport-title">DEIN PADDLE PASSPORT</h2>
+      <p class="sub">Drei Besuche. Drei Stempel. Dann entscheidest du.</p>
+      <div class="pp-cover" aria-hidden="true">
+        <span class="ppc-club">Pickleball Südbaden e.V.</span>
+        <span class="ppc-frame"><img src="../shared/logo-mark-on-dark.png" alt="" width="966" height="658"></span>
+        <span class="ppc-title">PADDLE PASSPORT</span>
+        <span class="ppc-langs">PASS · PASSEPORT · PASSPORT</span>
+      </div>
+    </div>
+
+    <div class="pp-book">
+      <div class="pp-page pp-visits">
+        <h3 class="pp-page-title">BESUCHE</h3>
+        <ol class="stamps">
+          <li class="stamp" data-stamp="1">
+            <span class="stamp-slot"><span class="stamp-n">1</span><span class="stamp-name">FIRST SERVE</span>
+              <svg class="stamp-ink" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
+                <defs><path id="ink-ring" d="M60 60m-41 0a41 41 0 1 1 82 0a41 41 0 1 1 -82 0"/></defs>
+                <circle cx="60" cy="60" r="55" fill="none" stroke="currentColor" stroke-width="4"/>
+                <circle cx="60" cy="60" r="31" fill="none" stroke="currentColor" stroke-width="2"/>
+                <text class="ink-ring-text"><textPath href="#ink-ring" startOffset="0" data-stamp-text>FIRST SERVE · 15. OKT. · FREIBURG ·</textPath></text>
+                <text x="60" y="58" text-anchor="middle" class="ink-mid">BESUCH</text>
+                <text x="60" y="78" text-anchor="middle" class="ink-num">1</text>
+              </svg>
+            </span>
+            <span class="stamp-cap">Erste Ballwechsel</span>
+          </li>
+          <li class="stamp" data-stamp="2">
+            <span class="stamp-slot"><span class="stamp-n">2</span><span class="stamp-name">DIE KITCHEN</span></span>
+            <span class="stamp-cap">Kitchen kennengelernt</span>
+          </li>
+          <li class="stamp" data-stamp="3">
+            <span class="stamp-slot"><span class="stamp-n">3</span><span class="stamp-name">ANGEFIXT</span></span>
+            <span class="stamp-cap">Amtlich bestätigt</span>
+          </li>
+        </ol>
+        <p class="pp-status" data-stamp-status aria-live="polite"></p>
+        <p class="pp-count">Bei bisher 12 Terminen haben sich schon 53 Menschen ihren ersten Stempel geholt. <span class="sample">Beispiel</span></p>
+        <p class="pp-note">Besuch 1 ist kostenlos. Besuch 2 und 3: <span class="ph" title="Platzhalter: wird noch bestätigt">[kostenlos oder __ € als Gast, das entscheidet der Vorstand]</span>.</p>
+        <p class="tag-proposal">VORSCHLAG: bis zu drei Schnuppertermine</p>
+        <div class="pp-cta">
+          <button type="button" class="btn btn-red btn-lg" data-open="trial">Ersten Stempel holen</button>
+          <p class="micro">Kein Druck, kein Verkaufsgespräch.</p>
+        </div>
+      </div>
+
+      <div class="pp-page pp-onward">
+        <h3 class="pp-page-title">WEITERREISE</h3>
+        <div class="visa">
+          <h4 class="visa-title">KITCHEN SCHOOL <span>· 4 Wochen</span></h4>
+          <ol class="syllabus">
+            <li><b>Woche 1</b> Aufschlag und Return.</li>
+            <li><b>Woche 2</b> Die Kitchen und der Dink.</li>
+            <li><b>Woche 3</b> Der dritte Schlag und das Zusammenspiel zu zweit.</li>
+            <li><b>Woche 4</b> Zählweise, Etikette und dein erstes Open-Play-Spiel.</li>
+          </ol>
+        </div>
+        <div class="visa">
+          <h4 class="visa-title">OPEN PLAY <span>· nach Level</span></h4>
+          <ol class="ladder" aria-label="Level Ladder, 0 bis 4">
+            <li><b>0</b> Noch nie ein Paddle in der Hand gehabt.</li>
+            <li><b>1</b> Ich halte den Ball im Spiel.</li>
+            <li><b>2</b> Ich kenne die Kitchen.</li>
+            <li><b>3</b> Ich dinke mit Plan.</li>
+            <li><b>4</b> Turnierreif.</li>
+          </ol>
+        </div>
+        <div class="visa visa-residency">
+          <h4 class="visa-title">WOHNSITZ <span>· Mitgliedschaft</span></h4>
+          <p>Mitglied werden, jede Woche spielen, den Verein mitgestalten.</p>
+          <button type="button" class="link-btn" data-open="member">Mitgliedschaft beantragen</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. FIELD GUIDE -->
+<section class="sec sec-tint cut" id="the-game" aria-labelledby="game-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="title" id="game-title">REISEFÜHRER: WAS IST PICKLEBALL?</h2>
+      <p class="sub sub-wide">Pickleball ist ein Rückschlagsport mit einem festen Paddle und einem leichten Kunststoffball mit Löchern, gespielt auf einem Feld so groß wie ein Badminton-Doppelfeld. Meist wird Doppel gespielt, der Aufschlag kommt von unten, und die Ballwechsel sind lang. Stell dir vor, Tennis, Badminton und Tischtennis hätten zusammen ein sehr freundliches Kind.</p>
+    </div>
+
+    <ul class="postcards" role="list">
+      <li class="postcard">
+        <div class="pc-pic pc-court">
+          <svg viewBox="-18 -18 564 276" aria-hidden="true" focusable="false" class="court-svg">
+            <g class="surfaces"><rect class="court-surface" x="0" y="0" width="528" height="240"/><rect class="kitchen" x="180" y="0" width="84" height="240"/><rect class="kitchen" x="264" y="0" width="84" height="240"/></g>
+            <g class="lines" fill="currentColor"><rect x="0" y="0" width="528" height="2"/><rect x="0" y="238" width="528" height="2"/><rect x="0" y="0" width="2" height="240"/><rect x="526" y="0" width="2" height="240"/><rect x="180" y="0" width="2" height="240"/><rect x="346" y="0" width="2" height="240"/><rect x="2" y="119" width="178" height="2"/><rect x="348" y="119" width="178" height="2"/></g>
+            <g class="net" fill="currentColor" opacity="0.6"><rect x="263" y="-12" width="2" height="264"/><circle cx="264" cy="-12" r="3"/><circle cx="264" cy="252" r="3"/></g>
+          </svg>
+        </div>
+        <p class="pc-cap"><strong>Das Feld:</strong> so groß wie beim Badminton</p>
+        <p class="pc-small">6,10 × 13,41&nbsp;m, mit einer 2,13&nbsp;m tiefen Kitchen auf jeder Seite des Netzes.</p>
+      </li>
+      <li class="postcard">
+        <div class="pc-pic pc-paddle"><svg viewBox="0 0 200 420" aria-hidden="true" focusable="false"><use href="#sym-paddle"/></svg></div>
+        <p class="pc-cap"><strong>Das Paddle:</strong> fest und leicht</p>
+        <p class="pc-small">Keine Saiten. Größer als ein Tischtennisschläger, kleiner als ein Tennisschläger.</p>
+      </li>
+      <li class="postcard">
+        <div class="pc-pic pc-ball"><svg viewBox="0 0 100 100" aria-hidden="true" focusable="false"><use href="#sym-ball"/></svg></div>
+        <p class="pc-cap"><strong>Der Ball:</strong> Kunststoff, mit Löchern</p>
+        <p class="pc-small">Leicht und langsam, deshalb dauern die Ballwechsel lange.</p>
+      </li>
+      <li class="postcard">
+        <div class="pc-pic pc-game" aria-hidden="true">
+          <span class="flap flap-xl"><i>1</i><i>1</i></span>
+          <span class="pc-game-sub">2 gegen 2 · 2 Punkte Vorsprung</span>
+        </div>
+        <p class="pc-cap"><strong>Das Spiel:</strong> meist Doppel, Aufschlag von unten, bis 11 Punkte</p>
+      </li>
+    </ul>
+
+    <div class="kitchen" data-kitchen data-zone="kitchen">
+      <div class="kitchen-copy">
+        <h3 class="title-sm">BADISCHE KÜCHE, JETZT MIT NETZ.</h3>
+        <p class="kitchen-plain">Die Kitchen (deutsch: Küche) ist die Zone direkt am Netz, 2,13&nbsp;m tief auf jeder Seite. Hineingehen darfst du jederzeit, nur aus der Luft schlagen darfst du dort nicht.</p>
+        <p class="kitchen-howto">Tipp auf eine Zone im Feld oder auf eine Regel: Dann siehst du, was wo gilt.</p>
+        <ol class="rules">
+          <li><button type="button" class="rule" data-zone="service" aria-pressed="false"><span class="rule-n" aria-hidden="true">1</span><span>Aufschlag von unten, diagonal über das Feld.</span></button></li>
+          <li><button type="button" class="rule" data-zone="baseline" aria-pressed="false"><span class="rule-n" aria-hidden="true">2</span><span>Der Ball muss auf jeder Seite einmal aufspringen, bevor jemand ihn aus der Luft schlagen darf. Das ist die Two-Bounce-Regel.</span></button></li>
+          <li><button type="button" class="rule" data-zone="kitchen" aria-pressed="true"><span class="rule-n" aria-hidden="true">3</span><span>Kein Volley aus der Kitchen, der 2,13&nbsp;m tiefen Zone auf jeder Seite des Netzes. Hineingehen darfst du jederzeit, aber dort muss der Ball erst aufspringen.</span></button></li>
+        </ol>
+        <p class="rule4"><span class="rule-n" aria-hidden="true">4</span><span>Gespielt wird bis 11, mit 2 Punkten Vorsprung. Punkte macht nur die aufschlagende Seite.</span></p>
+      </div>
+      <div class="kitchen-court">
+        <div class="kc-box">
+          <svg viewBox="-18 -18 564 276" aria-hidden="true" focusable="false" class="court-svg">
+            <g class="surfaces"><rect class="court-surface" x="0" y="0" width="528" height="240"/><rect class="kitchen" x="180" y="0" width="84" height="240"/><rect class="kitchen" x="264" y="0" width="84" height="240"/></g>
+            <rect class="hl hl-baseline" x="2" y="2" width="178" height="236"/>
+            <rect class="hl hl-service" x="348" y="2" width="178" height="117"/>
+            <rect class="hl hl-kitchen-base" x="182" y="2" width="164" height="236"/>
+            <rect class="hl hl-kitchen" x="182" y="2" width="164" height="236"/>
+            <g class="lines" fill="currentColor"><rect x="0" y="0" width="528" height="2"/><rect x="0" y="238" width="528" height="2"/><rect x="0" y="0" width="2" height="240"/><rect x="526" y="0" width="2" height="240"/><rect x="180" y="0" width="2" height="240"/><rect x="346" y="0" width="2" height="240"/><rect x="2" y="119" width="178" height="2"/><rect x="348" y="119" width="178" height="2"/></g>
+            <g class="net" fill="currentColor" opacity="0.75"><rect x="262.5" y="-12" width="3" height="264"/><circle cx="264" cy="-12" r="4"/><circle cx="264" cy="252" r="4"/></g>
+            <g class="mark mark-service"><path d="M18 196C120 40 300 10 420 58" fill="none" stroke="#FEDD02" stroke-width="4" stroke-dasharray="10 9" stroke-linecap="round"/><use href="#sym-ball" x="410" y="44" width="30" height="30" color="#052443"/></g>
+            <g class="mark mark-baseline">
+              <use href="#sym-ball" x="424" y="48" width="30" height="30" color="#052443"/><text x="439" y="100" text-anchor="middle" class="bounce-n">1</text>
+              <use href="#sym-ball" x="84" y="150" width="30" height="30" color="#052443"/><text x="99" y="202" text-anchor="middle" class="bounce-n">2</text>
+            </g>
+          </svg>
+          <button type="button" class="zone zone-baseline" data-zone="baseline" aria-pressed="false"><span>Grundlinie</span></button>
+          <button type="button" class="zone zone-kitchen" data-zone="kitchen" aria-pressed="true"><span>Kitchen</span></button>
+          <button type="button" class="zone zone-service" data-zone="service" aria-pressed="false"><span>Aufschlagfeld</span></button>
+          <p class="kc-label" aria-hidden="true">Badische Küche: hier kein Volley</p>
+        </div>
+        <p class="kc-output" data-rule-output aria-live="polite"><b>Regel 3 · Kitchen:</b> Kein Volley aus der Kitchen, der 2,13&nbsp;m tiefen Zone auf jeder Seite des Netzes. Hineingehen darfst du jederzeit, aber dort muss der Ball erst aufspringen.</p>
+      </div>
+    </div>
+
+    <div class="guide-row">
+      <div class="guide-col">
+        <div class="from" data-from>
+          <h3 class="h-sm">Du kommst vom …?</h3>
+          <div class="from-chips" role="group" aria-label="Der Sport, den du kennst">
+            <button type="button" class="chip chip-light" data-from-pick="tennis" aria-pressed="true">Tennis</button>
+            <button type="button" class="chip chip-light" data-from-pick="badminton" aria-pressed="false">Badminton</button>
+            <button type="button" class="chip chip-light" data-from-pick="tt" aria-pressed="false">Tischtennis</button>
+          </div>
+          <ul class="from-lines" aria-live="polite">
+            <li data-from-line="tennis"><strong>Tennis:</strong> Kleineres Feld, Aufschlag von unten, kein Kanonenaufschlag nötig.</li>
+            <li data-from-line="badminton"><strong>Badminton:</strong> Gleich großes Feld, niedrigeres Netz, und der Ball springt auf.</li>
+            <li data-from-line="tt"><strong>Tischtennis:</strong> Dieselben schnellen Hände, nur bewegst du dich jetzt über ein ganzes Feld.</li>
+          </ul>
+        </div>
+        <div class="hooked">
+          <h3 class="h-sm">Warum es so viele packt</h3>
+          <ul class="ball-list">
+            <li><strong>Leicht reinzukommen.</strong> Die meisten Neulinge spielen schon beim ersten Termin echte Ballwechsel.</li>
+            <li><strong>Gemacht für Geselligkeit.</strong> Meist wird Doppel auf kleinem Feld gespielt: Ihr redet, lacht und wechselt die Paarungen.</li>
+            <li><strong>Jedes Alter, ein Feld.</strong> Studierende, Eltern und Leute im Ruhestand spielen zusammen.</li>
+            <li><strong>Nichts zu kaufen.</strong> Dein erster Termin ist kostenlos, die Paddles stellen wir.</li>
+            <li><strong>Dein Tempo.</strong> Der Ball ist langsam und das Feld klein: Ob gemütlich oder schnell, entscheidest du.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="guide-col">
+        <div class="video-poster">
+          <button type="button" class="video-btn" data-toast="Demo: VIDEO 01 läuft von unserem eigenen Server, sobald es fertig ist. Kein YouTube, kein Tracking.">
+            <span class="vp-art vp-art-photo" aria-hidden="true">
+              <img src="../shared/photos/01-800.webp" srcset="../shared/photos/01-800.webp 800w, ../shared/photos/01-1600.webp 1536w" sizes="(min-width: 1248px) 546px, (min-width: 1024px) 45vw, calc(100vw - 66px)" width="1536" height="1024" loading="lazy" decoding="async" alt="Vier Menschen unterschiedlichen Alters spielen in einer hellen Sporthalle an einem niedrigen Netz: vorn ein älterer Mann und ein Mädchen im Teenageralter, hinten eine Frau und ein Mann. Alle lächeln, während der Ball über das Netz schwebt.">
+              <svg class="vp-play" viewBox="-50 -50 100 100" focusable="false"><circle r="46" fill="#EA162C"/><path d="M-13 -21v42l34-21z" fill="#fff"/></svg>
+              <span class="ai-tag">KI-Beispielbild · 01</span>
+            </span>
+            <span class="vp-text">
+              <span class="vp-id">VIDEO 01 · Was ist Pickleball? in 60 Sekunden</span>
+              <span class="vp-meta">Deutsch gesprochen, Untertitel auf Französisch und Englisch</span>
+              <span class="vp-load">Zum Laden klicken: läuft von unserem eigenen Server, sobald es das Video gibt</span>
+            </span>
+          </button>
+          <p class="photo-credit vp-credit"><svg aria-hidden="true"><use href="#i-camera"/></svg><span>Vorschaubild: KI-Beispielbild · Foto 01 · echtes Foto folgt (Einwilligung der Erziehungsberechtigten bei Minderjährigen)</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. BEFORE YOU TRAVEL -->
+<section class="sec sec-chalk" id="first-visit" aria-labelledby="fv-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="title" id="fv-title">VOR DER REISE</h2>
+      <p class="sub">Deine ersten 90 Minuten, Station für Station.</p>
+    </div>
+
+    <ol class="itinerary">
+      <li><span class="it-time">0:00</span><span class="it-stop" aria-hidden="true"><svg viewBox="0 0 32 32"><use href="#i-ball"/></svg></span><p><strong>Ankommen:</strong> Namensschild, Leih-Paddle, „Wer ist neu?“</p></li>
+      <li><span class="it-time">0:10</span><span class="it-stop" aria-hidden="true"><svg viewBox="0 0 32 32"><use href="#i-ball"/></svg></span><p><strong>Die Grundlagen mit der Spielleitung:</strong> Griff, Aufschlag von unten, zwei Aufsprünge, die Kitchen.</p></li>
+      <li><span class="it-time">0:25</span><span class="it-stop" aria-hidden="true"><svg viewBox="0 0 32 32"><use href="#i-ball"/></svg></span><p><strong>Spielen:</strong> lockeres Doppel in wechselnden Paarungen, Neulinge erst mal unter sich.</p></li>
+      <li><span class="it-time">1:15</span><span class="it-stop" aria-hidden="true"><svg viewBox="0 0 32 32"><use href="#i-ball"/></svg></span><p><strong>Ausklang:</strong> Fragen, nächste Termine und, wer mag, noch etwas trinken (auch alkoholfrei).</p></li>
+    </ol>
+
+    <div class="fv-grid">
+      <div class="packing" data-packing>
+        <div class="pack-cols">
+          <fieldset class="pack pack-you">
+            <legend>DU PACKST EIN</legend>
+            <label class="tick"><input type="checkbox" data-pack><span class="tick-box" aria-hidden="true"><svg><use href="#i-check"/></svg></span><span>Hallenschuhe mit heller, nicht abfärbender Sohle <span class="essential">Pflicht</span></span></label>
+            <label class="tick"><input type="checkbox" data-pack><span class="tick-box" aria-hidden="true"><svg><use href="#i-check"/></svg></span><span>Sportkleidung</span></label>
+            <label class="tick"><input type="checkbox" data-pack><span class="tick-box" aria-hidden="true"><svg><use href="#i-check"/></svg></span><span>Eine Trinkflasche</span></label>
+            <label class="tick"><input type="checkbox" data-pack><span class="tick-box" aria-hidden="true"><svg><use href="#i-check"/></svg></span><span>Optional: Sportbrille</span></label>
+          </fieldset>
+          <div class="pack pack-we">
+            <h3 class="pack-title">WIR PACKEN EIN</h3>
+            <ul>
+              <li><span class="tick-box is-on" aria-hidden="true"><svg><use href="#i-check"/></svg></span>Paddles aus der Paddle Library</li>
+              <li><span class="tick-box is-on" aria-hidden="true"><svg><use href="#i-check"/></svg></span>Bälle</li>
+              <li><span class="tick-box is-on" aria-hidden="true"><svg><use href="#i-check"/></svg></span>Netze</li>
+              <li><span class="tick-box is-on" aria-hidden="true"><svg><use href="#i-check"/></svg></span>Eine Spielleitung, die alles erklärt</li>
+            </ul>
+          </div>
+        </div>
+        <div class="pack-go" data-pack-go>
+          <button type="button" class="btn btn-red" data-open="trial">Eingepackt. Platz sichern →</button>
+        </div>
+      </div>
+      <div class="fv-notes">
+        <p class="shoe-rule"><strong>Schuhregel:</strong> Nur Hallenschuhe mit nicht abfärbender Sohle. Unsere Hallen lieben saubere Böden, und wir lieben unsere Hallen.</p>
+        <p class="notice">[Die Versicherung für Schnuppertermine wird gerade mit dem Badischen Sportbund Freiburg und der ARAG geklärt. Bevor die Buchung öffnet, steht hier, was abgedeckt ist.]</p>
+        <p class="photo-line">Bei Terminen fotografieren wir manchmal. Sag der Spielleitung Bescheid, wenn du nicht aufs Foto möchtest.</p>
+      </div>
+      <div class="fv-photos">
+        <figure class="postcard photo-card has-photo fv-wide">
+          <div class="photo-img" style="--ratio: 4 / 3; --pos: 50% 35%">
+            <img src="../shared/photos/03-800.webp" srcset="../shared/photos/03-800.webp 800w, ../shared/photos/03-1600.webp 1448w" sizes="(min-width: 1024px) 360px, (min-width: 600px) calc(100vw - 88px), calc(100vw - 56px)" width="1448" height="1086" loading="lazy" decoding="async" alt="In einer Sporthalle steht eine lächelnde Frau neben einem Neuling und gibt Tipps; er lacht, während er den Ball mit dem Paddle trifft.">
+            <span class="ai-tag" aria-hidden="true">KI-Beispielbild · 03</span>
+          </div>
+          <figcaption>Dein erster Ballwechsel, die Spielleitung direkt neben dir.<span class="photo-credit"><svg aria-hidden="true"><use href="#i-camera"/></svg><span>KI-Beispielbild · Foto 03 · echtes Foto folgt (schriftliche Einwilligung)</span></span></figcaption>
+        </figure>
+        <figure class="postcard photo-card has-photo">
+          <div class="photo-img" style="--ratio: 4 / 3; --pos: 50% 50%">
+            <img src="../shared/photos/13-800.webp" srcset="../shared/photos/13-800.webp 800w, ../shared/photos/13-1600.webp 1448w" sizes="(min-width: 1024px) 360px, (min-width: 600px) 45vw, calc(100vw - 56px)" width="1448" height="1086" loading="lazy" decoding="async" alt="Eine graue Kunststoffkiste auf einer Holzbank am Rand einer Sporthalle, voller Leih-Paddles in Petrol, Weinrot, Marineblau und Grau, dazu ein paar gelbe Bälle; dahinter steht ein mobiles Netz auf dem Feld.">
+            <span class="ai-tag" aria-hidden="true">KI-Beispielbild · 13</span>
+          </div>
+          <figcaption>Leih-Paddles für alle, bei jedem Termin.<span class="photo-credit"><svg aria-hidden="true"><use href="#i-camera"/></svg><span>KI-Beispielbild · Foto 13 · echtes Foto folgt (nur Hände)</span></span></figcaption>
+        </figure>
+        <figure class="postcard photo-card has-photo">
+          <div class="photo-img" style="--ratio: 4 / 3; --pos: 50% 72%">
+            <img src="../shared/photos/14-800.webp" srcset="../shared/photos/14-800.webp 800w, ../shared/photos/14-1600.webp 1254w" sizes="(min-width: 1024px) 360px, (min-width: 600px) 45vw, calc(100vw - 56px)" width="1254" height="1254" loading="lazy" decoding="async" alt="Nahaufnahme von zwei Füßen auf einem Hallenboden aus Holz: graue Hallenschuhe mit heller Gummisohle, weiße Socken, daneben eine blaue Feldlinie und ein gelber Ball.">
+            <span class="ai-tag" aria-hidden="true">KI-Beispielbild · 14</span>
+          </div>
+          <figcaption>Das Einzige, was du mitbringst: saubere Hallenschuhe.<span class="photo-credit"><svg aria-hidden="true"><use href="#i-camera"/></svg><span>KI-Beispielbild · Foto 14 · echtes Foto folgt (ohne Personen)</span></span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. THE MAP -->
+<section class="sec sec-map on-dark cut" id="map" aria-labelledby="map-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="title" id="map-title">SÜDBADEN &amp; NACHBARSCHAFT</h2>
+      <p class="sub">Vom Kaiserstuhl bis Konstanz, von Basel bis auf die Baar.</p>
+    </div>
+
+    <div class="map-grid">
+      <div class="map-col">
+        <div class="map-box" data-map>
+          <svg class="map-svg" viewBox="0 0 1000 880" role="img" aria-labelledby="map-svg-title" focusable="false">
+            <title id="map-svg-title">Schematische Karte von Südbaden, dem Elsass und der Nordwestschweiz: wo wir in Freiburg spielen, Clubs in der Nähe und die Orte, die für Pickleball abstimmen. Alles auf der Karte steht auch in der Liste darunter.</title>
+            <defs>
+              <pattern id="mp-hatch" width="14" height="14" patternUnits="userSpaceOnUse" patternTransform="rotate(15)"><path d="M0 7H14" stroke="#174A80" stroke-width="4"/></pattern>
+              <path id="mp-border-text" d="M149 384L158 354L208 228L248 66"/>
+            </defs>
+            <rect width="1000" height="880" fill="#0C3561"/>
+            <polygon points="300,140 560,170 640,420 560,700 330,720 300,560" fill="url(#mp-hatch)"/>
+            <text x="384" y="262" class="m-area">SCHWARZWALD</text>
+            <!-- Lake Constance as one shape: Untersee (with the Zeller See arm), Seerhein at Konstanz, Überlinger See, Obersee clipped at the east edge -->
+            <path class="m-lake" fill="#B5C5D8" d="M1004 742C1001.7 741.3 995.3 739.8 990 738C984.7 736.2 977.7 734.7 972 731C966.3 727.3 961 720.2 956 716C951 711.8 946.3 708.7 942 706C937.7 703.3 934 701.2 930 700C926 698.8 922.3 699 918 699C913.7 699 909.7 699.5 904 700C898.3 700.5 891.3 701.3 884 702C876.7 702.7 868 703.7 860 704C852 704.3 843.7 704.2 836 704C828.3 703.8 820.8 703.7 814 703C807.2 702.3 801.2 701.3 795 700C788.8 698.7 777.5 697 777 695C776.5 693 786.2 690.2 792 688C797.8 685.8 806.7 683.8 812 682C817.3 680.2 822.3 680 824 677C825.7 674 821.7 668.5 822 664C822.3 659.5 824 652 826 650C828 648 831.3 650 834 652C836.7 654 839 659.3 842 662C845 664.7 848 668 852 668C856 668 861.3 663.8 866 662C870.7 660.2 875.5 657 880 657C884.5 657 889.2 659.5 893 662C896.8 664.5 899.8 668.8 903 672C906.2 675.2 908.5 679 912 681C915.5 683 920.5 684.7 924 684C927.5 683.3 932.2 680.3 933 677C933.8 673.7 932.5 668.8 929 664C925.5 659.2 917.3 652.7 912 648C906.7 643.3 901.7 640.5 897 636C892.3 631.5 888.5 626.8 884 621C879.5 615.2 874 606.7 870 601C866 595.3 861.5 590.5 860 587C858.5 583.5 859.7 580.8 861 580C862.3 579.2 864.5 579.3 868 582C871.5 584.7 876.7 591.8 882 596C887.3 600.2 894 603.3 900 607C906 610.7 912 613.8 918 618C924 622.2 930.3 627 936 632C941.7 637 947 642.7 952 648C957 653.3 960.7 659.3 966 664C971.3 668.7 977.7 673 984 676C990.3 679 1000.7 681 1004 682L1004 742Z"/>
+            <!-- Rhine -->
+            <polyline points="777,693 672,667 619,751 475,732 404,761 349,769 278,768 185,759 180,741 166,585 179,433 187,357 239,231 283,54 309,0" fill="none" stroke="#B5C5D8" stroke-width="9" stroke-linejoin="round" stroke-linecap="round"/>
+            <!-- Borders (dashed) -->
+            <g fill="none" stroke="#7A96B6" stroke-width="3" stroke-dasharray="12 9" stroke-linecap="round">
+              <polyline points="172,741 158,585 171,433 179,356 231,228 275,52 300,0"/>
+              <polyline points="186,768 278,777 349,778 405,770 476,741 620,760 673,676 776,700"/>
+              <polyline points="776,690 924,690"/>
+              <polyline points="182,752 159,770 134,807 0,805"/>
+            </g>
+            <text class="m-border"><textPath href="#mp-border-text">Keine Passkontrolle. Nur Schuhkontrolle.</textPath></text>
+            <!-- Country labels -->
+            <text x="34" y="250" class="m-country">ELSASS</text>
+            <text x="640" y="196" class="m-country">DEUTSCHLAND</text>
+            <text x="410" y="856" class="m-country">SCHWEIZ</text>
+            <!-- Landmarks -->
+            <path d="M196 394Q220 362 244 394" fill="none" stroke="#B5C5D8" stroke-width="3"/>
+            <text x="234" y="418" text-anchor="middle" class="m-town m-landmark">Kaiserstuhl</text>
+            <path d="M377 528L391 552H363Z" fill="#B5C5D8"/>
+            <text x="398" y="550" class="m-town m-landmark">Feldberg 1.493&nbsp;m</text>
+            <!-- Optional town labels -->
+            <g class="m-opt">
+              <circle cx="74" cy="400" r="4"/><text x="86" y="406">Colmar</text>
+              <circle cx="64" cy="630" r="4"/><text x="76" y="636">Mulhouse</text>
+              <circle cx="178" cy="433" r="4"/><text x="192" y="446">Breisach</text>
+              <circle cx="266" cy="321" r="4"/><text x="278" y="316">Kenzingen</text>
+              <circle cx="315" cy="218" r="4"/><text x="327" y="224">Lahr</text>
+                            <circle cx="610" cy="488" r="4"/><text x="622" y="494">Donaueschingen</text>
+              <circle cx="669" cy="337" r="4"/><text x="681" y="343">Rottweil</text>
+              <circle cx="758" cy="465" r="4"/><text x="770" y="471">Tuttlingen</text>
+              <circle cx="768" cy="624" r="4"/><text x="780" y="630">Singen</text>
+            </g>
+            <!-- Leader lines for pins nudged apart -->
+            <g stroke="#FFFFFF" stroke-width="2" fill="#FFFFFF">
+              <path d="M318 470L344 498"/><circle cx="318" cy="470" r="3.5"/>
+              <path d="M250 816L259 842"/><circle cx="250" cy="816" r="3.5"/>
+            </g>
+            <!-- Pin labels -->
+            <text x="336" y="446" class="m-ours">Freiburg<tspan class="m-ours-venue"> · [Ort folgt]</tspan></text>
+            <g class="m-nb">
+              <text x="368" y="510">FT 1844 RACKETzone</text>
+              <text x="150" y="720" text-anchor="end">Pickleball Hub</text>
+              <text x="150" y="742" text-anchor="end">Basel</text>
+              <text x="274" y="794">Felder Giebenach</text>
+              <text x="282" y="854">Liestal</text>
+              <text x="280" y="60">Straßburg [noch zu bestätigen]</text>
+              <text x="44" y="524">Guebwiller</text>
+              <text x="44" y="545" class="m-tbc">[noch zu bestätigen]</text>
+            </g>
+            <g class="m-vote">
+              <text x="238" y="710">Lörrach</text>
+              <text x="372" y="131">Offenburg</text>
+              <text x="906" y="731" text-anchor="end">Konstanz</text>
+              <text x="475" y="683" text-anchor="middle">Waldshut-Tiengen</text>
+              <text x="630" y="418">Villingen-Schwenningen</text>
+              <text x="328" y="376">Emmendingen</text>
+            </g>
+          </svg>
+          <p class="map-tag">Schematische Karte</p>
+
+          <div class="map-pins">
+            <button type="button" class="pin pin-ours" style="--x:30.4;--y:52.16" data-pin="venue" aria-label="Freiburg, Spielort folgt: Hier spielen wir"><svg viewBox="0 0 100 100" aria-hidden="true"><use href="#sym-ball"/></svg></button>
+            <button type="button" class="pin pin-nb" style="--x:34.8;--y:57.05" data-pin="nb-racketzone" aria-label="FT 1844 RACKETzone Freiburg: auch in der Nähe, nicht von uns organisiert"><span class="ring"></span></button>
+            <button type="button" class="pin pin-nb" style="--x:18.2;--y:86.82" data-pin="nb-basel" aria-label="Pickleball Hub Basel: auch in der Nähe, nicht von uns organisiert"><span class="ring"></span></button>
+            <button type="button" class="pin pin-nb" style="--x:25.2;--y:89.77" data-pin="nb-giebenach" aria-label="Öffentliche Felder Giebenach: auch in der Nähe, nicht von uns organisiert"><span class="ring"></span></button>
+            <button type="button" class="pin pin-nb" style="--x:26.2;--y:96.36" data-pin="nb-liestal" aria-label="Liestal: auch in der Nähe, nicht von uns organisiert"><span class="ring"></span></button>
+            <button type="button" class="pin pin-nb" style="--x:25.9;--y:6.14" data-pin="nb-strasbourg" aria-label="Straßburg, Club im Elsass, noch zu bestätigen: nicht von uns organisiert"><span class="ring"></span></button>
+            <button type="button" class="pin pin-nb" style="--x:2.4;--y:58.86" data-pin="nb-guebwiller" aria-label="Guebwiller, Club im Elsass, noch zu bestätigen: nicht von uns organisiert"><span class="ring"></span></button>
+            <button type="button" class="pin pin-vote pin-vote-above" style="--x:21.6;--y:82.27" data-pin="vote" data-town="Lörrach" aria-label="Lörrach: 43 Stimmen. Abstimmung zeigen"><span class="ghost"></span><span class="vote-count" data-count-for="Lörrach">43</span></button>
+            <button type="button" class="pin pin-vote" style="--x:34.8;--y:14.2" data-pin="vote" data-town="Offenburg" aria-label="Offenburg: 28 Stimmen. Abstimmung zeigen"><span class="ghost"></span><span class="vote-count" data-count-for="Offenburg">28</span></button>
+            <button type="button" class="pin pin-vote pin-vote-below" style="--x:92.5;--y:78.75" data-pin="vote" data-town="Konstanz" aria-label="Konstanz: 19 Stimmen. Abstimmung zeigen"><span class="ghost"></span><span class="vote-count" data-count-for="Konstanz">19</span></button>
+            <button type="button" class="pin pin-vote" style="--x:47.5;--y:81.7" data-pin="vote" data-town="Waldshut-Tiengen" aria-label="Waldshut-Tiengen: 11 Stimmen. Abstimmung zeigen"><span class="ghost"></span><span class="vote-count" data-count-for="Waldshut-Tiengen">11</span></button>
+            <button type="button" class="pin pin-vote" style="--x:60.6;--y:46.82" data-pin="vote" data-town="Villingen-Schwenningen" aria-label="Villingen-Schwenningen: 9 Stimmen. Abstimmung zeigen"><span class="ghost"></span><span class="vote-count" data-count-for="Villingen-Schwenningen">9</span></button>
+            <button type="button" class="pin pin-vote" style="--x:30.4;--y:42.05" data-pin="vote" data-town="Emmendingen" aria-label="Emmendingen: 7 Stimmen. Abstimmung zeigen"><span class="ghost"></span><span class="vote-count" data-count-for="Emmendingen">7</span></button>
+          </div>
+        </div>
+        <p class="map-border-cap">An der Grenze: Keine Passkontrolle. Nur Schuhkontrolle.</p>
+        <ul class="map-legend">
+          <li><span class="lg lg-ours" aria-hidden="true"><svg viewBox="0 0 100 100"><use href="#sym-ball"/></svg></span>Hier spielen wir</li>
+          <li><span class="lg lg-nb" aria-hidden="true"></span>Auch in der Nähe (nicht von uns organisiert)</li>
+          <li class="lg-vote-item"><span class="lg lg-vote" aria-hidden="true"></span>Eure Stimmen <span class="sample">Beispiel</span></li>
+        </ul>
+      </div>
+
+      <aside class="venue-card on-light" aria-label="Details zur Karte" data-venue-card>
+        <div class="vc-pane" data-vc-default>
+          <p class="vc-kicker"><span class="lg lg-ours" aria-hidden="true"><svg viewBox="0 0 100 100"><use href="#sym-ball"/></svg></span>Hier spielen wir</p>
+          <h3 class="vc-title"><span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[Ort folgt]</span>, Freiburg</h3>
+          <p class="vc-addr"><span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[Straße, Nr.]</span></p>
+          <ul class="vc-facts">
+            <li>Tram <span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[Linie folgt]</span> bis <span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[Haltestelle folgt]</span></li>
+            <li>Fahrradständer <span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[folgt]</span></li>
+            <li>Parkplätze <span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[folgt]</span></li>
+            <li>Stufenloser Zugang <span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[folgt]</span></li>
+          </ul>
+          <p class="vc-shoes">Nur Hallenschuhe mit nicht abfärbender Sohle</p>
+          <p class="vc-sessions">Termine hier: Di. 19:00, Do. 18:30 <span class="muted">(Beispiel)</span></p>
+          <p class="vc-maps"><span class="vc-maps-dead" aria-disabled="true">In Karten öffnen</span> <span class="muted">(Link folgt, sobald der Spielort feststeht)</span></p>
+          <figure class="postcard photo-card photo-card-sm has-photo">
+            <div class="photo-img" style="--ratio: 3 / 2; --pos: 50% 50%">
+              <img src="../shared/photos/12-800.webp" srcset="../shared/photos/12-800.webp 800w, ../shared/photos/12-1600.webp 1536w" sizes="(min-width: 1024px) 340px, calc(100vw - 88px)" width="1536" height="1024" loading="lazy" decoding="async" alt="Der Glaseingang einer Schulsporthalle aus Beton in der Nachmittagssonne; ein Aufsteller mit Pfeil und Ball zeigt zur offenen Tür.">
+              <span class="ai-tag" aria-hidden="true">KI-Beispielbild · 12</span>
+            </div>
+            <figcaption><span class="photo-credit"><svg aria-hidden="true"><use href="#i-camera"/></svg><span>KI-Beispielbild · Foto 12 · echtes Foto folgt (Erwachsene vorab informiert)</span></span></figcaption>
+          </figure>
+        </div>
+        <div class="vc-pane" data-vc-alt hidden></div>
+      </aside>
+    </div>
+
+    <div class="map-below">
+      <div class="map-list">
+        <h3 class="h-sm">Alles auf der Karte</h3>
+        <div class="ml-cols">
+          <div>
+            <h4 class="ml-head">Hier spielen wir</h4>
+            <ul><li><button type="button" class="ml-btn" data-pin="venue">Freiburg · <span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[Ort folgt]</span></button></li></ul>
+          </div>
+          <div>
+            <h4 class="ml-head">Auch in der Nähe · nicht von uns organisiert</h4>
+            <ul>
+              <li><button type="button" class="ml-btn" data-pin="nb-racketzone">FT 1844 RACKETzone Freiburg</button></li>
+              <li><button type="button" class="ml-btn" data-pin="nb-basel">Pickleball Hub Basel</button></li>
+              <li><button type="button" class="ml-btn" data-pin="nb-giebenach">Öffentliche Felder Giebenach</button></li>
+              <li><button type="button" class="ml-btn" data-pin="nb-liestal">Liestal</button></li>
+              <li>Clubs im Elsass <span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[noch zu bestätigen]</span>: <button type="button" class="ml-btn" data-pin="nb-strasbourg">Straßburg</button>, <button type="button" class="ml-btn" data-pin="nb-guebwiller">Guebwiller</button></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="ml-head">Eure Stimmen <span class="sample">Beispiel</span></h4>
+            <ul class="ml-votes">
+              <li><button type="button" class="ml-btn" data-pin="vote" data-town="Lörrach">Lörrach</button> <span data-count-for="Lörrach">43</span></li>
+              <li><button type="button" class="ml-btn" data-pin="vote" data-town="Offenburg">Offenburg</button> <span data-count-for="Offenburg">28</span></li>
+              <li><button type="button" class="ml-btn" data-pin="vote" data-town="Konstanz">Konstanz</button> <span data-count-for="Konstanz">19</span></li>
+              <li><button type="button" class="ml-btn" data-pin="vote" data-town="Waldshut-Tiengen">Waldshut-Tiengen</button> <span data-count-for="Waldshut-Tiengen">11</span></li>
+              <li><button type="button" class="ml-btn" data-pin="vote" data-town="Villingen-Schwenningen">Villingen-Schwenningen</button> <span data-count-for="Villingen-Schwenningen">9</span></li>
+              <li><button type="button" class="ml-btn" data-pin="vote" data-town="Emmendingen">Emmendingen</button> <span data-count-for="Emmendingen">7</span></li>
+            </ul>
+            <p class="ml-note">6 Orte stimmen ab. Ab 50 Stimmen planen wir dort ein kostenloses Pickle Pop-up.</p>
+          </div>
+        </div>
+      </div>
+
+      <form class="vote" id="vote" data-vote action="#vote" novalidate>
+        <h3 class="title-sm">WEIT WEG VON FREIBURG?</h3>
+        <p class="vote-lead">Hol Pickleball in deinen Ort.</p>
+        <div class="vote-fields">
+          <div class="field">
+            <label for="vote-town">Dein Ort</label>
+            <select id="vote-town">
+              <option value="Lörrach">Lörrach</option>
+              <option value="Offenburg">Offenburg</option>
+              <option value="Konstanz">Konstanz</option>
+              <option value="Waldshut-Tiengen">Waldshut-Tiengen</option>
+              <option value="Villingen-Schwenningen">Villingen-Schwenningen</option>
+              <option value="Emmendingen">Emmendingen</option>
+              <option value="Other">Anderer Ort</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="vote-email">E-Mail <span class="opt">(optional)</span></label>
+            <input type="email" id="vote-email" autocomplete="email" aria-describedby="vote-email-hint">
+            <p class="hint" id="vote-email-hint">Sag mir Bescheid, wenn es so weit ist.</p>
+          </div>
+          <button type="submit" class="btn btn-yellow">Abstimmen</button>
+        </div>
+        <p class="vote-result" data-vote-result aria-live="polite"></p>
+        <p class="stub-note"><span class="demo-tag">Demo · es wird nichts gesendet</span> <span>Später: unser eigenes Formular, das ohne Cookies zählt.</span></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- 7. THREE COUNTRIES, ONE NET -->
+<section class="sec sec-chalk" id="cross-border" aria-labelledby="cb-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="title" id="cb-title"><span class="nw">AUS DEM ELSASS,</span> <span class="nw">AUS BASEL, AUS BADEN</span></h2>
+      <p class="sub sub-wide">Du kommst aus dem Elsass oder aus Basel? Herzlich willkommen! Termine mit französischsprachiger Spielleitung sind immer mit FR markiert. Die Mitgliedschaft steht allen offen, und mit einem Schweizer Konto zahlst du einfach per Überweisung. <span class="ph" title="Platzhalter: wird noch bestätigt">[Tipps zur Anfahrt je Spielort folgen]</span></p>
+    </div>
+
+    <ul class="badges" role="list">
+      <li class="badge-item">
+        <svg class="enamel" viewBox="0 0 200 200" aria-hidden="true" focusable="false">
+          <defs><path id="eb-t1" d="M26 100A74 74 0 0 1 174 100"/><path id="eb-b1" d="M13 100A87 87 0 0 0 187 100"/></defs>
+          <circle cx="100" cy="100" r="97" fill="#052443"/><circle cx="100" cy="100" r="66" fill="#FEDD02"/><circle cx="100" cy="100" r="58" fill="#FFFFFF"/>
+          <text class="ring-t"><textPath href="#eb-t1" startOffset="50%" text-anchor="middle">AUS DEM ELSASS</textPath></text>
+          <text class="ring-b"><textPath href="#eb-b1" startOffset="50%" text-anchor="middle">DREI LÄNDER · EIN NETZ</textPath></text>
+          <g fill="none" stroke="#052443" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M54 118C70 92 86 86 100 98C112 84 132 82 148 112"/>
+            <path d="M62 132l10-10M76 134l10-10M90 134l10-10M104 134l10-10M118 134l10-10M132 132l8-8"/>
+          </g>
+          <circle cx="122" cy="74" r="11" fill="#EA162C"/>
+        </svg>
+        <h3 class="badge-title">AUS DEM ELSASS</h3>
+        <p>Abfahrten mit französischsprachiger Spielleitung sind immer mit FR markiert. Du zahlst per SEPA-Lastschrift oder Überweisung.</p>
+      </li>
+      <li class="badge-item">
+        <svg class="enamel" viewBox="0 0 200 200" aria-hidden="true" focusable="false">
+          <defs><path id="eb-t2" d="M26 100A74 74 0 0 1 174 100"/><path id="eb-b2" d="M13 100A87 87 0 0 0 187 100"/></defs>
+          <circle cx="100" cy="100" r="97" fill="#052443"/><circle cx="100" cy="100" r="66" fill="#FEDD02"/><circle cx="100" cy="100" r="58" fill="#FFFFFF"/>
+          <text class="ring-t"><textPath href="#eb-t2" startOffset="50%" text-anchor="middle">AUS BASEL</textPath></text>
+          <text class="ring-b"><textPath href="#eb-b2" startOffset="50%" text-anchor="middle">DREI LÄNDER · EIN NETZ</textPath></text>
+          <g fill="none" stroke="#052443" stroke-width="3.5" stroke-linecap="round">
+            <path d="M58 112Q100 62 142 112"/><path d="M52 112H148"/>
+            <path d="M74 112V96M88 112V84M100 112V80M112 112V84M126 112V96" stroke-width="2.4"/>
+            <path d="M56 128c8-5 14-5 22 0s14 5 22 0 14-5 22 0 14 5 22 0" stroke="#EA162C"/>
+            <path d="M64 142c8-5 14-5 22 0s14 5 22 0 14-5 22 0"/>
+          </g>
+        </svg>
+        <h3 class="badge-title">AUS BASEL</h3>
+        <p><span class="ph" title="Platzhalter: wird noch bestätigt">[Tipp zur Anfahrt folgt]</span> · Mit Schweizer Konto zahlst du per Überweisung.</p>
+      </li>
+      <li class="badge-item">
+        <svg class="enamel" viewBox="0 0 200 200" aria-hidden="true" focusable="false">
+          <defs><path id="eb-t3" d="M26 100A74 74 0 0 1 174 100"/><path id="eb-b3" d="M13 100A87 87 0 0 0 187 100"/></defs>
+          <circle cx="100" cy="100" r="97" fill="#052443"/><circle cx="100" cy="100" r="66" fill="#FEDD02"/><circle cx="100" cy="100" r="58" fill="#FFFFFF"/>
+          <text class="ring-t"><textPath href="#eb-t3" startOffset="50%" text-anchor="middle">AUS DEUTSCHLAND</textPath></text>
+          <text class="ring-b"><textPath href="#eb-b3" startOffset="50%" text-anchor="middle">DREI LÄNDER · EIN NETZ</textPath></text>
+          <circle cx="100" cy="82" r="13" fill="#EA162C"/>
+          <g fill="#052443"><path d="M66 132l14-34 14 34z"/><path d="M90 136l14-40 14 40z"/><path d="M114 132l14-30 14 30z"/></g>
+          <path d="M52 138H148" stroke="#052443" stroke-width="3.5" stroke-linecap="round"/>
+        </svg>
+        <h3 class="badge-title">AUS DEUTSCHLAND</h3>
+        <p><span class="ph" title="Platzhalter: wird noch bestätigt">[Tipp zur Anfahrt in der Region folgt]</span></p>
+      </li>
+    </ul>
+
+    <div class="honest-row">
+      <p class="honest">Wir starten in Freiburg <span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[vorläufig]</span>. Die Clubs jenseits der Grenze sind befreundet, keine Filialen.</p>
+      <figure class="postcard photo-card has-photo">
+        <div class="photo-img" style="--ratio: 3 / 2; --pos: 38% 50%">
+          <img src="../shared/photos/24-800.webp" srcset="../shared/photos/24-800.webp 800w, ../shared/photos/24-1600.webp 1600w" sizes="(min-width: 900px) 436px, calc(100vw - 56px)" width="1600" height="900" loading="lazy" decoding="async" alt="Zwei Pickleball-Paddles und ein gelber Ball liegen bei Sonnenuntergang auf dem weißen Geländer einer Bogenbrücke über einem breiten Fluss; am anderen Ufer bewaldete Hügel.">
+          <span class="ai-tag" aria-hidden="true">KI-Beispielbild · 24</span>
+        </div>
+        <figcaption>Drei Länder, ein Fluss, ein Netz.<span class="photo-credit"><svg aria-hidden="true"><use href="#i-camera"/></svg><span>KI-Beispielbild · Foto 24 · echtes Foto folgt (schriftliche Einwilligung, falls jemand erkennbar ist)</span></span></figcaption>
+      </figure>
+    </div>
+
+    <div class="events-head">
+      <h3 class="title-sm" id="events-title">DEMNÄCHST</h3>
+      <span class="sample">Beispiel</span>
+    </div>
+    <ol class="posters" aria-labelledby="events-title">
+      <li class="ev ev-a">
+        <div class="ev-poster">
+          <p class="ev-date"><span class="nw">Fr., 6. Nov. 2026 ·</span> <span class="nw">ab 20&nbsp;Uhr</span></p>
+          <svg class="ev-art" viewBox="0 0 160 90" aria-hidden="true" focusable="false"><path d="M118 18a16 16 0 1 0 14 24 13 13 0 1 1-14-24z" fill="#FEDD02"/><g fill="none" stroke="#FEDD02" stroke-width="4" stroke-linejoin="round"><path d="M44 40h24l-4 38H48z"/><path d="M76 34h24l-4 44H80z"/></g><path d="M48 58h16M80 54h16" stroke="#FEDD02" stroke-width="3"/><use href="#sym-ball" x="61" y="12" width="22" height="22" color="#FEDD02"/></svg>
+          <h4 class="ev-title">DINK &amp; DRINK</h4>
+        </div>
+        <p class="ev-line">Dinken &amp; Trinken: unser geselliger Abend. Alkoholfreie Getränke stehen immer auf dem Tisch.</p>
+        <p class="ev-where">Nach dem Open Play · <span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[Ort folgt]</span>, Freiburg</p>
+        <button type="button" class="btn btn-outline btn-sm" data-toast="Demo: Du bekämst jetzt eine Bestätigung per E-Mail für Dink &amp; Drink.">Ich bin dabei</button>
+      </li>
+      <li class="ev ev-b">
+        <div class="ev-poster">
+          <p class="ev-date"><span class="nw">Sa., 21. Nov. 2026 ·</span> <span class="nw">10–13&nbsp;Uhr</span></p>
+          <svg class="ev-art" viewBox="0 0 160 90" aria-hidden="true" focusable="false"><path d="M0 84C40 56 80 50 160 70V90H0z" fill="#EA162C"/><path d="M92 58V16" stroke="#C41224" stroke-width="4"/><path d="M94 16h34l-8 10 8 10H94z" fill="#C41224"/><text x="110" y="31" text-anchor="middle" class="ev-flag">50</text></svg>
+          <h4 class="ev-title">PICKLE <span class="nw">POP-UP</span> LÖRRACH</h4>
+        </div>
+        <p class="ev-line">Kostenloses Schnuppern in einem neuen Ort. Es findet statt, wenn Lörrach 50 Stimmen erreicht.</p>
+        <p class="ev-where"><span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[Ort folgt]</span>, Lörrach</p>
+        <button type="button" class="btn btn-outline btn-sm" data-toast="Demo: Du bekämst jetzt eine Bestätigung per E-Mail für das Pickle Pop-up Lörrach.">Ich bin dabei</button>
+      </li>
+      <li class="ev ev-c">
+        <div class="ev-poster">
+          <p class="ev-date">Frühjahr 2027 <span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[Datum folgt]</span></p>
+          <svg class="ev-art" viewBox="0 0 160 90" aria-hidden="true" focusable="false"><g fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"><path d="M60 10h40v18c0 16-9 26-20 26S60 44 60 28z"/><path d="M60 16H46c0 14 6 20 15 20M100 16h14c0 14-6 20-15 20"/><path d="M80 54v14M66 80h28M70 68h20v12H70z"/></g><use href="#sym-ball" x="70" y="18" width="20" height="20" color="#052443"/></svg>
+          <h4 class="ev-title">FOUNDERS’ CUP</h4>
+        </div>
+        <p class="ev-line">Ein Spaßturnier für Gründungsmitglieder und ihren Freundeskreis. Jedes Level willkommen.</p>
+        <p class="ev-where"><span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[Ort folgt]</span></p>
+        <button type="button" class="btn btn-outline btn-sm" data-toast="Demo: Du bekämst jetzt eine Bestätigung per E-Mail für den Founders’ Cup.">Ich bin dabei</button>
+      </li>
+      <li class="ev ev-a">
+        <div class="ev-poster">
+          <p class="ev-date">Oktober 2027 <span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[Datum folgt]</span></p>
+          <svg class="ev-art" viewBox="0 0 160 90" aria-hidden="true" focusable="false"><use href="#sym-ball" x="50" y="4" width="60" height="60" color="#FEDD02"/><g fill="none" stroke="#FEDD02" stroke-width="3"><ellipse cx="80" cy="34" rx="44" ry="12"/><path d="M20 80h120"/></g><path d="M20 80h40" stroke="#EA162C" stroke-width="5"/></svg>
+          <h4 class="ev-title">WORLD PICKLEBALL DAY: TAG DER OFFENEN TÜR</h4>
+        </div>
+        <p class="ev-line">Offene Türen für alle, am selben Wochenende wie die Tage der offenen Tür in Frankreich.</p>
+        <p class="ev-where"><span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[Ort folgt]</span>, Freiburg</p>
+        <button type="button" class="btn btn-outline btn-sm" data-toast="Demo: Du bekämst jetzt eine Bestätigung per E-Mail für den Tag der offenen Tür zum World Pickleball Day.">Ich bin dabei</button>
+      </li>
+      <li class="ev ev-b">
+        <div class="ev-poster">
+          <p class="ev-date"><span class="nw">Sommer 2027 ·</span> <span class="nw">noch eine Idee</span></p>
+          <svg class="ev-art" viewBox="0 0 160 90" aria-hidden="true" focusable="false"><path d="M0 62L36 36 70 58 104 30 160 62V90H0z" fill="#052443"/><path d="M0 70L40 50 80 70 120 46 160 70" fill="none" stroke="#EA162C" stroke-width="4"/><path d="M80 12v60" stroke="#052443" stroke-width="3" stroke-dasharray="4 4"/><text x="80" y="10" text-anchor="middle" class="ev-flag ev-flag-navy">FR · DE · CH</text></svg>
+          <h4 class="ev-title">THREE COUNTRIES OPEN</h4>
+        </div>
+        <p class="ev-line">Ein grenzüberschreitendes Spaßturnier mit Pickleball-Begeisterten aus dem Elsass und aus Basel.</p>
+        <p class="ev-where"><span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[Ort folgt]</span></p>
+        <button type="button" class="btn btn-outline btn-sm" data-toast="Demo: Du bekämst jetzt eine Bestätigung per E-Mail für das Three Countries Open.">Ich bin dabei</button>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- 8. CLUB -->
+<section class="sec sec-white" id="club" aria-labelledby="club-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="title" id="club-title">UNSERE PADDLES TRAGEN DAS BADISCHE WAPPEN.</h2>
+    </div>
+
+    <div class="club-intro">
+      <div class="club-left">
+      <figure class="arms">
+        <img src="../shared/logo-transparent.png" alt="Pickleball Südbaden e.V." width="280" height="251">
+        <svg class="arms-line" viewBox="0 0 160 60" aria-hidden="true" focusable="false"><circle cx="6" cy="40" r="5" fill="#052443"/><path d="M6 40L60 10H160" fill="none" stroke="#052443" stroke-width="2"/></svg>
+        <figcaption class="arms-cap"><svg class="arms-swatch" viewBox="0 0 200 420" aria-hidden="true" focusable="false"><use href="#sym-paddle"/></svg>Ein roter Schrägbalken auf Gold: das badische Wappen. Eine Anspielung darauf, nicht das offizielle Landeswappen.</figcaption>
+      </figure>
+      <div class="story">
+        <h3 class="h-sm">Wie alles anfing</h3>
+        <p class="ph-block"><span class="ph" title="Platzhalter: wird noch bestätigt">[Drei Sätze: Wer den Verein gegründet hat, wann (Gründungsversammlung am [Datum]) und warum Südbaden einen Pickleball-Verein gebraucht hat. Beispiel: „Im [Monat] 2026 haben sich [Anzahl] Pickleball-Begeisterte in [Ort] getroffen und den Pickleball Südbaden e.V. gegründet. Wir wollten einen Verein für Neulinge, in drei Sprachen, direkt hier im Südwesten. Jetzt suchen wir die ersten 100 Mitglieder.“]</span></p>
+      </div>
+      </div>
+      <figure class="postcard photo-card club-photo">
+        <div class="photo-ph" style="--ratio: 3 / 2">
+          <svg class="ph-cam" aria-hidden="true"><use href="#i-camera"/></svg>
+          <span class="ph-id">FOTO 05 · MOTIVLISTE</span>
+          <span class="ph-brief">Gruppenfoto der Gründungsmitglieder, draußen vor Freiburger Kulisse oder am Spielort.</span>
+          <span class="ph-meta">Format 3:2 · Schriftliche Einwilligung</span>
+        </div>
+        <figcaption class="real-needed">Echtes Foto gesucht: unsere Gründungsmitglieder</figcaption>
+      </figure>
+    </div>
+
+    <div class="people-block">
+      <div class="block-head">
+        <h3 class="title-sm">DER VORSTAND</h3>
+        <p class="block-note"><strong class="real-needed">Echte Porträts gesucht:</strong> Namen und Fotos ergänzen wir vor dem Start. Jede Rolle hat eine eigene Adresse, damit deine Nachricht gleich bei der richtigen Person landet.</p>
+      </div>
+      <ul class="people" role="list">
+        <li class="person"><div class="pphoto" aria-hidden="true"><span class="q">?</span><span class="pphoto-role">Vorsitz</span></div><p class="p-role">Vorsitz</p><p class="p-name"><span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[Name]</span></p><p class="p-topic">Allgemeines, Presse</p><p class="p-mail">chair@<span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[Domain folgt]</span></p></li>
+        <li class="person"><div class="pphoto" aria-hidden="true"><span class="q">?</span><span class="pphoto-role">Stellv. Vorsitz</span></div><p class="p-role">Stellvertretender Vorsitz</p><p class="p-name"><span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[Name]</span></p><p class="p-topic">Sponsoring</p><p class="p-mail">vice-chair@<span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[Domain folgt]</span></p></li>
+        <li class="person"><div class="pphoto" aria-hidden="true"><span class="q">?</span><span class="pphoto-role">Finanzen</span></div><p class="p-role">Finanzen</p><p class="p-name"><span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[Name]</span></p><p class="p-topic">Mitgliedschaft und Beiträge</p><p class="p-mail">treasurer@<span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[Domain folgt]</span></p></li>
+        <li class="person"><div class="pphoto" aria-hidden="true"><span class="q">?</span><span class="pphoto-role">Schriftführung</span></div><p class="p-role">Schriftführung</p><p class="p-name"><span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[Name]</span></p><p class="p-topic">Dokumente, Mitgliederversammlung</p><p class="p-mail">secretary@<span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[Domain folgt]</span></p></li>
+        <li class="person"><div class="pphoto" aria-hidden="true"><span class="q">?</span><span class="pphoto-role">Sport</span></div><p class="p-role">Sport und Training</p><p class="p-name"><span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[Name]</span></p><p class="p-topic">Termine, Kitchen School</p><p class="p-mail">sport@<span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[Domain folgt]</span></p></li>
+        <li class="person"><div class="pphoto" aria-hidden="true"><span class="q">?</span><span class="pphoto-role">Kinderschutz</span></div><p class="p-role">Ansprechperson Kinderschutz</p><p class="p-name"><span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[Name]</span></p><p class="p-topic">Kinderschutz, vertraulich</p><p class="p-mail">kinderschutz@<span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[Domain folgt]</span></p></li>
+        <li class="person"><div class="pphoto" aria-hidden="true"><span class="q">?</span><span class="pphoto-role">Hallen</span></div><p class="p-role">Hallen und Kommunen</p><p class="p-name"><span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[Name]</span></p><p class="p-topic">Spielorte, Städte und Gemeinden</p><p class="p-mail">venues@<span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[Domain folgt]</span></p></li>
+      </ul>
+    </div>
+
+    <div class="founders">
+      <div class="f-badge">
+        <svg class="enamel enamel-founder" viewBox="0 0 200 200" role="img" aria-label="Emaille-Abzeichen: Gründungsnummer 038 von 100 ist noch frei" focusable="false">
+          <defs><path id="fb-t" d="M26 100A74 74 0 0 1 174 100"/><path id="fb-b" d="M13 100A87 87 0 0 0 187 100"/></defs>
+          <circle cx="100" cy="100" r="97" fill="#052443"/><circle cx="100" cy="100" r="66" fill="#FEDD02"/><circle cx="100" cy="100" r="58" fill="#FFFFFF"/>
+          <text class="ring-t"><textPath href="#fb-t" startOffset="50%" text-anchor="middle">GRÜNDUNGSNR. 038</textPath></text>
+          <text class="ring-b"><textPath href="#fb-b" startOffset="50%" text-anchor="middle">VON 100 IST NOCH FREI</textPath></text>
+          <text x="100" y="84" text-anchor="middle" class="badge-no">Nr.</text>
+          <text x="100" y="132" text-anchor="middle" class="badge-num">038</text>
+          <path d="M62 142H138" stroke="#EA162C" stroke-width="5" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="f-body">
+        <div class="f-head">
+          <h3 class="title-sm">DIE FIRST 100</h3>
+          <span class="sample">Beispiel</span>
+        </div>
+        <p class="f-count"><span class="f-num">37</span> <span>von 100 Gründungsplätzen sind vergeben. Gründungsnummer 038 ist noch frei.</span></p>
+        <ul class="perks" aria-label="Vorteile für Gründungsmitglieder (Vorschlag)">
+          <li>Keine Aufnahmegebühr</li>
+          <li>Deine Gründungsnummer, für immer</li>
+          <li>Dein Emaille-Abzeichen als Gründungsmitglied</li>
+          <li>Eine Einladung zum Founders’ Cup</li>
+        </ul>
+        <p class="perks-note"><span class="ph" title="Platzhalter: wird noch bestätigt">[Vorgeschlagene Vorteile, der Vorstand bestätigt sie noch]</span></p>
+        <p class="ticker"><svg class="ico" aria-hidden="true"><use href="#i-ball"/></svg>Willkommen, Jonas aus Kenzingen! <span class="sample">Beispiel</span> <span class="muted">Nur sichtbar, wenn neue Mitglieder zustimmen.</span></p>
+        <button type="button" class="btn btn-navy btn-lg" data-open="member">Gründungsmitglied werden</button>
+      </div>
+      <div class="f-balls">
+        <svg class="balls100" viewBox="0 0 100 100" role="img" aria-label="Zähler: 37 von 100 Gründungsplätzen vergeben (Beispiel)" focusable="false">
+          <defs>
+            <pattern id="pt-full" width="10" height="10" patternUnits="userSpaceOnUse"><use href="#sym-ball" x=".8" y=".8" width="8.4" height="8.4" color="#052443"/></pattern>
+            <pattern id="pt-empty" width="10" height="10" patternUnits="userSpaceOnUse"><circle cx="5" cy="5" r="3.7" fill="none" stroke="#7A96B6" stroke-width=".6"/></pattern>
+          </defs>
+          <rect width="100" height="30" fill="url(#pt-full)"/>
+          <rect y="30" width="70" height="10" fill="url(#pt-full)"/>
+          <rect x="70" y="30" width="30" height="10" fill="url(#pt-empty)"/>
+          <rect y="40" width="100" height="60" fill="url(#pt-empty)"/>
+          <circle cx="75" cy="35" r="4.6" fill="none" stroke="#C41224" stroke-width=".9" stroke-dasharray="1.6 1.1"/>
+        </svg>
+        <p class="balls-cap">Als Nächstes frei: <strong>Nr.&nbsp;038</strong> <span class="balls-key" aria-hidden="true"></span></p>
+      </div>
+    </div>
+
+    <div class="trust">
+      <div class="block-head">
+        <h3 class="title-sm">DER PAPIERKRAM</h3>
+      </div>
+      <div class="trust-grid">
+        <div class="trust-lines">
+          <p class="register">Eingetragener Verein · Amtsgericht Freiburg i.&nbsp;Br. · VR <span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[ausstehend]</span> (bis zur Eintragung e.V. i.&nbsp;G.)</p>
+          <ul class="status-lines">
+            <li><span class="pending">Ausstehend</span> Sportversicherung: <span class="ph" title="Platzhalter: wird noch bestätigt">[wird mit dem BSB Freiburg / der ARAG geklärt]</span></li>
+            <li><span class="pending">Ausstehend</span> Gemeinnützigkeit: <span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[ausstehend]</span></li>
+            <li><span class="pending">Ausstehend</span> Mitgliedschaften: <span class="ph" title="Platzhalter: wird noch bestätigt">[Badischer Sportbund Freiburg, ausstehend]</span> · <span class="ph" title="Platzhalter: wird noch bestätigt">[Fachverband, ausstehend]</span></li>
+          </ul>
+        </div>
+        <div class="table-scroll" tabindex="0" role="region" aria-label="Dokumentenverzeichnis">
+          <table class="doc-table">
+            <caption>Dokumentenverzeichnis</caption>
+            <thead><tr><th scope="col">Dokument</th><th scope="col">Version</th><th scope="col">Beschlossen</th><th scope="col">Sprachen</th><th scope="col">Hinweis</th></tr></thead>
+            <tbody>
+              <tr><th scope="row"><button type="button" class="link-btn" data-toast="Demo: Hier wird die Satzung als PDF verlinkt.">Satzung</button></th><td><span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[v1.0]</span></td><td><span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[Datum]</span></td><td>DE, mit Übersetzungen ins Englische und Französische</td><td>Maßgeblich ist die deutsche Fassung</td></tr>
+              <tr><th scope="row"><button type="button" class="link-btn" data-toast="Demo: Hier wird die Beitragsordnung als PDF verlinkt.">Beitragsordnung</button></th><td><span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[Entwurf]</span></td><td><span class="ph" title="Platzhalter: wird noch bestätigt">[Mitgliederversammlung, Datum folgt]</span></td><td>DE</td><td></td></tr>
+              <tr><th scope="row"><button type="button" class="link-btn" data-toast="Demo: Hier wird der Verhaltenskodex verlinkt.">Verhaltenskodex</button></th><td><span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[Entwurf]</span></td><td></td><td></td><td></td></tr>
+              <tr><th scope="row"><button type="button" class="link-btn" data-toast="Demo: Hier wird das Kinderschutzkonzept verlinkt.">Kinderschutzkonzept</button></th><td><span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[Entwurf]</span></td><td></td><td></td><td></td></tr>
+              <tr><th scope="row"><button type="button" class="link-btn" data-toast="Demo: Hier wird die Datenschutzerklärung verlinkt.">Datenschutzerklärung</button></th><td><span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[Entwurf]</span></td><td></td><td>DE · FR · EN vor dem Start</td><td></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 9. FARES -->
+<section class="sec sec-chalk cut" id="fares" aria-labelledby="fares-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="title" id="fares-title">TARIFE</h2>
+      <p class="sub">Alle Preise. Nichts versteckt.</p>
+    </div>
+
+    <ul class="tickets" role="list">
+      <li class="ticket ticket-day">
+        <div class="t-body">
+          <p class="t-class">TAGESKARTE</p>
+          <h3 class="t-name">GAST</h3>
+          <p class="t-desc">Dein erster Besuch ist kostenlos. Danach <span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[__]&nbsp;€</span> pro Termin <span class="ph" title="Platzhalter: wird noch bestätigt">[bis zu 2 Besuche, vorläufig]</span>.</p>
+        </div>
+        <div class="t-stub">
+          <p class="t-price-row"><span class="t-label">Erster Besuch</span><span class="t-price">0&nbsp;€</span></p>
+          <p class="t-price-row"><span class="t-label">Dann</span><span class="t-price"><span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[__]&nbsp;€</span></span></p>
+          <p class="t-per">pro Termin nach dem ersten Besuch</p>
+        </div>
+      </li>
+      <li class="ticket has-ribbon">
+        <div class="t-body">
+          <p class="t-class">MITGLIED</p>
+          <h3 class="t-name">ERWACHSENE</h3>
+          <p class="t-desc">Regelmäßige Termine das ganze Jahr und eine Stimme in der Mitglieder&shy;versammlung.</p>
+        </div>
+        <div class="t-stub"><p class="t-price"><span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[__]&nbsp;€</span></p><p class="t-per">/ Jahr</p></div>
+        <span class="t-ribbon" aria-hidden="true">FIRST 100: OHNE AUFNAHME&shy;GEBÜHR</span>
+      </li>
+      <li class="ticket has-ribbon ticket-mini">
+        <div class="t-body">
+          <p class="t-class">MITGLIED</p>
+          <h3 class="t-name">ERMÄSSIGT</h3>
+          <p class="t-desc">Studierende, Auszubildende und Menschen im Freiwilligendienst.</p>
+        </div>
+        <div class="t-stub"><p class="t-price"><span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[__]&nbsp;€</span></p><p class="t-per">/ Jahr</p></div>
+        <span class="t-ribbon" aria-hidden="true">FIRST 100: OHNE AUFNAHME&shy;GEBÜHR</span>
+      </li>
+      <li class="ticket has-ribbon ticket-mini">
+        <div class="t-body">
+          <p class="t-class">MITGLIED</p>
+          <h3 class="t-name">JUGEND</h3>
+          <p class="t-desc">Unter 18. Ein Elternteil oder eine erziehungsberechtigte Person unterschreibt mit dir.</p>
+        </div>
+        <div class="t-stub"><p class="t-price"><span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[__]&nbsp;€</span></p><p class="t-per">/ Jahr</p></div>
+        <span class="t-ribbon" aria-hidden="true">FIRST 100: OHNE AUFNAHME&shy;GEBÜHR</span>
+      </li>
+      <li class="ticket has-ribbon ticket-mini">
+        <div class="t-body">
+          <p class="t-class">MITGLIED</p>
+          <h3 class="t-name">FAMILIE</h3>
+          <p class="t-desc">Ein Haushalt, ein Beitrag.</p>
+        </div>
+        <div class="t-stub"><p class="t-price"><span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[__]&nbsp;€</span></p><p class="t-per">/ Jahr</p></div>
+        <span class="t-ribbon" aria-hidden="true">FIRST 100: OHNE AUFNAHME&shy;GEBÜHR</span>
+      </li>
+      <li class="ticket has-ribbon ticket-mini">
+        <div class="t-body">
+          <p class="t-class">MITGLIED</p>
+          <h3 class="t-name">FÖRDERMITGLIED</h3>
+          <p class="t-desc">Du spielst nicht, hilfst dem Verein aber beim Wachsen.</p>
+        </div>
+        <div class="t-stub"><p class="t-price"><span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[__]&nbsp;€</span></p><p class="t-per">/ Jahr</p></div>
+        <span class="t-ribbon" aria-hidden="true">FIRST 100: OHNE AUFNAHME&shy;GEBÜHR</span>
+      </li>
+    </ul>
+    <p class="sr-only">Für die ersten 100 Mitglieder entfällt bei jeder Mitgliedschaft die Aufnahmegebühr.</p>
+
+    <div class="fare-notes">
+      <div class="fn-main">
+        <p class="breakeven">Die Mitgliedschaft lohnt sich ab etwa <span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[N]</span> Terminen im Jahr.</p>
+        <p class="joining">Aufnahmegebühr: <span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[__]&nbsp;€</span>. Für die First 100: 0&nbsp;€.</p>
+        <p class="fee-label">Beispielhafte Platzhalter. Die Beiträge legt die Mitgliederversammlung in der Beitragsordnung fest.</p>
+        <button type="button" class="btn btn-navy btn-lg" data-open="member">Mitglied werden</button>
+        <p class="small-print">Mitgliedsbeiträge sind nicht steuerlich absetzbar. Spenden können absetzbar werden, wenn das Finanzamt unsere Gemeinnützigkeit bestätigt.</p>
+      </div>
+      <div class="verein">
+        <h3 class="h-sm">Warum ein Verein?</h3>
+        <p>In Deutschland ist Sport meist in gemeinnützigen Vereinen organisiert, die von ihren Mitgliedern getragen werden. Beitreten ist einfacher, als es klingt: ein Formular, ein Lastschriftmandat, und du gehörst dazu. Mitglieder bekommen regelmäßige Termine, eine Stimme in der Mitgliederversammlung und <span class="ph" title="Platzhalter: wird noch bestätigt">[Sportversicherung über den Sportbund, ausstehend]</span>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 10. JOIN THE CREW -->
+<section class="sec sec-white" id="join-in" aria-labelledby="crew-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="title" id="crew-title">KOMM INS TEAM</h2>
+      <p class="sub">Ein junger Verein lebt von allen, die mit anpacken. Hier findest du deinen Platz.</p>
+    </div>
+    <div class="crew-grid">
+      <div class="crew-col">
+        <h3 class="h-sm">Mit anpacken</h3>
+        <p class="crew-lead">Such dir eine Aufgabe aus, wir melden uns.</p>
+        <ul class="role-chips" role="list">
+          <li><button type="button" class="chip chip-light" data-contact-topic="Volunteering" data-contact-note="Termine leiten">Termine leiten</button></li>
+          <li><button type="button" class="chip chip-light" data-contact-topic="Volunteering" data-contact-note="Netze aufbauen">Netze aufbauen</button></li>
+          <li><button type="button" class="chip chip-light" data-contact-topic="Volunteering" data-contact-note="Übersetzen (FR/EN)">Übersetzen (FR/EN)</button></li>
+          <li><button type="button" class="chip chip-light" data-contact-topic="Volunteering" data-contact-note="Fotografieren">Fotografieren</button></li>
+          <li><button type="button" class="chip chip-light" data-contact-topic="Volunteering" data-contact-note="Hallen finden">Hallen finden</button></li>
+          <li><button type="button" class="chip chip-light" data-contact-topic="Volunteering" data-contact-note="Gruppe in meinem Ort starten">Gruppe in deinem Ort starten</button></li>
+          <li><button type="button" class="chip chip-light" data-contact-topic="Volunteering" data-contact-note="Social Media">Social Media</button></li>
+        </ul>
+        <figure class="postcard photo-card photo-card-sm has-photo no-stamp">
+          <div class="photo-img" style="--ratio: 4 / 3; --pos: 50% 50%">
+            <img src="../shared/photos/15-800.webp" srcset="../shared/photos/15-800.webp 800w, ../shared/photos/15-1600.webp 1448w" sizes="(min-width: 1024px) 340px, calc(100vw - 56px)" width="1448" height="1086" loading="lazy" decoding="async" alt="Drei Ehrenamtliche bauen in einer leeren Sporthalle ein mobiles Pickleball-Netz auf: Eine Frau und ein älterer Mann klappen das Netzgestell auf, ein jüngerer Mann trägt ein Netz voller Bälle.">
+            <span class="ai-tag" aria-hidden="true">KI-Beispielbild · 15</span>
+          </div>
+          <figcaption>Vor dem ersten Aufschlag: Netze hoch, Bälle raus.<span class="photo-credit"><svg aria-hidden="true"><use href="#i-camera"/></svg><span>KI-Beispielbild · Foto 15 · echtes Foto folgt (Erwachsene vorab informiert)</span></span></figcaption>
+        </figure>
+      </div>
+
+      <div class="crew-col">
+        <h3 class="h-sm">Für Gemeinden, Schulen und Hallen</h3>
+        <div class="postcard fact-card">
+          <span class="pc-stamp" aria-hidden="true"><svg viewBox="-18 -18 564 276"><rect x="0" y="0" width="528" height="240" fill="#1F5EA8"/><rect x="180" y="0" width="168" height="240" fill="#0C3561"/><g fill="#fff"><rect x="0" y="0" width="528" height="8"/><rect x="0" y="232" width="528" height="8"/><rect x="0" y="0" width="8" height="240"/><rect x="520" y="0" width="8" height="240"/><rect x="262" y="-18" width="6" height="276"/></g></svg></span>
+          <h4 class="fact-title">Eure Halle hat die Linien schon.</h4>
+          <p>Ein Pickleball-Feld ist so groß wie ein Badminton-Doppelfeld (6,10 × 13,41&nbsp;m). Wir bringen mobile Netze mit, spielen nur in Hallenschuhen mit nicht abfärbender Sohle und sind ein eingetragener Verein <span class="ph" title="Platzhalter: wird noch bestätigt">[Registernummer und Versicherung: ausstehend]</span>. Wir können euch zeigen, wie viele Menschen in eurem Ort spielen möchten.</p>
+          <div class="fact-actions">
+            <button type="button" class="btn btn-outline btn-sm" data-toast="Demo: Hier wird das Hallen-Infoblatt (PDF, DE · FR · EN) heruntergeladen.">Hallen-Infoblatt herunterladen</button>
+            <button type="button" class="link-btn" data-contact-topic="Venues and councils">Kontakt: <span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[Name]</span>, Hallen und Kommunen</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="crew-col">
+        <h3 class="h-sm">Für Unternehmen</h3>
+        <p class="crew-lead">Teamabend oder Betriebssporttag? Wir bringen euch Paddles und eine Spielleitung mit.</p>
+        <button type="button" class="btn btn-outline btn-sm" data-contact-topic="Groups and companies">Gruppentermin anfragen</button>
+        <h4 class="partners-title">Unsere ersten Partner</h4>
+        <ol class="partner-wall" role="list">
+          <li><span>Platz für Gründungspartner</span><b>1 von 10</b></li>
+          <li><span>Platz für Gründungspartner</span><b>2 von 10</b></li>
+          <li><span>Platz für Gründungspartner</span><b>3 von 10</b></li>
+          <li><span>Platz für Gründungspartner</span><b>4 von 10</b></li>
+          <li><span>Platz für Gründungspartner</span><b>5 von 10</b></li>
+          <li><span>Platz für Gründungspartner</span><b>6 von 10</b></li>
+          <li><span>Platz für Gründungspartner</span><b>7 von 10</b></li>
+          <li><span>Platz für Gründungspartner</span><b>8 von 10</b></li>
+          <li><span>Platz für Gründungspartner</span><b>9 von 10</b></li>
+          <li><span>Platz für Gründungspartner</span><b>10 von 10</b></li>
+        </ol>
+        <button type="button" class="link-btn" data-contact-topic="Sponsoring">Gründungspartner werden</button>
+      </div>
+    </div>
+
+    <div class="donate">
+      <div>
+        <h3 class="h-sm">Spenden</h3>
+        <p>Spenden: bald möglich. Zuwendungsbestätigungen können wir ausstellen, sobald das Finanzamt unsere Gemeinnützigkeit bestätigt hat. Bis dahin hilfst du uns am meisten mit deiner Zeit oder einer Partnerschaft.</p>
+      </div>
+      <button type="button" class="btn btn-outline" disabled aria-describedby="donate-why">Spenden</button>
+      <p class="sr-only" id="donate-why">Erst möglich, wenn unsere Gemeinnützigkeit bestätigt ist.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 11. FAQ -->
+<section class="sec sec-chalk" id="faq" aria-labelledby="faq-title">
+  <div class="wrap faq-wrap">
+    <div class="sec-head">
+      <h2 class="title" id="faq-title">FRAGEN? ANTWORTEN.</h2>
+      <p class="sub">Noch etwas offen? <a class="link-btn" href="#contact">Schreib uns</a>.</p>
+    </div>
+    <div class="faq-list">
+      <details><summary><svg class="faq-ball" viewBox="0 0 32 32" aria-hidden="true"><use href="#i-ball"/></svg>Brauche ich Vorerfahrung?</summary><p>Überhaupt nicht. First Serve ist für alle gemacht, die noch nie ein Paddle in der Hand hatten.</p></details>
+      <details><summary><svg class="faq-ball" viewBox="0 0 32 32" aria-hidden="true"><use href="#i-ball"/></svg>Brauche ich ein eigenes Paddle?</summary><p>Nein. Paddles und Bälle leihen wir dir aus unserer Paddle Library. Bring einfach Hallenschuhe mit nicht abfärbender Sohle mit.</p></details>
+      <details><summary><svg class="faq-ball" viewBox="0 0 32 32" aria-hidden="true"><use href="#i-ball"/></svg>Was kostet das?</summary><p>Dein erster Termin ist kostenlos. Danach zahlen Gäste <span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[__]&nbsp;€</span> pro Termin <span class="ph" title="Platzhalter: wird noch bestätigt">[bis zu 2 Besuche, vorläufig]</span>. Mitglieder spielen bei den regulären Terminen <span class="ph" title="Platzhalter: wird noch bestätigt">[ohne Zusatzkosten, vorläufig]</span>.</p></details>
+      <details><summary><svg class="faq-ball" viewBox="0 0 32 32" aria-hidden="true"><use href="#i-ball"/></svg>Was, wenn ich am schlechtesten spiele?</summary><p>Wirst du nicht, und es stört auch niemanden. Neulinge spielen erst mal mit Neulingen, und die Spielleitung stellt die Paarungen mit Gefühl zusammen.</p></details>
+      <details><summary><svg class="faq-ball" viewBox="0 0 32 32" aria-hidden="true"><use href="#i-ball"/></svg>Welche Sprachen werden gesprochen?</summary><p>Die Termine laufen auf Deutsch, und die Spielleitung spricht meist auch Englisch. Termine mit französischsprachiger Spielleitung sind im Spielplan mit FR markiert.</p></details>
+      <details><summary><svg class="faq-ball" viewBox="0 0 32 32" aria-hidden="true"><use href="#i-ball"/></svg>Kann ich jemanden oder meine Kinder mitbringen?</summary><p>Bring gern jemanden mit! Melde die Person bei der Buchung mit an, damit wir genug Paddles dabeihaben. Kinder ab <span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[Alter folgt]</span> sind bei Familienterminen mit einem Elternteil willkommen.</p></details>
+      <details><summary><svg class="faq-ball" viewBox="0 0 32 32" aria-hidden="true"><use href="#i-ball"/></svg>Bin ich beim kostenlosen Termin versichert?</summary><p><span class="ph" title="Platzhalter: wird noch bestätigt">[Wird gerade mit dem Badischen Sportbund Freiburg und der ARAG geklärt. Bevor die Buchung öffnet, steht hier, was abgedeckt ist.]</span></p></details>
+      <details><summary><svg class="faq-ball" viewBox="0 0 32 32" aria-hidden="true"><use href="#i-ball"/></svg>Ist Pickleball nur was für Ältere?</summary><p>Nein. Studierende, Familien, Leute, die vom Tennis kommen, und Menschen im Ruhestand spielen auf demselben Feld.</p></details>
+      <details><summary><svg class="faq-ball" viewBox="0 0 32 32" aria-hidden="true"><use href="#i-ball"/></svg>Wie werde ich Mitglied?</summary><p>Du füllst ein Formular aus und erteilst ein Lastschriftmandat oder zahlst per Überweisung, zum Beispiel von einem Schweizer Konto. Wir bestätigen dir alles per E-Mail.</p></details>
+      <details><summary><svg class="faq-ball" viewBox="0 0 32 32" aria-hidden="true"><use href="#i-ball"/></svg>Kann ich Mitglied werden, wenn ich in Frankreich oder der Schweiz wohne?</summary><p>Ja. Die Mitgliedschaft steht allen offen.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- 12. MONTHLY POSTCARD AND CONTACT -->
+<section class="sec sec-white" id="news" aria-labelledby="news-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="title" id="news-title">BLEIB AM BALL</h2>
+    </div>
+    <div class="nl-card postcard" data-newsletter>
+      <div class="nl-left">
+        <p class="nl-msg">Die Monatspostkarte. Termine, Neuigkeiten und ab und zu ein schlechter Wortwitz.</p>
+        <p class="nl-from">Vom Pickleball Südbaden e.V., Freiburg <span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[vorläufig]</span>. Einmal im Monat, auf Deutsch, Französisch oder Englisch.</p>
+        <svg class="postmark" viewBox="0 0 220 90" aria-hidden="true" focusable="false"><circle cx="46" cy="45" r="36" fill="none" stroke="#7A96B6" stroke-width="2.5"/><circle cx="46" cy="45" r="28" fill="none" stroke="#7A96B6" stroke-width="1.2"/><text x="46" y="41" text-anchor="middle" class="pm-t">FREIBURG</text><text x="46" y="57" text-anchor="middle" class="pm-t">i.&nbsp;Br.</text><g fill="none" stroke="#7A96B6" stroke-width="2.5"><path d="M92 25c16-8 32 8 48 0s32 8 48 0 16-4 24 0"/><path d="M92 45c16-8 32 8 48 0s32 8 48 0 16-4 24 0"/><path d="M92 65c16-8 32 8 48 0s32 8 48 0 16-4 24 0"/></g></svg>
+      </div>
+      <form class="nl-right" data-nl-form action="#news" novalidate>
+        <span class="nl-stamp" aria-hidden="true"><svg viewBox="0 0 100 100"><use href="#sym-ball"/></svg></span>
+        <div class="field field-ruled">
+          <label for="nl-email">Deine E-Mail-Adresse</label>
+          <input type="email" id="nl-email" autocomplete="email" required aria-describedby="nl-email-err">
+          <p class="err" id="nl-email-err" hidden></p>
+        </div>
+        <fieldset class="field field-ruled">
+          <legend>Sprache der Postkarte</legend>
+          <div class="radios-inline">
+            <label class="radio"><input type="radio" name="nl-lang" value="de" checked><span>Deutsch</span></label>
+            <label class="radio"><input type="radio" name="nl-lang" value="fr"><span lang="fr">Français</span></label>
+            <label class="radio"><input type="radio" name="nl-lang" value="en"><span lang="en">English</span></label>
+          </div>
+        </fieldset>
+        <p class="hint">Zuerst schicken wir dir einen Bestätigungslink. Dein Abo startet erst, wenn du ihn anklickst. Eine E-Mail im Monat, Abmeldung jederzeit mit einem Klick.</p>
+        <div class="submit-row">
+          <button type="submit" class="btn btn-navy">Monatspostkarte abonnieren</button>
+          <p class="privacy-line">So gehen wir mit deinen Daten um: <button type="button" class="link-btn" data-open="doc-datenschutz">Datenschutzerklärung</button></p>
+        </div>
+        <p class="stub-note"><span class="demo-tag">Demo · es wird nichts gesendet</span> <span>Später: ein Newsletter-Tool mit Servern in der EU <span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[folgt]</span>.</span></p>
+      </form>
+      <div class="nl-done" data-nl-done hidden tabindex="-1">
+        <svg class="postmark-sent" viewBox="0 0 140 140" aria-hidden="true" focusable="false"><g transform="rotate(-8 70 70)"><circle cx="70" cy="70" r="60" fill="none" stroke="#C41224" stroke-width="4"/><circle cx="70" cy="70" r="48" fill="none" stroke="#C41224" stroke-width="1.6"/><text x="70" y="66" text-anchor="middle" class="sent-t">RAUS</text><text x="70" y="92" text-anchor="middle" class="sent-s">· DEMO ·</text></g></svg>
+        <p class="nl-done-msg">Schau in dein Postfach. Wir haben dir einen Bestätigungslink geschickt. (Demo: Es wurde nichts gesendet.)</p>
+      </div>
+    </div>
+
+    <div class="contact" id="contact">
+      <div class="sec-head">
+        <h2 class="title" id="contact-title">SCHREIB UNS</h2>
+        <p class="sub">Wir antworten innerhalb von 2 Werktagen (unser Ziel).</p>
+      </div>
+      <div class="contact-grid">
+        <form class="contact-form postcard" data-contact action="#contact" novalidate aria-labelledby="contact-title">
+          <div class="field">
+            <label for="c-topic">Thema</label>
+            <select id="c-topic">
+              <option value="General">Allgemeines</option>
+              <option value="Trying pickleball">Pickleball ausprobieren</option>
+              <option value="Membership and fees">Mitgliedschaft und Beiträge</option>
+              <option value="Groups and companies">Gruppen und Firmen</option>
+              <option value="Venues and councils">Hallen und Kommunen</option>
+              <option value="Sponsoring">Sponsoring</option>
+              <option value="Press">Presse</option>
+              <option value="Volunteering">Ehrenamt</option>
+              <option value="Child protection (confidential)">Kinderschutz (vertraulich)</option>
+            </select>
+          </div>
+          <div class="field-pair">
+            <div class="field">
+              <label for="c-name">Name</label>
+              <input id="c-name" autocomplete="name" required aria-describedby="c-name-err">
+              <p class="err" id="c-name-err" hidden></p>
+            </div>
+            <div class="field">
+              <label for="c-email">E-Mail</label>
+              <input type="email" id="c-email" autocomplete="email" required aria-describedby="c-email-err">
+              <p class="err" id="c-email-err" hidden></p>
+            </div>
+          </div>
+          <div class="field">
+            <label for="c-msg">Nachricht</label>
+            <textarea id="c-msg" rows="5" required aria-describedby="c-msg-err"></textarea>
+            <p class="err" id="c-msg-err" hidden></p>
+          </div>
+          <div class="hp" aria-hidden="true"><label for="c-website">Bitte leer lassen</label><input id="c-website" tabindex="-1" autocomplete="off"></div>
+          <button type="submit" class="btn btn-navy">Nachricht senden</button>
+          <p class="privacy-line">So gehen wir mit deinen Daten um: <button type="button" class="link-btn" data-open="doc-datenschutz">Datenschutzerklärung</button></p>
+          <p class="stub-note"><span class="demo-tag">Demo · es wird nichts gesendet</span> <span>Später: unser eigenes Formular, das jede Nachricht an die passende Rollenadresse schickt.</span></p>
+          <div class="contact-done" data-contact-done hidden tabindex="-1">
+            <svg class="postmark-sent" viewBox="0 0 140 140" aria-hidden="true" focusable="false"><g transform="rotate(-8 70 70)"><circle cx="70" cy="70" r="60" fill="none" stroke="#C41224" stroke-width="4"/><circle cx="70" cy="70" r="48" fill="none" stroke="#C41224" stroke-width="1.6"/><text x="70" y="66" text-anchor="middle" class="sent-t">RAUS</text><text x="70" y="92" text-anchor="middle" class="sent-s">· DEMO ·</text></g></svg>
+            <p>Danke! <span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[Name]</span> antwortet dir innerhalb von 2 Werktagen (unser Ziel). (Demo: Es wurde nichts gesendet.)</p>
+            <button type="button" class="link-btn" data-contact-again>Noch eine Nachricht schreiben</button>
+          </div>
+        </form>
+        <div class="contacts">
+          <h3 class="h-sm">Wer antwortet worauf</h3>
+          <dl class="contact-list">
+            <div data-role="chair"><dt>Allgemeines, Presse</dt><dd><span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[Name]</span>, Vorsitz · chair@<span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[Domain folgt]</span></dd></div>
+            <div data-role="vice"><dt>Sponsoring, Gruppen und Firmen</dt><dd><span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[Name]</span>, stellv. Vorsitz · vice-chair@<span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[Domain folgt]</span></dd></div>
+            <div data-role="treasurer"><dt>Mitgliedschaft und Beiträge</dt><dd><span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[Name]</span>, Finanzen · treasurer@<span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[Domain folgt]</span></dd></div>
+            <div data-role="secretary"><dt>Dokumente, Mitgliederversammlung, Ehrenamt</dt><dd><span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[Name]</span>, Schriftführung · secretary@<span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[Domain folgt]</span></dd></div>
+            <div data-role="sport"><dt>Pickleball ausprobieren, Termine, Kitchen School</dt><dd><span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[Name]</span>, Sport und Training · sport@<span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[Domain folgt]</span></dd></div>
+            <div data-role="kinderschutz"><dt>Kinderschutz (vertraulich)</dt><dd><span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[Name]</span>, Ansprechperson Kinderschutz · kinderschutz@<span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[Domain folgt]</span></dd></div>
+            <div data-role="venues"><dt>Hallen und Kommunen</dt><dd><span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[Name]</span>, Hallen und Kommunen · venues@<span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[Domain folgt]</span></dd></div>
+          </dl>
+          <p class="muted">Wir antworten innerhalb von 2 Werktagen (unser Ziel).</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+<footer class="site-foot on-dark">
+  <svg class="foot-ridge" viewBox="0 0 1440 80" preserveAspectRatio="xMidYMax slice" aria-hidden="true" focusable="false"><path d="M-10 40L-6.8 39.7L-3.1 39.4L1 39L5.4 38.5L10.1 38L15.2 37.5L20.5 36.9L26.2 36.3L32.1 35.7L38.2 35L44.5 34.4L51 33.7L57.6 33L64.4 32.4L71.3 31.7L78.2 31.1L85.2 30.4L92.3 29.8L99.4 29.2L106.5 28.7L113.5 28.1L120.5 27.7L127.4 27.2L134.2 26.9L140.9 26.5L147.5 26.3L153.8 26.1L160 26L166.1 26L172.1 26L178.1 26.2L184.1 26.4L190.1 26.7L196.1 27L202 27.4L208 27.8L213.9 28.3L219.9 28.8L225.8 29.3L231.8 29.9L237.8 30.4L243.8 31L249.7 31.6L255.7 32.1L261.8 32.7L267.8 33.2L273.9 33.7L280 34.2L286.1 34.6L292.2 35L298.4 35.3L304.7 35.6L310.9 35.8L317.2 36L323.6 36L330 36L335.6 35.9L341.3 35.7L347.1 35.5L352.9 35.2L358.7 34.9L364.5 34.5L370.4 34.1L376.3 33.6L382.3 33.1L388.2 32.5L394.2 32L400.2 31.4L406.2 30.8L412.3 30.1L418.3 29.5L424.4 28.9L430.4 28.2L436.5 27.6L442.5 27L448.6 26.4L454.7 25.8L460.7 25.3L466.7 24.7L472.7 24.2L478.7 23.8L484.7 23.4L490.7 23L496.6 22.7L502.5 22.4L508.4 22.2L514.2 22.1L520 22L526.2 22L532.3 22.1L538.4 22.3L544.5 22.5L550.6 22.8L556.6 23.2L562.7 23.6L568.7 24L574.7 24.5L580.7 25L586.7 25.6L592.7 26.2L598.7 26.8L604.7 27.4L610.6 28L616.6 28.6L622.5 29.2L628.5 29.8L634.4 30.4L640.4 31L646.3 31.5L652.3 32L658.2 32.4L664.2 32.8L670.1 33.2L676.1 33.5L682 33.7L688 33.9L694 34L700 34L706 33.9L712 33.8L718 33.5L724 33.2L730 32.9L736 32.4L742 32L748 31.5L754 30.9L760 30.3L766 29.7L772 29L778 28.4L784 27.7L790 27L796 26.3L802 25.6L808 25L814 24.3L820 23.7L826 23.1L832 22.5L838 22L844 21.6L850 21.1L856 20.8L862 20.5L868 20.2L874 20.1L880 20L886 20L892 20.1L898 20.2L903.9 20.5L909.9 20.7L915.8 21.1L921.8 21.4L927.7 21.9L933.7 22.3L939.6 22.8L945.6 23.3L951.5 23.9L957.5 24.5L963.4 25L969.4 25.6L975.3 26.2L981.3 26.8L987.3 27.4L993.3 28L999.3 28.5L1005.3 29.1L1011.3 29.6L1017.3 30L1023.4 30.5L1029.4 30.9L1035.5 31.2L1041.6 31.5L1047.7 31.7L1053.8 31.9L1060 32L1065.8 32L1071.6 32L1077.4 31.9L1083.2 31.8L1089 31.7L1094.9 31.5L1100.7 31.2L1106.6 31L1112.4 30.7L1118.3 30.4L1124.2 30L1130.1 29.7L1136 29.3L1141.9 28.9L1147.8 28.5L1153.8 28.1L1159.7 27.7L1165.6 27.3L1171.6 26.9L1177.6 26.6L1183.6 26.2L1189.6 25.8L1195.6 25.5L1201.6 25.2L1207.6 24.9L1213.6 24.7L1219.7 24.5L1225.7 24.3L1231.8 24.1L1237.8 24L1243.9 24L1250 24L1256 24.1L1262.2 24.1L1268.6 24.3L1275.1 24.4L1281.7 24.6L1288.5 24.9L1295.3 25.1L1302.2 25.4L1309.2 25.7L1316.3 26L1323.3 26.4L1330.4 26.7L1337.5 27.1L1344.5 27.5L1351.5 27.9L1358.4 28.3L1365.3 28.7L1372.1 29.1L1378.7 29.5L1385.2 29.9L1391.6 30.3L1397.8 30.7L1403.8 31.1L1409.6 31.5L1415.2 31.9L1420.6 32.2L1425.7 32.5L1430.5 32.9L1435.1 33.1L1439.3 33.4L1443.2 33.6L1446.8 33.8L1450 34V80H-10Z" fill="#0C3561"/><path d="M-6.1 42.1L0 19.2L6.1 42.1ZM4.9 41.1L9.7 26.3L14.4 41.1ZM18.5 39.6L23.5 23.7L28.5 39.6ZM32.4 38.1L37.7 18.7L43.1 38.1ZM45.4 36.6L52.3 18.4L59.2 36.6ZM56.4 35.6L62 18.3L67.6 35.6ZM87.1 32.8L92.3 11.1L97.4 32.8ZM111.9 30.8L118.3 18.3L124.8 30.8ZM140.6 29.3L146.2 10.9L151.8 29.3ZM170.4 29.1L176.5 8.3L182.6 29.1ZM198.3 30.6L204.9 18.1L211.4 30.6ZM224.9 32.7L230.4 10.3L235.9 32.7ZM231.7 33.5L238.2 13.8L244.6 33.5ZM247.4 34.9L252.9 13.7L258.3 34.9ZM260.9 36.1L267 16.1L273 36.1ZM270 36.9L276.7 15.7L283.4 36.9ZM284.9 37.9L291 20.3L297.1 37.9ZM299.5 38.6L304.7 24.2L309.9 38.6ZM311.2 38.9L316.2 22.4L321.3 38.9ZM321.1 39L327.8 22.1L334.5 39ZM330.2 38.9L336.4 18.3L342.6 38.9ZM347.2 38.3L351.8 17.7L356.4 38.3ZM355 37.8L360.4 15.9L365.8 37.8ZM365.8 37.1L370.4 19.5L375.1 37.1ZM379 35.8L385 23.4L390.9 35.8ZM387.4 35.1L392.7 11.5L397.9 35.1ZM397.8 34L404 13.8L410.2 34ZM410.5 32.8L415.3 13.8L420 32.8ZM419.4 31.7L426.4 18.5L433.3 31.7ZM434.6 30.2L441.1 10.6L447.5 30.2ZM442.2 29.4L448.8 10L455.5 29.4ZM454.8 28.2L460.9 10.9L467 28.2ZM468.3 27.1L474.3 8.4L480.3 27.1ZM484.9 26.1L489.6 9.6L494.4 26.1ZM496.6 25.4L502.5 10L508.4 25.4ZM506.6 25.1L512.1 4.5L517.6 25.1ZM516.8 25L521.4 11.8L526 25ZM530.3 25.2L537.1 3.1L543.9 25.2ZM546.1 25.9L551.7 9.6L557.2 25.9ZM554.5 26.5L561.4 13.7L568.4 26.5ZM570.8 27.6L575.3 11L579.8 27.6ZM581.2 28.7L588 8L594.8 28.7ZM593.2 29.7L598.1 11.6L602.9 29.7ZM602.9 30.7L607.6 16.9L612.4 30.7ZM617.8 32.2L622.8 19.4L627.7 32.2ZM628.6 33.5L635.1 13.3L641.6 33.5ZM661.8 36L667.3 19.2L672.8 36ZM694.9 37L700.4 17.2L705.8 37ZM723.5 36L728.4 14L733.3 36ZM753.2 33.5L758.1 16.9L763.1 33.5ZM784.4 29.9L791 9.5L797.6 29.9ZM799.4 28.3L805.2 13.7L811.1 28.3ZM812.6 26.8L818.9 10.8L825.1 26.8ZM820.2 26.1L826.6 8.2L833 26.1ZM831.1 25.2L835.9 12.3L840.7 25.2ZM844 24.2L849 5.9L854 24.2ZM857.3 23.4L862.9 8.4L868.4 23.4ZM873.3 23L878.2 3L883.2 23ZM883.8 23.1L890.6 8.8L897.4 23.1ZM894.6 23.3L899.2 8.4L903.8 23.3ZM900.1 23.6L907 8.8L914 23.6ZM916 24.4L920.8 5.3L925.6 24.4ZM926.1 25.3L932.9 4.7L939.6 25.3ZM942.3 26.6L948.7 14.2L955 26.6ZM954.4 27.6L959 4.1L963.7 27.6ZM962.7 28.5L967.8 5.5L972.9 28.5ZM976 29.9L982.3 14.2L988.7 29.9ZM989 31.2L995.9 12.5L1002.8 31.2ZM1000.3 32.1L1005.6 19L1010.9 32.1ZM1015.9 33.3L1021 17.5L1026 33.3ZM1023.9 33.8L1028.6 14.1L1033.4 33.8ZM1031.3 34.3L1036.7 16.2L1042.1 34.3ZM1042.7 34.7L1048.3 19.1L1053.9 34.7ZM1054.7 35L1061 17.5L1067.3 35ZM1070.3 35L1076.4 18.3L1082.5 35ZM1084.6 34.6L1090.7 16.5L1096.8 34.6ZM1099.2 34.1L1103.8 19.1L1108.5 34.1ZM1114.1 33.3L1119.6 21.2L1125.1 33.3ZM1122.8 32.8L1127.4 18.3L1132 32.8ZM1133 32.1L1138.5 16.9L1144 32.1ZM1143.2 31.4L1149.9 12.1L1156.6 31.4ZM1155.5 30.6L1162.3 11L1169.2 30.6ZM1164.3 30L1171.2 8.8L1178.1 30ZM1179.4 29.1L1184.8 12L1190.2 29.1ZM1191.2 28.4L1197.2 16L1203.1 28.4ZM1216.9 27.3L1223.9 3.4L1230.9 27.3ZM1252.9 27.1L1257.6 6.3L1262.2 27.1ZM1280.4 27.8L1285.3 7.8L1290.3 27.8ZM1309.9 29L1316.3 14.6L1322.6 29ZM1339.9 30.5L1345 9.3L1350.1 30.5ZM1365.6 32L1370.1 10.7L1374.6 32ZM1378.9 32.9L1384.7 13.2L1390.5 32.9ZM1390 33.6L1394.9 12.2L1399.7 33.6ZM1405 34.6L1410.3 15.2L1415.6 34.6ZM1411.8 35L1417.4 16.4L1423.1 35ZM1420 35.5L1424.6 23.2L1429.1 35.5ZM1429.2 36.1L1434.6 18.9L1440.1 36.1Z" fill="#0C3561"/><path d="M-10 58L-6.8 57.8L-3.3 57.7L0.4 57.4L4.5 57.2L8.9 56.9L13.5 56.7L18.4 56.4L23.5 56L28.9 55.7L34.4 55.3L40.1 55L46.1 54.6L52.2 54.2L58.4 53.9L64.8 53.5L71.3 53.1L77.9 52.7L84.6 52.3L91.4 51.9L98.3 51.6L105.2 51.2L112.2 50.8L119.1 50.5L126.1 50.2L133.1 49.8L140.1 49.5L147.1 49.3L154 49L160.9 48.8L167.6 48.6L174.3 48.4L180.9 48.2L187.4 48.1L193.8 48L200 48L205.8 48L211.7 48L217.5 48.1L223.4 48.2L229.2 48.3L235.1 48.5L241 48.7L246.9 48.9L252.8 49.1L258.7 49.3L264.7 49.6L270.6 49.9L276.6 50.2L282.5 50.5L288.5 50.8L294.4 51.2L300.4 51.5L306.4 51.8L312.4 52.2L318.3 52.5L324.3 52.8L330.3 53.2L336.3 53.5L342.3 53.8L348.3 54.1L354.3 54.4L360.3 54.7L366.3 54.9L372.2 55.1L378.2 55.3L384.2 55.5L390.2 55.7L396.2 55.8L402.1 55.9L408.1 56L414.1 56L420 56L425.9 56L431.9 55.9L437.8 55.8L443.8 55.6L449.7 55.4L455.7 55.2L461.6 55L467.6 54.7L473.5 54.4L479.5 54.1L485.4 53.8L491.4 53.4L497.3 53.1L503.2 52.7L509.2 52.4L515.1 52L521.1 51.6L527 51.2L533 50.8L538.9 50.4L544.9 50L550.8 49.6L556.8 49.3L562.7 48.9L568.6 48.6L574.6 48.2L580.5 47.9L586.5 47.6L592.4 47.3L598.4 47L604.3 46.8L610.3 46.6L616.2 46.4L622.2 46.2L628.1 46.1L634.1 46L640 46L645.9 46L651.9 46L657.8 46.1L663.8 46.2L669.7 46.3L675.7 46.5L681.6 46.7L687.6 46.9L693.5 47.1L699.5 47.3L705.4 47.6L711.4 47.9L717.3 48.2L723.2 48.5L729.2 48.8L735.1 49.2L741.1 49.5L747 49.8L753 50.2L758.9 50.5L764.9 50.8L770.8 51.2L776.8 51.5L782.7 51.8L788.6 52.1L794.6 52.4L800.5 52.7L806.5 52.9L812.4 53.1L818.4 53.3L824.3 53.5L830.3 53.7L836.2 53.8L842.2 53.9L848.1 54L854.1 54L860 54L865.9 54L871.9 53.9L877.8 53.8L883.8 53.6L889.7 53.4L895.7 53.2L901.6 53L907.6 52.7L913.5 52.4L919.5 52.1L925.4 51.8L931.4 51.4L937.3 51.1L943.2 50.7L949.2 50.4L955.1 50L961.1 49.6L967 49.2L973 48.8L978.9 48.4L984.9 48L990.8 47.6L996.8 47.3L1002.7 46.9L1008.6 46.6L1014.6 46.2L1020.5 45.9L1026.5 45.6L1032.4 45.3L1038.4 45L1044.3 44.8L1050.3 44.6L1056.2 44.4L1062.2 44.2L1068.1 44.1L1074.1 44L1080 44L1086 44L1092 44L1098 44.1L1104.1 44.2L1110.3 44.3L1116.4 44.4L1122.6 44.6L1128.9 44.8L1135.1 45L1141.3 45.2L1147.6 45.4L1153.8 45.7L1160.1 46L1166.4 46.2L1172.6 46.5L1178.8 46.8L1185.1 47.2L1191.3 47.5L1197.5 47.8L1203.6 48.1L1209.7 48.4L1215.8 48.7L1221.9 49L1227.9 49.4L1233.8 49.7L1239.7 49.9L1245.6 50.2L1251.4 50.5L1257.1 50.7L1262.7 51L1268.3 51.2L1273.8 51.4L1279.2 51.6L1284.6 51.7L1289.8 51.8L1294.9 51.9L1300 52L1307.4 52.1L1314.8 52.1L1322.2 52.1L1329.6 52L1336.9 51.9L1344.1 51.8L1351.3 51.6L1358.4 51.5L1365.4 51.3L1372.2 51.1L1379 50.9L1385.5 50.6L1391.9 50.4L1398.1 50.1L1404.2 49.9L1410 49.6L1415.5 49.4L1420.9 49.2L1425.9 48.9L1430.7 48.7L1435.2 48.5L1439.4 48.4L1443.3 48.2L1446.8 48.1L1450 48V80H-10Z" fill="#021427"/></svg>
+  <div class="wrap foot-grid">
+    <div class="foot-brand">
+      <img src="../shared/logo-on-dark.png" alt="Pickleball Südbaden e.V." width="134" height="120">
+      <p class="signoff">Ehrenamtlich organisiert in Südbaden, mit Freundschaften ins Elsass und nach Basel.</p>
+    </div>
+    <nav class="foot-links" aria-label="Rechtliches und Kontakt">
+      <ul>
+        <li><button type="button" data-open="doc-impressum" lang="de">Impressum</button></li>
+        <li><button type="button" data-open="doc-datenschutz" lang="de">Datenschutz</button></li>
+        <li><button type="button" data-open="doc-satzung" lang="de">Satzung &amp; Dokumente</button></li>
+        <li><button type="button" data-open="doc-kinderschutz" lang="de">Kinderschutz</button></li>
+        <li><a href="#contact" data-scroll-contact lang="de">Kontakt</a></li>
+        <li><button type="button" data-open="doc-presse" lang="de">Presse</button></li>
+      </ul>
+    </nav>
+    <div class="foot-meta">
+      <div class="foot-row">
+        <div class="lang" role="group" aria-label="Sprache">
+          <a class="lang-btn" href="index.html" lang="de" hreflang="de" aria-current="true">DE<span class="sr-only"> Deutsch</span></a><span class="lang-dot" aria-hidden="true">·</span><button type="button" class="lang-btn" lang="fr" data-lang-stub="fr">FR<span class="sr-only"> Français</span></button><span class="lang-dot" aria-hidden="true">·</span><a class="lang-btn" href="index.en.html" lang="en" hreflang="en">EN<span class="sr-only"> English</span></a>
+        </div>
+        <button type="button" class="foot-login" data-open="login">Mitglieder-Login</button>
+      </div>
+      <p class="foot-register">Eingetragener Verein · Amtsgericht Freiburg i.&nbsp;Br. · VR <span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[ausstehend]</span> (bis zur Eintragung e.V. i.&nbsp;G.)</p>
+      <p class="foot-notrack">Kein Tracking. Kein Cookie-Banner. Nur Pickleball.</p>
+      <p class="foot-consent">Diese Website setzt keine Cookies. Dein Browser merkt sich nur den Demo-Stempel im Paddle Passport, sonst nichts.</p>
+      <p class="foot-copy">© 2026 Pickleball Südbaden e.V.</p>
+    </div>
+  </div>
+</footer>
+
+<div class="sticky-bar on-dark" data-sticky>
+  <button type="button" class="sb-chip" data-scroll-to="#sessions"><svg class="ico" aria-hidden="true"><use href="#i-ball"/></svg><span>Nächster Termin: Do., 15. Okt. · 18:30 · Freiburg</span></button>
+  <button type="button" class="btn btn-red" data-open="trial">Gratis testen</button>
+</div>
+
+<button type="button" class="concept-badge" data-open="about"><svg class="cb-i" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="8.4" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M10 9v5.2" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><circle cx="10" cy="5.9" r="1.3" fill="currentColor"/></svg><span class="cb-short">Konzept</span><span class="cb-rest"> · Platzhalterinhalte</span></button>
+
+<div class="toast" data-toast-box data-state="off">
+  <p class="toast-msg" role="status" aria-live="polite" data-toast-msg></p>
+  <button type="button" class="toast-x" data-toast-close aria-label="Meldung schließen" tabindex="-1"><svg aria-hidden="true"><use href="#i-x"/></svg></button>
+</div>
+
+<!-- ===================== DIALOGS ===================== -->
+
+<!-- Mobile menu -->
+<dialog class="dlg-menu on-dark" id="dlg-menu" aria-label="Menü" data-dlg="menu">
+  <div class="menu-head">
+    <p class="menu-brand"><img src="../shared/logo-mark-on-dark.png" alt="" width="53" height="36"><span>Pickleball Südbaden e.V.</span></p>
+    <button type="button" class="dlg-x" data-close aria-label="Schließen"><svg aria-hidden="true"><use href="#i-x"/></svg></button>
+  </div>
+  <nav aria-label="Menü" class="menu-nav">
+    <ul>
+      <li><a href="#sessions" data-menu-link>Abfahrten</a></li>
+      <li><a href="#passport" data-menu-link>Passport</a></li>
+      <li><a href="#the-game" data-menu-link>Das Spiel</a></li>
+      <li><a href="#map" data-menu-link>Karte</a></li>
+      <li><a href="#club" data-menu-link>Verein</a></li>
+      <li><a href="#fares" data-menu-link>Tarife</a></li>
+    </ul>
+  </nav>
+  <div class="menu-actions">
+    <button type="button" class="btn btn-red btn-lg" data-open="trial">Kostenlos ausprobieren</button>
+    <button type="button" class="btn btn-ghost-dark" data-open="login">Mitglieder-Login</button>
+    <div class="lang lang-lg" role="group" aria-label="Sprache">
+      <a class="lang-btn" href="index.html" lang="de" hreflang="de" aria-current="true">DE<span class="sr-only"> Deutsch</span></a><span class="lang-dot" aria-hidden="true">·</span><button type="button" class="lang-btn" lang="fr" data-lang-stub="fr">FR<span class="sr-only"> Français</span></button><span class="lang-dot" aria-hidden="true">·</span><a class="lang-btn" href="index.en.html" lang="en" hreflang="en">EN<span class="sr-only"> English</span></a>
+    </div>
+  </div>
+</dialog>
+
+<!-- Trial booking: First Serve -->
+<dialog class="dlg" id="dlg-trial" aria-labelledby="trial-title" data-dlg="trial">
+  <div class="dlg-head">
+    <div class="dlg-bar">
+      <h2 class="dlg-title" id="trial-title" data-trial-title>KOSTENLOS SCHNUPPERN</h2>
+      <button type="button" class="dlg-x" data-close aria-label="Schließen"><svg aria-hidden="true"><use href="#i-x"/></svg></button>
+    </div>
+    <div class="dlg-meta">
+      <div class="dlg-tags"><span class="demo-tag demo-tag-dark">Demo · es wird nichts gesendet</span></div>
+      <ol class="stations" data-stations aria-label="Buchungsschritte">
+        <li data-st="1"><span class="st-dot" aria-hidden="true"></span><span class="st-label">Termin</span></li>
+        <li data-st="2"><span class="st-dot" aria-hidden="true"></span><span class="st-label">Über dich</span></li>
+        <li data-st="3"><span class="st-dot" aria-hidden="true"></span><span class="st-label">Bestätigt</span></li>
+      </ol>
+    </div>
+    <div class="head-pass" data-head-pass hidden>
+      <span class="hp-stub"><span data-hp-day>DO., 15. OKT.</span><b data-hp-time>18:30</b></span>
+      <span class="hp-body"><span class="hp-svc" data-hp-svc>First Serve</span><span class="hp-fare" data-hp-fare>Erster Termin kostenlos</span><span class="hp-where">Freiburg · <span data-hp-status>noch 6 von 16 frei</span></span></span>
+      <button type="button" class="hp-change" data-goto="1">ändern<span class="sr-only">: Termin</span></button>
+    </div>
+  </div>
+  <div class="dlg-body">
+    <form class="step" data-step="1" novalidate>
+      <fieldset class="pick-list">
+        <legend class="step-title">Termin wählen</legend>
+        <label class="pick"><input type="radio" name="t-session" value="S1"><span class="pick-card"><span class="pick-when"><b>Di., 13. Okt.</b> 19:00–20:30</span><span class="pick-what">Open Play · <span class="nw">Level 1–2</span></span><span class="pick-fare">Mitglieder 0&nbsp;€ · <span class="nw">Gäste <span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[__]&nbsp;€</span></span></span><span class="pick-meta">Spielleitung spricht DE · EN · <span class="nw">noch 8 von 16 frei</span></span></span></label>
+        <label class="pick"><input type="radio" name="t-session" value="S2"><span class="pick-card"><span class="pick-when"><b>Do., 15. Okt.</b> 18:30–20:00</span><span class="pick-what">First Serve (kostenloses Schnuppertraining) · <span class="nw">Level 0</span></span><span class="pick-fare">Erster Termin kostenlos</span><span class="pick-meta">Spielleitung spricht DE · EN · <span class="nw">noch 6 von 16 frei</span></span></span></label>
+        <label class="pick"><input type="radio" name="t-session" value="S3"><span class="pick-card"><span class="pick-when"><b>Sa., 17. Okt.</b> 10:00–11:30</span><span class="pick-what">First Serve, familienfreundlich · <span class="nw">Level 0</span></span><span class="pick-fare">Erster Termin kostenlos</span><span class="pick-meta">Spielleitung spricht DE · FR · EN · <strong class="pick-full">Ausgebucht: Komm auf die Warteliste (2 warten schon)</strong></span></span></label>
+        <label class="pick"><input type="radio" name="t-session" value="S4"><span class="pick-card"><span class="pick-when"><b>Di., 20. Okt.</b> 19:00–20:30</span><span class="pick-what">Kitchen School, Woche 1 von 4 · <span class="nw">Level 0–1</span></span><span class="pick-fare">4-Wochen-Kurs: <span class="nw">Mitglieder <span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[__]&nbsp;€</span> ·</span> <span class="nw">Gäste <span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[__]&nbsp;€</span></span></span><span class="pick-meta">Kursleitung spricht DE · EN · <span class="nw">noch 3 von 12 frei</span></span></span></label>
+        <label class="pick"><input type="radio" name="t-session" value="S5"><span class="pick-card"><span class="pick-when"><b>Do., 22. Okt.</b> 18:30–20:00</span><span class="pick-what">First Serve · <span class="nw">Level 0</span></span><span class="pick-fare">Erster Termin kostenlos</span><span class="pick-meta">Spielleitung spricht DE · FR · <span class="nw">noch 10 von 16 frei</span></span></span></label>
+        <p class="err" id="t-session-err" hidden></p>
+      </fieldset>
+      <p class="wait-note" data-wait-note hidden>Dieser Termin ist ausgebucht. Wähl ihn trotzdem, dann setzen wir dich auf die Warteliste.</p>
+      <div class="step-actions"><button type="submit" class="btn btn-red">Weiter</button></div>
+    </form>
+
+    <form class="step" data-step="2" novalidate hidden>
+      <h3 class="step-title">Über dich</h3>
+      <div class="field-pair">
+        <div class="field">
+          <label for="t-first">Vorname</label>
+          <input id="t-first" name="first" autocomplete="given-name" required aria-describedby="t-first-err">
+          <p class="err" id="t-first-err" hidden></p>
+        </div>
+        <div class="field">
+          <label for="t-last">Nachname <span class="opt">(optional)</span></label>
+          <input id="t-last" name="last" autocomplete="family-name">
+        </div>
+      </div>
+      <div class="field">
+        <label for="t-email">E-Mail</label>
+        <input type="email" id="t-email" name="email" autocomplete="email" required aria-describedby="t-email-err">
+        <p class="err" id="t-email-err" hidden></p>
+      </div>
+      <div class="field">
+        <label for="t-phone">Telefon <span class="opt">(optional)</span></label>
+        <input type="tel" id="t-phone" name="phone" autocomplete="tel" aria-describedby="t-phone-hint">
+        <p class="hint" id="t-phone-hint">Nur für kurzfristige Änderungen</p>
+      </div>
+      <fieldset class="field" aria-describedby="t-lang-hint">
+        <legend>Sprachen, in denen du dich wohlfühlst</legend>
+        <div class="checks-inline">
+          <label class="check"><input type="checkbox" name="t-lang" value="de"><span>DE <span class="muted">Deutsch</span></span></label>
+          <label class="check"><input type="checkbox" name="t-lang" value="fr"><span>FR <span class="muted" lang="fr">Français</span></span></label>
+          <label class="check"><input type="checkbox" name="t-lang" value="en"><span>EN <span class="muted" lang="en">English</span></span></label>
+        </div>
+        <p class="hint" id="t-lang-hint">Wir achten darauf, dass deine Spielleitung sie spricht.</p>
+      </fieldset>
+      <fieldset class="field" aria-describedby="t-racket-hint">
+        <legend>Schon mal einen Rückschlagsport gespielt? <span class="opt">(optional)</span></legend>
+        <label class="radio"><input type="radio" name="t-racket" value="never"><span>Nein, noch nie</span></label>
+        <label class="radio"><input type="radio" name="t-racket" value="racket"><span>Ja: Tennis, Badminton, Tischtennis oder Padel</span></label>
+        <label class="radio"><input type="radio" name="t-racket" value="pickle"><span>Ich spiele schon Pickleball</span></label>
+        <p class="hint" id="t-racket-hint">Hier gibt es keine falschen Antworten. So finden wir passende Mitspielende für dich.</p>
+      </fieldset>
+      <div class="field-pair field-pair-top">
+        <div class="field">
+          <label for="t-friends">Bringst du jemanden mit?</label>
+          <div class="stepper">
+            <button type="button" class="step-btn" data-stepper="-1" aria-label="Eine Person weniger" aria-controls="t-friends"><svg aria-hidden="true"><use href="#i-minus"/></svg></button>
+            <input type="number" id="t-friends" name="friends" min="0" max="2" value="0" inputmode="numeric" aria-describedby="t-friends-hint">
+            <button type="button" class="step-btn" data-stepper="1" aria-label="Eine Person mehr" aria-controls="t-friends"><svg aria-hidden="true"><use href="#i-plus"/></svg></button>
+          </div>
+          <p class="hint" id="t-friends-hint">Damit wir genug Paddles dabeihaben. Bis zu 2 Personen.</p>
+        </div>
+        <fieldset class="field">
+          <legend>Brauchst du ein Leih-Paddle?</legend>
+          <div class="radios-inline">
+            <label class="radio"><input type="radio" name="t-paddle" value="yes" checked><span>Ja</span></label>
+            <label class="radio"><input type="radio" name="t-paddle" value="no"><span>Nein</span></label>
+          </div>
+        </fieldset>
+      </div>
+      <div class="field">
+        <label class="check"><input type="checkbox" id="t-u18" data-u18><span>Ich bin unter 18</span></label>
+      </div>
+      <div class="guardian" data-guardian hidden>
+        <div class="field">
+          <label for="t-g-name">Name der erziehungsberechtigten Person</label>
+          <input id="t-g-name" name="guardian" autocomplete="off" aria-describedby="t-g-name-err" data-req-when-shown>
+          <p class="err" id="t-g-name-err" hidden></p>
+        </div>
+        <div class="field">
+          <label for="t-g-email">E-Mail der erziehungsberechtigten Person</label>
+          <input type="email" id="t-g-email" name="guardian-email" autocomplete="off" aria-describedby="t-g-email-err" data-req-when-shown>
+          <p class="err" id="t-g-email-err" hidden></p>
+        </div>
+        <p class="hint">Bevor du spielst, muss ein Elternteil oder eine erziehungsberechtigte Person zustimmen. Jüngere Kinder spielen bei Familienterminen mit einem Elternteil mit <span class="ph" title="Platzhalter: wird noch bestätigt">[Mindestalter folgt]</span>.</p>
+      </div>
+      <p class="notice">[Die Versicherung für Schnuppertermine wird gerade mit dem Badischen Sportbund Freiburg und der ARAG geklärt. Bevor die Buchung öffnet, steht hier, was abgedeckt ist.]</p>
+      <p class="photo-line">Bei Terminen fotografieren wir manchmal. Sag der Spielleitung Bescheid, wenn du nicht aufs Foto möchtest.</p>
+      <div class="step-actions step-actions-split">
+        <button type="submit" class="btn btn-red" data-trial-submit>Platz sichern</button>
+        <p class="privacy-line">So gehen wir mit deinen Daten um: <button type="button" class="link-btn" data-open="doc-datenschutz">Datenschutzerklärung</button></p>
+      </div>
+    </form>
+
+    <div class="step step-done" data-step="3" hidden tabindex="-1">
+      <div class="bp" data-bp>
+        <div class="bp-main">
+          <p class="bp-kicker">BORDKARTE · <span data-bp-svc>FIRST SERVE</span></p>
+          <h3 class="bp-title" data-bp-title>Du bist dabei!</h3>
+          <dl class="bp-grid">
+            <div><dt>Datum</dt><dd data-bp-date>Do., 15. Okt. 2026</dd></div>
+            <div><dt>Uhrzeit</dt><dd data-bp-time>18:30–20:00</dd></div>
+            <div class="wide"><dt>Ort</dt><dd><span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[Ort folgt]</span>, <span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[Straße folgt]</span>, Freiburg</dd></div>
+            <div class="wide"><dt>Tarif</dt><dd data-bp-fare>Erster Termin kostenlos</dd></div>
+            <div class="wide"><dt>Mitbringen</dt><dd>Hallenschuhe mit nicht abfärbender Sohle</dd></div>
+          </dl>
+        </div>
+        <div class="bp-stub" data-bp-stub><span class="bp-admit" data-bp-admit>EINLASS</span><span class="bp-n" data-bp-n>1</span></div>
+      </div>
+      <p class="done-wait" data-done-wait hidden>Du bist Nummer 3 auf der Warteliste. Sobald ein Platz frei wird, schreiben wir dir eine E-Mail.</p>
+      <p class="roster" data-done-ok><span>Lena, Markus, Gisela und 7 weitere kommen. 4 davon sind auch zum ersten Mal dabei.</span> <span class="sample">Beispiel</span></p>
+      <p class="done-line" data-done-ok>Einlass ist 10 Minuten vor Beginn. Bring Hallenschuhe mit nicht abfärbender Sohle mit. Die Paddles bringen wir mit.</p>
+      <div class="done-actions" data-done-actions>
+        <button type="button" class="btn btn-outline btn-sm" data-ics>In den Kalender (.ics)</button>
+        <button type="button" class="btn btn-outline btn-sm" data-share>Einladung weiterschicken</button>
+      </div>
+      <p class="done-line" data-done-ok>Du kannst doch nicht? Gib deinen Platz über den Link in deiner E-Mail frei, dann rückt jemand von der Warteliste nach.</p>
+      <div class="step-actions"><button type="button" class="btn btn-red" data-finish>Meinen Stempel ansehen</button></div>
+    </div>
+    <p class="integration">Später: Spond, Reclub oder ein eigenes Formular.</p>
+  </div>
+</dialog>
+
+<!-- Membership application -->
+<dialog class="dlg" id="dlg-member" aria-labelledby="member-title" data-dlg="member">
+  <div class="dlg-head">
+    <div class="dlg-bar">
+      <h2 class="dlg-title" id="member-title">MITGLIED WERDEN</h2>
+      <svg class="head-badge" viewBox="0 0 200 200" aria-hidden="true" focusable="false"><circle cx="100" cy="100" r="97" fill="#FEDD02"/><circle cx="100" cy="100" r="84" fill="#052443"/><circle cx="100" cy="100" r="70" fill="#FFFFFF"/><text x="100" y="92" text-anchor="middle" class="badge-no">Nr.</text><text x="100" y="140" text-anchor="middle" class="badge-num">038</text></svg>
+      <button type="button" class="dlg-x" data-close aria-label="Schließen"><svg aria-hidden="true"><use href="#i-x"/></svg></button>
+    </div>
+    <div class="dlg-tags"><span class="demo-tag demo-tag-dark">Demo · es wird nichts gesendet</span></div>
+    <div class="rail" data-rail style="--step:0">
+      <span class="rail-line" aria-hidden="true"></span>
+      <span class="rail-ball" aria-hidden="true"><svg viewBox="0 0 100 100"><use href="#sym-ball"/></svg></span>
+      <ol class="rail-stations" aria-label="Antragsschritte">
+        <li data-st="1"><span class="rs-dot" aria-hidden="true"></span><span class="rs-label">Über dich</span></li>
+        <li data-st="2"><span class="rs-dot" aria-hidden="true"></span><span class="rs-label">Mitgliedschaft</span></li>
+        <li data-st="3"><span class="rs-dot" aria-hidden="true"></span><span class="rs-label">Zahlung</span></li>
+        <li data-st="4"><span class="rs-dot" aria-hidden="true"></span><span class="rs-label">Bestätigen</span></li>
+      </ol>
+    </div>
+  </div>
+  <div class="dlg-body">
+    <form class="step" data-step="1" novalidate>
+      <h3 class="step-title">Über dich</h3>
+      <div class="field-pair">
+        <div class="field"><label for="m-first">Vorname</label><input id="m-first" autocomplete="given-name" required aria-describedby="m-first-err"><p class="err" id="m-first-err" hidden></p></div>
+        <div class="field"><label for="m-last">Nachname</label><input id="m-last" autocomplete="family-name" required aria-describedby="m-last-err"><p class="err" id="m-last-err" hidden></p></div>
+      </div>
+      <div class="field"><label for="m-dob">Geburtsdatum</label><input type="date" id="m-dob" autocomplete="bday" required min="1910-01-01" max="2026-10-07" aria-describedby="m-dob-err"><p class="err" id="m-dob-err" hidden></p></div>
+      <div class="field"><label for="m-street">Straße und Hausnummer</label><input id="m-street" autocomplete="street-address" required aria-describedby="m-street-err"><p class="err" id="m-street-err" hidden></p></div>
+      <div class="field-pair field-pair-zip">
+        <div class="field"><label for="m-zip">PLZ</label><input id="m-zip" autocomplete="postal-code" inputmode="numeric" required aria-describedby="m-zip-err"><p class="err" id="m-zip-err" hidden></p></div>
+        <div class="field"><label for="m-town">Ort</label><input id="m-town" autocomplete="address-level2" required aria-describedby="m-town-err"><p class="err" id="m-town-err" hidden></p></div>
+      </div>
+      <div class="field"><label for="m-country">Land</label>
+        <select id="m-country" autocomplete="country-name"><option>Deutschland</option><option>Frankreich</option><option>Schweiz</option><option>Anderes Land</option></select>
+      </div>
+      <div class="field"><label for="m-email">E-Mail</label><input type="email" id="m-email" autocomplete="email" required aria-describedby="m-email-err"><p class="err" id="m-email-err" hidden></p></div>
+      <fieldset class="field">
+        <legend>Bevorzugte Sprache</legend>
+        <div class="radios-inline">
+          <label class="radio"><input type="radio" name="m-lang" value="DE" checked><span>Deutsch</span></label>
+          <label class="radio"><input type="radio" name="m-lang" value="FR"><span lang="fr">Français</span></label>
+          <label class="radio"><input type="radio" name="m-lang" value="EN"><span lang="en">English</span></label>
+        </div>
+      </fieldset>
+      <div class="guardian" data-m-guardian hidden>
+        <p class="guardian-note"><strong>Du bist unter 18.</strong> Deshalb stellt eine erziehungsberechtigte Person den Antrag mit dir.</p>
+        <div class="field"><label for="m-g-name">Name der erziehungsberechtigten Person</label><input id="m-g-name" autocomplete="off" aria-describedby="m-g-name-err" data-req-when-shown><p class="err" id="m-g-name-err" hidden></p></div>
+        <div class="field"><label for="m-g-email">E-Mail der erziehungsberechtigten Person</label><input type="email" id="m-g-email" autocomplete="off" aria-describedby="m-g-email-err" data-req-when-shown><p class="err" id="m-g-email-err" hidden></p></div>
+      </div>
+      <div class="step-actions"><button type="submit" class="btn btn-navy">Weiter</button></div>
+    </form>
+
+    <form class="step" data-step="2" novalidate hidden>
+      <fieldset class="tier-list">
+        <legend class="step-title">Mitgliedschaft</legend>
+        <label class="tier"><input type="radio" name="m-tier" value="Adult" checked><span class="tier-card"><span class="tier-name">Erwachsene</span><span class="tier-price"><span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[__]&nbsp;€</span> / Jahr</span></span></label>
+        <label class="tier"><input type="radio" name="m-tier" value="Reduced"><span class="tier-card"><span class="tier-name">Ermäßigt <span class="tier-who">Studierende, Auszubildende und Menschen im Freiwilligendienst</span></span><span class="tier-price"><span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[__]&nbsp;€</span> / Jahr</span></span></label>
+        <label class="tier"><input type="radio" name="m-tier" value="Youth"><span class="tier-card"><span class="tier-name">Jugend <span class="tier-who">unter 18</span></span><span class="tier-price"><span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[__]&nbsp;€</span> / Jahr</span></span></label>
+        <label class="tier"><input type="radio" name="m-tier" value="Family"><span class="tier-card"><span class="tier-name">Familie <span class="tier-who">ein Haushalt</span></span><span class="tier-price"><span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[__]&nbsp;€</span> / Jahr</span></span></label>
+        <label class="tier"><input type="radio" name="m-tier" value="Supporting member"><span class="tier-card"><span class="tier-name">Fördermitglied <span class="tier-who">spielt nicht</span></span><span class="tier-price"><span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[__]&nbsp;€</span> / Jahr</span></span></label>
+      </fieldset>
+      <p class="family-note" data-family-note hidden>Die Angaben zu deinen Familienmitgliedern fragen wir per E-Mail ab <span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[Ablauf folgt]</span>.</p>
+      <p class="found-ribbon"><span>First 100: Aufnahmegebühr 0&nbsp;€ · Du wärst Gründungsmitglied Nr.&nbsp;038 (Beispiel)</span></p>
+      <div class="step-actions step-actions-split"><button type="button" class="btn btn-ghost" data-back>Zurück</button><button type="submit" class="btn btn-navy">Weiter</button></div>
+    </form>
+
+    <form class="step" data-step="3" novalidate hidden>
+      <fieldset class="field">
+        <legend class="step-title">Zahlung</legend>
+        <label class="radio radio-card"><input type="radio" name="m-pay" value="sepa" checked><span>SEPA-Lastschrift</span></label>
+        <label class="radio radio-card"><input type="radio" name="m-pay" value="transfer"><span>Überweisung (zum Beispiel von einem Schweizer Konto)</span></label>
+      </fieldset>
+      <div class="sepa" data-sepa>
+        <p class="sepa-head">SEPA-LASTSCHRIFTMANDAT</p>
+        <dl class="sepa-grid">
+          <div><dt>Zahlungsempfänger</dt><dd>Pickleball Südbaden e.V.</dd></div>
+          <div><dt>Gläubiger-ID</dt><dd><span class="ph" title="Platzhalter: wird noch bestätigt">DE[__]ZZZ[________]</span></dd></div>
+          <div><dt>Mandatsreferenz</dt><dd><span class="ph" title="Platzhalter: wird noch bestätigt">[wird nach der Aufnahme vergeben]</span></dd></div>
+          <div><dt>Kontoinhaber:in</dt><dd data-sepa-holder>Aus Schritt 1</dd></div>
+        </dl>
+        <div class="field">
+          <label for="m-iban">IBAN <span class="opt">Demo: In diesem Konzept werden keine Bankdaten erfasst.</span></label>
+          <input id="m-iban" disabled placeholder="DE00 0000 0000 0000 0000 00" aria-describedby="m-iban-note">
+          <p class="hint" id="m-iban-note">Dieses Feld ist absichtlich deaktiviert.</p>
+        </div>
+        <p class="mandate">SEPA-Lastschriftmandat. Ich ermächtige den Pickleball Südbaden e.V., Zahlungen von meinem Konto mittels Lastschrift einzuziehen. Zugleich weise ich mein Kreditinstitut an, die vom Pickleball Südbaden e.V. auf mein Konto gezogenen Lastschriften einzulösen. Hinweis: Ich kann innerhalb von acht Wochen, beginnend mit dem Belastungsdatum, die Erstattung des belasteten Betrages verlangen. Es gelten dabei die mit meinem Kreditinstitut vereinbarten Bedingungen.</p>
+        <p class="collect">Der Jahresbeitrag wird am <span class="ph" title="Platzhalter: wird noch bestätigt">[1. Februar, vorläufig]</span> eingezogen. Datum und Betrag kündigen wir dir <span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[14 Tage, vorläufig]</span> vorher an.</p>
+      </div>
+      <p class="transfer-note" data-transfer hidden>Nach der Aufnahme schicken wir dir unsere Bankverbindung und deinen Verwendungszweck per E-Mail.</p>
+      <div class="step-actions step-actions-split"><button type="button" class="btn btn-ghost" data-back>Zurück</button><button type="submit" class="btn btn-navy">Weiter</button></div>
+    </form>
+
+    <form class="step" data-step="4" novalidate hidden>
+      <h3 class="step-title">Antrag prüfen</h3>
+      <dl class="summary" data-summary></dl>
+      <div class="field">
+        <div class="check check-req">
+          <input type="checkbox" id="m-accept" required aria-labelledby="m-accept-text" aria-describedby="m-accept-err">
+          <span id="m-accept-text"><label for="m-accept">Ich erkenne die</label> <button type="button" class="link-btn" data-open="doc-satzung">Satzung</button> <label for="m-accept">und die</label> <button type="button" class="link-btn" data-open="doc-satzung">Beitragsordnung</button> <label for="m-accept">an.</label></span>
+        </div>
+        <p class="err" id="m-accept-err" hidden></p>
+      </div>
+      <div class="field">
+        <label class="check"><input type="checkbox" id="m-photos"><span>Ihr dürft Fotos von mir aus Vereinsterminen auf der Website und in sozialen Medien verwenden. <span class="opt">(optional)</span></span></label>
+      </div>
+      <div class="field">
+        <label class="check"><input type="checkbox" id="m-news"><span>Schickt mir die Monatspostkarte per E-Mail. <span class="opt">(optional)</span></span></label>
+      </div>
+      <div class="step-actions step-actions-split">
+        <button type="button" class="btn btn-ghost" data-back>Zurück</button>
+        <button type="submit" class="btn btn-navy">Antrag absenden</button>
+      </div>
+      <p class="privacy-line">So gehen wir mit deinen Daten um: <button type="button" class="link-btn" data-open="doc-datenschutz">Datenschutzerklärung</button></p>
+    </form>
+
+    <div class="step step-done member-done" data-step="5" hidden tabindex="-1">
+      <svg class="enamel enamel-win" viewBox="0 0 200 200" aria-hidden="true" focusable="false">
+        <defs><path id="wb-t" d="M26 100A74 74 0 0 1 174 100"/><path id="wb-b" d="M13 100A87 87 0 0 0 187 100"/></defs>
+        <circle cx="100" cy="100" r="97" fill="#052443"/><circle cx="100" cy="100" r="66" fill="#FEDD02"/><circle cx="100" cy="100" r="58" fill="#FFFFFF"/>
+        <text class="ring-t"><textPath href="#wb-t" startOffset="50%" text-anchor="middle">GRÜNDUNGSMITGLIED</textPath></text>
+        <text class="ring-b"><textPath href="#wb-b" startOffset="50%" text-anchor="middle">PICKLEBALL SÜDBADEN e.V.</textPath></text>
+        <text x="100" y="84" text-anchor="middle" class="badge-no">Nr.</text>
+        <text x="100" y="132" text-anchor="middle" class="badge-num">038</text>
+        <path d="M62 142H138" stroke="#EA162C" stroke-width="5" stroke-linecap="round"/>
+      </svg>
+      <p class="win-line">Gründungsnummer 038 (Beispiel) ist für dich reserviert.</p>
+      <p data-member-thanks>Danke. Du bekommst innerhalb von <span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[7 Tagen, vorläufig]</span> eine Bestätigung per E-Mail. Deine Mitgliedschaft beginnt, sobald der Vorstand zugestimmt hat.</p>
+      <div class="step-actions"><button type="button" class="btn btn-navy" data-close>Schließen</button></div>
+    </div>
+    <p class="integration">Später: unser eigenes Formular; die Mandate verwaltet das Ressort Finanzen in <span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[Tool folgt]</span>.</p>
+  </div>
+</dialog>
+
+<!-- Member login -->
+<dialog class="dlg" id="dlg-login" aria-labelledby="login-title" data-dlg="login">
+  <div class="dlg-head">
+    <div class="dlg-bar">
+      <h2 class="dlg-title" id="login-title">MITGLIEDER-LOUNGE</h2>
+      <button type="button" class="dlg-x" data-close aria-label="Schließen"><svg aria-hidden="true"><use href="#i-x"/></svg></button>
+    </div>
+    <div class="dlg-tags"><span class="demo-tag demo-tag-dark">Demo · es wird nichts gesendet</span></div>
+  </div>
+  <div class="dlg-body">
+    <form class="step" data-login-form novalidate>
+      <p class="step-lead">Mitglieder melden sich über einen Link per <span class="nw">E-Mail</span> an. Kein Passwort nötig.</p>
+      <div class="field"><label for="l-email">E-Mail</label><input type="email" id="l-email" autocomplete="email" required aria-describedby="l-email-err"><p class="err" id="l-email-err" hidden></p></div>
+      <div class="step-actions"><button type="submit" class="btn btn-navy">Login-Link anfordern</button></div>
+    </form>
+    <div class="step" data-login-sent hidden tabindex="-1">
+      <p class="sent-note">Demo: Im echten Tool bekämst du jetzt einen Anmeldelink per E-Mail.</p>
+      <div class="step-actions"><button type="button" class="btn btn-navy" data-login-preview>Mitgliederbereich ansehen</button></div>
+    </div>
+    <div class="step dash" data-login-dash hidden tabindex="-1">
+      <p class="preview-tag">Vorschau · Mitglieder-Tools noch nicht festgelegt</p>
+      <div class="dash-hello">
+        <svg class="dash-badge" viewBox="0 0 200 200" aria-hidden="true" focusable="false"><circle cx="100" cy="100" r="97" fill="#052443"/><circle cx="100" cy="100" r="78" fill="#FEDD02"/><circle cx="100" cy="100" r="68" fill="#FFFFFF"/><text x="100" y="92" text-anchor="middle" class="badge-no">Nr.</text><text x="100" y="140" text-anchor="middle" class="badge-num">012</text></svg>
+        <div><h3 class="dash-title">Hallo, <span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[Name]</span></h3><p class="muted">Gründungsmitglied Nr.&nbsp;012 (Beispiel)</p></div>
+      </div>
+      <div class="dash-card">
+        <h4>Dein Paddle Passport <span class="sample">Beispiel</span></h4>
+        <p class="dash-strip-cap">Besuchte Termine: 7</p>
+        <ol class="dash-strip" aria-label="7 Terminstempel">
+          <li>13.09.</li><li>17.09.</li><li>24.09.</li><li>27.09.</li><li>01.10.</li><li>04.10.</li><li>08.10.</li>
+        </ol>
+      </div>
+      <div class="dash-card">
+        <h4>Meine nächsten Termine</h4>
+        <ul class="dash-rows">
+          <li><span><b>Di., 13. Okt. · 19:00</b> Open Play</span><button type="button" class="btn btn-ghost btn-xs" data-toast="Demo: Dein Platz würde für die Warteliste freigegeben.">Absagen<span class="sr-only"> Open Play, Di., 13. Okt.</span></button></li>
+          <li><span><b>Sa., 17. Okt. · 10:00</b> First Serve, familienfreundlich · Warteliste: Platz 2</span><button type="button" class="btn btn-ghost btn-xs" data-toast="Demo: Du würdest die Warteliste verlassen.">Absagen<span class="sr-only"> Wartelistenplatz, Sa., 17. Okt.</span></button></li>
+        </ul>
+      </div>
+      <div class="dash-grid">
+        <div class="dash-card"><h4>Jahresbeitrag</h4><p>Per SEPA eingezogen am <span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[1. Feb., vorläufig]</span>: bezahlt (Beispiel)</p></div>
+        <div class="dash-card"><h4>Paddle Library</h4><button type="button" class="link-btn" data-toast="Demo: Für Donnerstag würde ein Leih-Paddle für dich zurückgelegt.">Paddle für Donnerstag reservieren</button></div>
+        <div class="dash-card"><h4>Einsatzplan</h4><p>Netzaufbau, Do., 22. Okt.: 1 Person gesucht · <button type="button" class="link-btn" data-toast="Demo: Du bist für den Netzaufbau am Do., 22. Okt. eingetragen.">Eintragen</button></p></div>
+        <div class="dash-card"><h4>Dokumente</h4><ul class="dash-docs"><li><button type="button" class="link-btn" data-toast="Demo: Hier wird die Satzung als PDF verlinkt.">Satzung</button></li><li><button type="button" class="link-btn" data-toast="Demo: Hier wird die Beitragsordnung als PDF verlinkt.">Beitragsordnung</button></li><li><button type="button" class="link-btn" data-toast="Demo: Hier wird die Einladung zur Mitgliederversammlung verlinkt.">Einladung zur Mitgliederversammlung</button> <span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[Datum folgt]</span></li></ul></div>
+        <div class="dash-card"><h4>Profil und Einwilligungen</h4><button type="button" class="link-btn" data-toast="Demo: Hier würdest du deine Daten, deine Sprache und deine Foto-Einwilligung ändern.">Profil und Einwilligungen ändern</button></div>
+        <div class="dash-card"><h4>Außerdem</h4><ul class="dash-docs"><li>Termin-App <span class="ph" title="Platzhalter: wird noch bestätigt">[Spond oder Reclub, offen]</span></li><li>Ratings <span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[DUPR-Club, offen]</span></li></ul></div>
+      </div>
+    </div>
+    <p class="integration">Später: Die Anmeldung übernehmen die Mitglieder-Tools, für die wir uns entscheiden (zum Beispiel Spond oder Reclub).</p>
+  </div>
+</dialog>
+
+<!-- About this concept -->
+<dialog class="dlg" id="dlg-about" aria-labelledby="about-title" data-dlg="about">
+  <div class="dlg-head">
+    <div class="dlg-bar">
+      <h2 class="dlg-title" id="about-title">ÜBER DIESES KONZEPT</h2>
+      <button type="button" class="dlg-x" data-close aria-label="Schließen"><svg aria-hidden="true"><use href="#i-x"/></svg></button>
+    </div>
+  </div>
+  <div class="dlg-body prose" tabindex="0" aria-label="Über dieses Konzept, Details">
+    <p class="about-lead"><strong>Konzept A: Paddle Passport.</strong> Ein südbadisches Reiseplakat, nur eben für einen Sport: Der Ball geht wie die Sonne über dem Schwarzwald auf, die Termine laufen über eine Abfahrtstafel, und Neulinge sammeln Stempel, bevor sie beitreten.</p>
+    <dl class="about-list">
+      <div><dt>Reihenfolge der Startseite</dt><dd>Ausprobieren zuerst: Die nächsten Termine kommen vor der Geschichte.</dd></div>
+      <div><dt>Schriften</dt><dd>Barlow Condensed (Überschriften, Zahlen) und Figtree (Text), nur für diese Vorschau von Google Fonts geladen; die fertige Website liefert sie vom eigenen Server aus.</dd></div>
+      <div><dt>Platzhalter</dt><dd>Alles, was in [eckigen Klammern] steht oder mit BEISPIEL markiert ist, ist ein Platzhalter.</dd></div>
+      <div><dt>Fotos</dt><dd>Die Fotos sind KI-generierte Beispielbilder, die die Stimmung zeigen. Jedes trägt den Hinweis „KI-Beispielbild“ und seine Nummer aus der Motivliste. Die fertige Website zeigt nur echte Fotos aus unseren eigenen Terminen, aufgenommen mit Einwilligung. Das Gründungsfoto und die Porträts des Vorstands bleiben leer, bis es echte gibt: Erfundene Gesichter zeigen wir dort nicht.</dd></div>
+      <div><dt>Formulare</dt><dd>Die Formulare sind Demos und senden nichts. Gespeichert wird auf dieser Seite nur ein Demo-Merker für den Paddle-Passport-Stempel, auf deinem eigenen Gerät.</dd></div>
+      <div><dt>Sprachen</dt><dd>Deutsch und Englisch; die französische Version folgt.</dd></div>
+    </dl>
+  </div>
+</dialog>
+
+<!-- Legal stubs -->
+<dialog class="dlg" id="dlg-doc-impressum" aria-labelledby="impressum-title" data-dlg="doc-impressum">
+  <div class="dlg-head"><div class="dlg-bar"><h2 class="dlg-title" id="impressum-title" lang="de">IMPRESSUM</h2><button type="button" class="dlg-x" data-close aria-label="Schließen"><svg aria-hidden="true"><use href="#i-x"/></svg></button></div><div class="dlg-tags"><span class="demo-tag demo-tag-dark">Demo · Platzhaltertext</span></div></div>
+  <div class="dlg-body prose">
+    <p>Pickleball Südbaden e.V. <span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[i.&nbsp;G.]</span><br><span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[Straße, Nr.]</span><br><span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[PLZ]</span> Freiburg im Breisgau <span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[vorläufig]</span></p>
+    <p>Vertreten durch den Vorstand nach §&nbsp;26 BGB: <span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[Name]</span> (Vorsitz), <span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[Name]</span> (stellv. Vorsitz)</p>
+    <p>Registergericht: Amtsgericht Freiburg i.&nbsp;Br. · Registernummer: VR <span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[ausstehend]</span></p>
+    <p>E-Mail: info@<span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[Domain folgt]</span> · Telefon: <span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[folgt]</span></p>
+    <p>Verantwortlich für den Inhalt nach §&nbsp;18 Abs.&nbsp;2 MStV: <span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[Name, Anschrift]</span></p>
+    <p class="muted">Platzhalter. Das endgültige Impressum wird vor dem Start geprüft.</p>
+    <p class="integration">Später: geprüfter Rechtstext auf Deutsch, mit französischer und englischer Fassung.</p>
+  </div>
+</dialog>
+
+<dialog class="dlg" id="dlg-doc-datenschutz" aria-labelledby="ds-title" data-dlg="doc-datenschutz">
+  <div class="dlg-head"><div class="dlg-bar"><h2 class="dlg-title" id="ds-title" lang="de">DATENSCHUTZ</h2><button type="button" class="dlg-x" data-close aria-label="Schließen"><svg aria-hidden="true"><use href="#i-x"/></svg></button></div><div class="dlg-tags"><span class="demo-tag demo-tag-dark">Demo · Platzhaltertext</span></div></div>
+  <div class="dlg-body prose">
+    <p>Datenschutzerklärung (Platzhalter). Die vollständige Erklärung erscheint vor dem Start auf Deutsch, Französisch und Englisch.</p>
+    <p>Kurz gesagt: Diese Website nutzt kein Tracking und setzt keine Cookies. Im Betrieb kommen Schriften und Dateien von unserem eigenen Server. Formulardaten gehen nur an <span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[Auftragsverarbeiter folgen]</span>, auf Grundlage von Auftragsverarbeitungsverträgen.</p>
+    <p>Verantwortlich: Pickleball Südbaden e.V., <span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[Anschrift]</span>. Kontakt Datenschutz: datenschutz@<span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[Domain folgt]</span>.</p>
+    <p class="integration">Später: die geprüfte Erklärung auf DE · FR · EN.</p>
+  </div>
+</dialog>
+
+<dialog class="dlg" id="dlg-doc-satzung" aria-labelledby="satzung-title" data-dlg="doc-satzung">
+  <div class="dlg-head"><div class="dlg-bar"><h2 class="dlg-title" id="satzung-title" lang="de">SATZUNG &amp; DOKUMENTE</h2><button type="button" class="dlg-x" data-close aria-label="Schließen"><svg aria-hidden="true"><use href="#i-x"/></svg></button></div><div class="dlg-tags"><span class="demo-tag demo-tag-dark">Demo · Platzhaltertext</span></div></div>
+  <div class="dlg-body prose">
+    <p>Unsere Gründungsdokumente mit ihrem Stand. Maßgeblich ist die deutsche Fassung der Satzung.</p>
+    <ul class="doc-cards">
+      <li><button type="button" class="doc-btn" data-toast="Demo: Hier wird die Satzung als PDF verlinkt."><b>Satzung</b><span><span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[v1.0]</span> · beschlossen am <span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[Datum]</span> · DE, mit Übersetzungen ins Englische und Französische · Maßgeblich ist die deutsche Fassung</span></button></li>
+      <li><button type="button" class="doc-btn" data-toast="Demo: Hier wird die Beitragsordnung als PDF verlinkt."><b>Beitragsordnung</b><span><span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[Entwurf]</span> · <span class="ph" title="Platzhalter: wird noch bestätigt">[Mitgliederversammlung, Datum folgt]</span> · DE</span></button></li>
+      <li><button type="button" class="doc-btn" data-toast="Demo: Hier wird der Verhaltenskodex verlinkt."><b>Verhaltenskodex</b><span><span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[Entwurf]</span></span></button></li>
+      <li><button type="button" class="doc-btn" data-toast="Demo: Hier wird das Kinderschutzkonzept verlinkt."><b>Kinderschutzkonzept</b><span><span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[Entwurf]</span></span></button></li>
+      <li><button type="button" class="doc-btn" data-toast="Demo: Hier wird die Datenschutzerklärung verlinkt."><b>Datenschutzerklärung</b><span><span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[Entwurf]</span> · DE · FR · EN vor dem Start</span></button></li>
+    </ul>
+    <p class="integration">Später: PDFs von unserem eigenen Server.</p>
+  </div>
+</dialog>
+
+<dialog class="dlg" id="dlg-doc-kinderschutz" aria-labelledby="ks-title" data-dlg="doc-kinderschutz">
+  <div class="dlg-head"><div class="dlg-bar"><h2 class="dlg-title" id="ks-title" lang="de">KINDERSCHUTZ</h2><button type="button" class="dlg-x" data-close aria-label="Schließen"><svg aria-hidden="true"><use href="#i-x"/></svg></button></div><div class="dlg-tags"><span class="demo-tag demo-tag-dark">Demo · Platzhaltertext</span></div></div>
+  <div class="dlg-body prose">
+    <p>Ansprechperson Kinderschutz: <span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[Name]</span>, kinderschutz@<span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[Domain folgt]</span>.</p>
+    <p>Alle, die Termine mit jungen Menschen leiten oder junge Menschen trainieren, unterschreiben unseren Ehrenkodex <span class="ph" title="Platzhalter: wird noch bestätigt">[und legen ein erweitertes Führungszeugnis vor, vorläufig]</span>.</p>
+    <p>Hilfe außerhalb des Vereins: Nummer gegen Kummer 116 111 · Hilfetelefon Sexueller Missbrauch 0800 22 55 530 <span class="ph" title="Platzhalter: wird noch bestätigt">[vor dem Start prüfen]</span>.</p>
+    <p class="integration">Später: das vollständige Kinderschutzkonzept, beschlossen vom Vorstand.</p>
+  </div>
+</dialog>
+
+<dialog class="dlg" id="dlg-doc-presse" aria-labelledby="presse-title" data-dlg="doc-presse">
+  <div class="dlg-head"><div class="dlg-bar"><h2 class="dlg-title" id="presse-title" lang="de">PRESSE</h2><button type="button" class="dlg-x" data-close aria-label="Schließen"><svg aria-hidden="true"><use href="#i-x"/></svg></button></div><div class="dlg-tags"><span class="demo-tag demo-tag-dark">Demo · Platzhaltertext</span></div></div>
+  <div class="dlg-body prose">
+    <p>Pressemappe: Logopaket, Infoblatt und Fotos mit Bildnachweis <span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[folgt bald]</span>. Pressekontakt: <span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[Name]</span>, presse@<span class="ph ph-s" title="Platzhalter: wird noch bestätigt">[Domain folgt]</span>.</p>
+    <p class="integration">Später: eine Pressemappe zum Herunterladen.</p>
+  </div>
+</dialog>
+
+</body>
+</html>

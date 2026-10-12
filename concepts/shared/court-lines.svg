@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-18 -18 564 276" width="564" height="276" color="#FFFFFF">
+  <title>Pickleball court, top-down</title>
+  <!-- Regulation pickleball court, units = inches. Court 20 ft x 44 ft (240 x 528), measured to the outside of 2-inch lines.
+       Non-volley zone ("kitchen") 7 ft (84) from the net on each side; the NVZ line is part of the kitchen.
+       Service courts 10 ft x 15 ft; centrelines run from the NVZ line to the baseline only.
+       Net posts sit 1 ft outside each sideline (22 ft apart).
+       Lines use currentColor (default white). Inline the SVG to recolour with CSS `color`, and fill
+       .court-surface / .kitchen with CSS for a coloured court. Surfaces are transparent by default. -->
+  <g class="surfaces" fill="none">
+    <rect class="court-surface" x="0" y="0" width="528" height="240"/>
+    <rect class="kitchen" x="180" y="0" width="84" height="240"/>
+    <rect class="kitchen" x="264" y="0" width="84" height="240"/>
+  </g>
+  <g class="lines" fill="currentColor">
+    <rect x="0" y="0" width="528" height="2"/>
+    <rect x="0" y="238" width="528" height="2"/>
+    <rect x="0" y="0" width="2" height="240"/>
+    <rect x="526" y="0" width="2" height="240"/>
+    <rect x="180" y="0" width="2" height="240"/>
+    <rect x="346" y="0" width="2" height="240"/>
+    <rect x="2" y="119" width="178" height="2"/>
+    <rect x="348" y="119" width="178" height="2"/>
+  </g>
+  <g class="net" fill="currentColor" opacity="0.6">
+    <rect x="263" y="-12" width="2" height="264"/>
+    <circle cx="264" cy="-12" r="3"/>
+    <circle cx="264" cy="252" r="3"/>
+  </g>
+</svg>
