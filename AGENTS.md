@@ -20,6 +20,11 @@ Plain HTML, CSS and JavaScript: no framework, no build step, no dependencies. Ke
 
 Serve the project folder with any static server (`python3 -m http.server 8000`) and open `/concepts/`.
 
+GitHub Pages publishes `main` to https://pickleball-suedbaden.github.io/www-concepts/. The root `index.html`
+forwards to `concepts/`, and `.nojekyll` serves files as they are. Every page carries
+`<meta name="robots" content="noindex">` so search engines do not list these mock-ups under the club's name:
+keep it on every page, including new ones.
+
 Before you call a change done, check every page you touched in both languages:
 
 - no console errors, failed requests or broken images;

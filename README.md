@@ -20,8 +20,12 @@ Vorstand kann sie vergleichen, bevor die eigentliche Website gebaut wird. Sie si
 
 ### Ansehen
 
-Die Seiten sind reines HTML, CSS und JavaScript, ohne Build-Schritt. Öffne `concepts/index.html` im Browser
-oder starte im Projektordner einen einfachen Webserver:
+Online: <https://pickleball-suedbaden.github.io/www-concepts/>. GitHub Pages veröffentlicht jede Änderung
+auf `main` automatisch. Suchmaschinen sollen die Seiten nicht aufnehmen; wer den Link hat, kann sie trotzdem
+öffnen.
+
+Lokal: Die Seiten sind reines HTML, CSS und JavaScript, ohne Build-Schritt. Öffne `concepts/index.html` im
+Browser oder starte im Projektordner einen einfachen Webserver:
 
 ```bash
 python3 -m http.server 8000
@@ -65,8 +69,11 @@ the board to compare before the real website is built. They are not the live sit
 
 ### Viewing
 
-The pages are plain HTML, CSS and JavaScript, with no build step. Open `concepts/index.html` in a browser, or
-start a simple web server in the project folder:
+Online: <https://pickleball-suedbaden.github.io/www-concepts/>. GitHub Pages publishes every change on `main`
+automatically. Search engines are asked not to list the pages, but anyone with the link can open them.
+
+Locally: the pages are plain HTML, CSS and JavaScript, with no build step. Open `concepts/index.html` in a
+browser, or start a simple web server in the project folder:
 
 ```bash
 python3 -m http.server 8000
